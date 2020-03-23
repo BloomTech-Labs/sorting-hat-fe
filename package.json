@@ -24,6 +24,12 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0"
 	},
+	"jest":{
+		"moduleNameMapper": {
+		 "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+		 "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+	   }
+	 },
 	"scripts": {
 		"start": "npm run build:css && react-app-rewired start",
 		"build": "npm run build:css && react-app-rewired build",
@@ -50,6 +56,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",
+		"identity-obj-proxy": "^3.0.0",
 		"jest": "^25.1.0",
 		"postcss-cli": "^7.1.0",
 		"tailwindcss": "^1.2.0"

@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Landing() {
@@ -14,7 +14,7 @@ function Landing() {
 							01
 						</span>
 						<h2 className="z-10 relative text-2xl text-gray-900 absolute">
-							Prudent
+							Python
 						</h2>
 						<hr className="block mb-6 mt-5 w- border-red-500 h-0 border-t-2" />
 						<p className="text-gray-700">
@@ -38,5 +38,5 @@ function Landing() {
     </div>
   );
 }
-
-export default connect(null, {})(Landing);
+export default Landing;
+// export default connect(null, {})(Landing);
