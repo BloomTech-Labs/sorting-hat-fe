@@ -3,13 +3,14 @@ import React from "react";
 function Header() {
   return (
     <nav
-			class="flex
+			className="flex
 			 items-center
 			 justify-between
-			 p-6 
-			 bg-primary"
+             p-6 
+             bg-teal-500
+			 "
 		>
-			<span class="font-semibold text-secondary text-xl ">Sorting Hat</span>
+			<span className="font-semibold text-secondary text-xl ">Sorting Hat</span>
     </nav>
   );
 }
