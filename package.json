@@ -27,7 +27,7 @@
 	"scripts": {
 		"start": "npm run build:css && react-app-rewired start",
 		"build": "npm run build:css && react-app-rewired build",
-		"test": "react-app-rewired test",
+		"test": "jest --watchAll",
 		"eject": "react-app-rewired eject",
 		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
 		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
@@ -50,6 +50,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",
+		"jest": "^25.1.0",
 		"postcss-cli": "^7.1.0",
 		"tailwindcss": "^1.2.0"
 	}
