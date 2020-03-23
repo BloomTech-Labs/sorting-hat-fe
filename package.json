@@ -12,6 +12,7 @@
 		"customize-cra": "^0.9.1",
 		"less": "^3.11.1",
 		"less-loader": "^5.0.0",
+		"lodash": "^4.17.15",
 		"node-sass": "^4.13.1",
 		"react": "^16.13.1",
 		"react-app-rewired": "^2.1.5",
@@ -29,7 +30,8 @@
 		"test": "react-app-rewired test",
 		"eject": "react-app-rewired eject",
 		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
-		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w"
+		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
+		"coverage": "CI=true yarn test --coverage --watchAll=false || true"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
