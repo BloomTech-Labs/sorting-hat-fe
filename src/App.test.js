@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-
+// import Quiz from './components/Quiz';
+// import Results from './components/Results';
 // test('renders learn react link', () => {
 //   const { getByText } = render(<App />);
 //   const linkElement = getByText(/learn react/i);
@@ -18,6 +19,20 @@ test('App renders without crashing', () => {
     <App />
   </Router>);
 });
+
+// test('Quiz renders without crashing', () => {
+//   render(
+//   <Router>
+//     <Quiz />
+//   </Router>);
+// });
+
+// test('Results renders without crashing', () => {
+//   render(
+//   <Router>
+//     <Results />
+//   </Router>);
+// });
 
 //   expect(getByText(/previous/i));
 //   expect(getByText(/next/i));
