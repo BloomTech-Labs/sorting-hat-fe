@@ -30,7 +30,8 @@
 		"test": "react-app-rewired test",
 		"eject": "react-app-rewired eject",
 		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
-		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w"
+		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
+		"coverage": "CI=true yarn test --coverage --watchAll=false || true"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
