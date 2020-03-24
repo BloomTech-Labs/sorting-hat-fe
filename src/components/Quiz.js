@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
 import { getAnswers } from "../redux/actions/getAnswers";
 import { Redirect } from "react-router-dom";
+import ProgressBar from "./ProgressBar";
 
 function Quiz(props) {
   const { getQuestions, getAnswers, questions, answers } = props;
@@ -16,10 +17,12 @@ function Quiz(props) {
   if (num === questions.length) {
     return <Redirect to="/results" />;
   }
+  console.log(`${questions[num].id}/questions.length`);
   return (
     <div className="quiz-wrapper">
       <h1>Quiz</h1>
       <h2>{questions[num].question}</h2>
+      {/* //todo change list style  */}
       <ol className="list-decimal">
         {answers.map(answer => {
           if (answer.question_id === questions[num].id) {
@@ -28,6 +31,7 @@ function Quiz(props) {
         })}
       </ol>
       <button onClick={() => setNum(num + 1)}>Next</button>
+      <ProgressBar progress={`${questions[num].id}/${questions.length}`} />
     </div>
   );
 }
