@@ -8,16 +8,16 @@ function Landing() {
     <div className="landing-wrapper">
       <h2>Landing</h2>
       <Link to="/quiz">Start Quiz</Link>
-      <section className="w-3/6 m-auto flex bg-blue-500 flex-wrap mt-20">
+      <section className="flex flex-wrap w-3/6 m-auto mt-20 bg-blue-500">
         <div className="flex flex-wrap">
-          <div className="w-full mb- p-10 bg-gray relative rounded shadow">
-            <span className="text-gray-300 text-6xl absolute italic right-10">
+          <div className="relative w-full p-10 rounded shadow mb- bg-gray">
+            <span className="absolute text-6xl italic text-gray-300 right-10">
               01
             </span>
-            <h2 className="z-10 relative text-2xl text-gray-900 absolute">
+            <h2 className="absolute relative z-10 text-2xl text-gray-900">
               Python
             </h2>
-            <hr className="block mb-6 mt-5 w- border-red-500 h-0 border-t-2" />
+            <hr className="block h-0 mt-5 mb-6 border-t-2 border-red-500 w-" />
             <p className="text-gray-700">
               Beautiful is better than ugly. Explicit is better than implicit.
               Simple is better than complex. Complex is better than complicated.
@@ -36,7 +36,7 @@ function Landing() {
           </div>
         </div>
       </section>
-    </div>
+flex flex-wrap w-3/6 m-auto mt-20 bg-blue-500relative w-full p-10 rounded shadow mb- bg-grayabsolute text-6xl italic text-gray-300 right-10absolute relative z-10 text-2xl text-gray-900block h-0 mt-5 mb-6 border-t-2 border-red-500 w-    </div>
   );
 }
 export default Landing;
