@@ -10,11 +10,32 @@ import {
 const initialState = {
   isFetching: false,
   questions: [
-    { question: "question1" },
-    { question: "question2" },
-    { question: "question3" }
+    { question: "question1", id: 1 },
+    { question: "question2", id: 2 },
+    { question: "question3", id: 3 }
   ],
-  answers: [],
+  answers: [
+    { choice: "Nulla et pellentesque, facilisis pede", id: 1, question_id: 1 },
+    { choice: "This is an answer to the question", id: 2, question_id: 1 },
+    { choice: "Nonummy ante pulvinar", id: 3, question_id: 1 },
+    { choice: "Lectus leo", id: 4, question_id: 1 },
+    { choice: "This is an answer to the question", id: 5, question_id: 2 },
+    { choice: "Amet hendrerit amet, diam arcu et", id: 6, question_id: 2 },
+    {
+      choice: "Cras eleifend litora, pellentesque donec mus, volutpat libero",
+      id: 7,
+      question_id: 2
+    },
+    { choice: "Elit wisi, et senectus etiam", id: 8, question_id: 2 },
+    { choice: "Dolorem possimus, quis ante", id: 9, question_id: 3 },
+    { choice: "Orci dapibus", id: 10, question_id: 3 },
+    { choice: "This is an answer to the question", id: 11, question_id: 3 },
+    {
+      choice: "Nisl convallis ut, primis nisl, sed mollis purus",
+      id: 12,
+      question_id: 3
+    }
+  ],
   error: false
 };
 
