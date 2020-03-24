@@ -4,7 +4,8 @@ import {
   QUESTION_GET_FAIL,
   ANSWER_GET_START,
   ANSWER_GET_SUCCESS,
-  ANSWER_GET_FAIL
+  ANSWER_GET_FAIL,
+  SCORE
 } from "../constants";
 
 const initialState = {
@@ -36,6 +37,13 @@ const initialState = {
       question_id: 3
     }
   ],
+  scores: {
+    fullstack: 0,
+    ios: 0,
+    android: 0,
+    ux: 0,
+    ds: 0
+  },
   error: false
 };
 
@@ -56,6 +64,11 @@ export default (state = initialState, action) => {
     case ANSWER_GET_FAIL:
       return { ...state, isFetching: false, error: payload };
 
+    case SCORE:
+      return {
+        ...state,
+        scores: payload
+      };
     default:
       return state;
   }

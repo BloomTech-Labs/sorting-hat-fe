@@ -5,3 +5,5 @@ export const QUESTION_GET_FAIL = "QUESTION_GET_FAIL";
 export const ANSWER_GET_START = "ANSWER_GET_START";
 export const ANSWER_GET_SUCCESS = "ANSWER_GET_SUCCESS";
 export const ANSWER_GET_FAIL = "ANSWER_GET_FAIL";
+
+export const SCORE = "SCORE";

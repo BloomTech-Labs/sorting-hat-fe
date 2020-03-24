@@ -2,12 +2,20 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
 import { getAnswers } from "../redux/actions/getAnswers";
+import { setScores } from "../redux/actions/setScores";
 import { Redirect } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 
 function Quiz(props) {
-  const { getQuestions, getAnswers, questions, answers } = props;
+  const { getQuestions, getAnswers, setScores, questions, answers } = props;
   const [num, setNum] = useState(0);
+  const [currentScores, setCurrentScores] = useState({
+    fullstack: 0,
+    ios: 0,
+    android: 0,
+    ux: 0,
+    ds: 0
+  });
 
   useEffect(() => {
     getQuestions();
@@ -15,9 +23,9 @@ function Quiz(props) {
   }, []);
 
   if (num === questions.length) {
+    setScores(currentScores);
     return <Redirect to="/results" />;
   }
-  console.log(`${questions[num].id}/questions.length`);
   return (
     <div className="quiz-wrapper">
       <h1>Quiz</h1>
@@ -42,4 +50,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getQuestions, getAnswers })(Quiz);
+export default connect(mapStateToProps, {
+  getQuestions,
+  getAnswers,
+  setScores
+})(Quiz);
