@@ -3,13 +3,24 @@ import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
 import { getAnswers } from "../redux/actions/getAnswers";
 import { setScores } from "../redux/actions/setScores";
+import { getTracks } from "../redux/actions/getTracks";
 import { Redirect } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 
 function Quiz(props) {
-  const { getQuestions, getAnswers, setScores, questions, answers } = props;
+  const {
+    getQuestions,
+    getAnswers,
+    setScores,
+    getTracks,
+    questions,
+    answers,
+    tracks
+  } = props;
+
   const [num, setNum] = useState(0);
-  const [currentScores, setCurrentScores] = useState({
+
+  const [currentPoints, setCurrentPoints] = useState({
     fullstack: 0,
     ios: 0,
     android: 0,
@@ -20,25 +31,46 @@ function Quiz(props) {
   useEffect(() => {
     getQuestions();
     getAnswers();
+    getTracks();
   }, []);
 
   if (num === questions.length) {
-    setScores(currentScores);
+    setScores(currentPoints);
     return <Redirect to="/results" />;
   }
   return (
     <div className="quiz-wrapper">
       <h1>Quiz</h1>
       <h2>{questions[num].question}</h2>
-      {/* //todo change list style  */}
-      <ol className="list-decimal">
+
+      <div className="flex flex-col">
         {answers.map(answer => {
           if (answer.question_id === questions[num].id) {
-            return <li key={answer.id}>{answer.choice}</li>;
+            return (
+              <button
+                key={answer.id}
+                onClick={() => {
+                  const point = tracks.filter(
+                    track => track.answer_id === answer.id
+                  )[0];
+                  setNum(num + 1);
+                  setCurrentPoints({
+                    ...currentPoints,
+                    fullstack:
+                      currentPoints.fullstack + parseFloat(point.fullstack),
+                    ios: currentPoints.ios + parseFloat(point.iOS),
+                    android: currentPoints.android + parseFloat(point.android),
+                    ux: currentPoints.ux + parseFloat(point.UX),
+                    ds: currentPoints.ds + parseFloat(point.DS)
+                  });
+                }}
+              >
+                {answer.choice}
+              </button>
+            );
           }
         })}
-      </ol>
-      <button onClick={() => setNum(num + 1)}>Next</button>
+      </div>
       <ProgressBar progress={`${questions[num].id}/${questions.length}`} />
     </div>
   );
@@ -46,12 +78,14 @@ function Quiz(props) {
 const mapStateToProps = state => {
   return {
     questions: state.questions,
-    answers: state.answers
+    answers: state.answers,
+    tracks: state.tracks
   };
 };
 
 export default connect(mapStateToProps, {
   getQuestions,
   getAnswers,
-  setScores
+  setScores,
+  getTracks
 })(Quiz);

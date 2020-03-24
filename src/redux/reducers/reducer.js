@@ -5,6 +5,9 @@ import {
   ANSWER_GET_START,
   ANSWER_GET_SUCCESS,
   ANSWER_GET_FAIL,
+  TRACKS_GET_START,
+  TRACKS_GET_SUCCESS,
+  TRACKS_GET_FAIL,
   SCORE
 } from "../constants";
 
@@ -37,6 +40,7 @@ const initialState = {
       question_id: 3
     }
   ],
+  tracks: [],
   scores: {
     fullstack: 0,
     ios: 0,
@@ -62,6 +66,13 @@ export default (state = initialState, action) => {
     case ANSWER_GET_SUCCESS:
       return { ...state, isFetching: false, answers: payload };
     case ANSWER_GET_FAIL:
+      return { ...state, isFetching: false, error: payload };
+
+    case TRACKS_GET_START:
+      return { ...state, isFetching: true, error: false };
+    case TRACKS_GET_SUCCESS:
+      return { ...state, isFetching: false, tracks: payload };
+    case TRACKS_GET_FAIL:
       return { ...state, isFetching: false, error: payload };
 
     case SCORE:

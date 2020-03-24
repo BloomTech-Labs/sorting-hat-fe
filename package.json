@@ -17,6 +17,7 @@
 		"react": "^16.13.1",
 		"react-app-rewired": "^2.1.5",
 		"react-dom": "^16.13.1",
+		"react-particles-js": "^2.7.1",
 		"react-redux": "^7.2.0",
 		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.4.0",
@@ -24,15 +25,15 @@
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.3.0"
 	},
-	"jest":{
+	"jest": {
 		"moduleNameMapper": {
-		 "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-		 "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-	   },
-	   "collectCoverageFrom": [
-		"**/*.{js,jsx}",
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
+		},
+		"collectCoverageFrom": [
+			"**/*.{js,jsx}",
 			"!**/node_modules/**",
-		"!**/vendor/**"
+			"!**/vendor/**"
 		]
 	},
 	"scripts": {
