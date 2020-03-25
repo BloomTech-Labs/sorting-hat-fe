@@ -6,6 +6,7 @@ import { setScores } from "../redux/actions/setScores";
 import { getTracks } from "../redux/actions/getTracks";
 import { Redirect } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import Header from "../components/Header";
 
 function Quiz(props) {
   const {
@@ -49,32 +50,35 @@ function Quiz(props) {
     });
   };
   return (
-    <div className="quiz-wrapper">
-      <h1>Quiz</h1>
-      <h2>{questions[num].question}</h2>
+    <div>
+      <Header />
+      <div className="quiz-wrapper">
+        <h1>Quiz</h1>
+        <h2>{questions[num].question}</h2>
 
-      <div className="flex flex-col m-4">
-        {answers.map(answer => {
-          if (answer.question_id === questions[num].id) {
-            return (
-              <button
-                key={answer.id}
-                onClick={() => {
-                  const point = tracks.find(
-                    track => track.answer_id === answer.id
-                  );
-                  setNum(num + 1);
-                  updatePoints(point);
-                }}
-                className="bg-gray-200 hover:bg-red-500 w-1/4 p-1 m-auto"
-              >
-                {answer.choice}
-              </button>
-            );
-          }
-        })}
+        <div className="flex flex-col m-4">
+          {answers.map(answer => {
+            if (answer.question_id === questions[num].id) {
+              return (
+                <button
+                  key={answer.id}
+                  onClick={() => {
+                    const point = tracks.find(
+                      track => track.answer_id === answer.id
+                    );
+                    setNum(num + 1);
+                    updatePoints(point);
+                  }}
+                  className="bg-gray-200 hover:bg-red-500 w-1/4 p-1 m-auto"
+                >
+                  {answer.choice}
+                </button>
+              );
+            }
+          })}
+        </div>
+        <ProgressBar progress={`${questions[num].id}/${questions.length}`} />
       </div>
-      <ProgressBar progress={`${questions[num].id}/${questions.length}`} />
     </div>
   );
 }
