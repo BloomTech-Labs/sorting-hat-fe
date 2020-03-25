@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import {
   BarChart,
   Bar,
@@ -10,16 +11,16 @@ import {
   Legend
 } from "recharts";
 
-function BarGraph({ scores }) {
+function BarGraph({ scores, history }) {
   const data = [];
-
   for (const track in scores) {
     data.push({ track: track, score: scores[track] });
   }
+  //todo have multiple data arrays for each track, each bars
 
   return (
     <BarChart
-      width={500}
+      width={400}
       height={300}
       data={data}
       margin={{
@@ -34,7 +35,11 @@ function BarGraph({ scores }) {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="score" fill="#f56565" />
+      <Bar
+        dataKey="score"
+        fill="#f56565"
+        // onClick={evt => history.push(`/quiz/${evt.track}`)}
+      />
     </BarChart>
   );
 }
@@ -43,4 +48,4 @@ const mapStateToProps = state => {
     scores: state.scores
   };
 };
-export default connect(mapStateToProps, {})(BarGraph);
+export default withRouter(connect(mapStateToProps, {})(BarGraph));

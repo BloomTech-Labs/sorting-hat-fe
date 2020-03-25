@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/quiz" component={Quiz} />
+        <Route exact path="/quiz" component={Quiz} />
         <Route path="/results" component={Results} />
         <Route path="/particles" component={ParticleTesting} />
       </Switch>

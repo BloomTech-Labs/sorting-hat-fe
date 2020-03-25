@@ -11,22 +11,15 @@ function Quiz(props) {
   const {
     getQuestions,
     getAnswers,
-    setScores,
     getTracks,
+    setScores,
     questions,
     answers,
-    tracks
+    tracks,
+    scores
   } = props;
 
   const [num, setNum] = useState(0);
-
-  const [currentPoints, setCurrentPoints] = useState({
-    fullstack: 0,
-    ios: 0,
-    android: 0,
-    ux: 0,
-    ds: 0
-  });
 
   useEffect(() => {
     getQuestions();
@@ -35,19 +28,20 @@ function Quiz(props) {
   }, []);
 
   if (num === questions.length) {
-    setScores(currentPoints);
     return <Redirect to="/results" />;
   }
+
   const updatePoints = point => {
-    setCurrentPoints({
-      ...currentPoints,
-      fullstack: currentPoints.fullstack + parseFloat(point.fullstack),
-      ios: currentPoints.ios + parseFloat(point.iOS),
-      android: currentPoints.android + parseFloat(point.android),
-      ux: currentPoints.ux + parseFloat(point.UX),
-      ds: currentPoints.ds + parseFloat(point.DS)
+    setScores({
+      ...scores,
+      fullstack: scores.fullstack + parseFloat(point.fullstack),
+      ios: scores.ios + parseFloat(point.iOS),
+      android: scores.android + parseFloat(point.android),
+      ux: scores.ux + parseFloat(point.UX),
+      ds: scores.ds + parseFloat(point.DS)
     });
   };
+
   return (
     <div className="w-4/5 m-auto">
       <h1 mt-2>Question {num + 1}</h1>
@@ -57,6 +51,8 @@ function Quiz(props) {
         {answers.map(answer => {
           if (answer.question_id === questions[num].id) {
             return (
+              // <div className="hover:bg-red-500  w-1/2 p-1 m-auto text-left">
+              //  <input type="checkbox" props={...props} name="checkbox" />
               <button
                 key={answer.id}
                 onClick={() => {
@@ -66,10 +62,12 @@ function Quiz(props) {
                   setNum(num + 1);
                   updatePoints(point);
                 }}
-                className="hover:bg-red-500 w-1/2 p-1 m-auto text-left"
+                className="hover:bg-red-500  w-1/2 p-1 m-auto text-left"
+                // hover:border-4 hover:border-solid hover:border-black hover:rounded-md
               >
                 {answer.choice}
               </button>
+              // </div>
             );
           }
         })}
@@ -82,7 +80,8 @@ const mapStateToProps = state => {
   return {
     questions: state.questions,
     answers: state.answers,
-    tracks: state.tracks
+    tracks: state.tracks,
+    scores: state.scores
   };
 };
 
