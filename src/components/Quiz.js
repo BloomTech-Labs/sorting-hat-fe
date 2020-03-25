@@ -38,32 +38,35 @@ function Quiz(props) {
     setScores(currentPoints);
     return <Redirect to="/results" />;
   }
+  const updatePoints = point => {
+    setCurrentPoints({
+      ...currentPoints,
+      fullstack: currentPoints.fullstack + parseFloat(point.fullstack),
+      ios: currentPoints.ios + parseFloat(point.iOS),
+      android: currentPoints.android + parseFloat(point.android),
+      ux: currentPoints.ux + parseFloat(point.UX),
+      ds: currentPoints.ds + parseFloat(point.DS)
+    });
+  };
   return (
     <div className="quiz-wrapper">
       <h1>Quiz</h1>
       <h2>{questions[num].question}</h2>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col m-4">
         {answers.map(answer => {
           if (answer.question_id === questions[num].id) {
             return (
               <button
                 key={answer.id}
                 onClick={() => {
-                  const point = tracks.filter(
+                  const point = tracks.find(
                     track => track.answer_id === answer.id
-                  )[0];
+                  );
                   setNum(num + 1);
-                  setCurrentPoints({
-                    ...currentPoints,
-                    fullstack:
-                      currentPoints.fullstack + parseFloat(point.fullstack),
-                    ios: currentPoints.ios + parseFloat(point.iOS),
-                    android: currentPoints.android + parseFloat(point.android),
-                    ux: currentPoints.ux + parseFloat(point.UX),
-                    ds: currentPoints.ds + parseFloat(point.DS)
-                  });
+                  updatePoints(point);
                 }}
+                className="bg-gray-200 hover:bg-red-500 w-1/4 p-1 m-auto"
               >
                 {answer.choice}
               </button>

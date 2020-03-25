@@ -2,6 +2,7 @@ import React from "react";
 // import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
+import "../styles/landing.css";
 
 const particleOpt = {
   particles: {
@@ -18,7 +19,9 @@ const particleOpt = {
 function Landing() {
   return (
     <>
-      {/* <Particles params={particleOpt} /> */}
+      <div className="particle-wrapper">
+        <Particles params={particleOpt} />
+      </div>
       <div className="landing-wrapper">
         <section className="flex flex-wrap w-3/6 m-auto mt-20 ">
           <div className="flex flex-wrap">
@@ -36,9 +39,12 @@ function Landing() {
         </section>
 
         <div className="flex px-1 py-1 justify-center">
-          <button className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 border border-red-700 rounded">
-            <Link to="/quiz">Start Quiz</Link>
-          </button>
+          <Link
+            to="/quiz"
+            className="bg-red-600 hover:bg-red-700 text-white py-2 px-20 border border-red-700 rounded"
+          >
+            Start Quiz
+          </Link>
         </div>
         {/* flex flex-wrap w-3/6 m-auto mt-20 bg-blue-500relative w-full p-10 rounded
       shadow mb- bg-grayabsolute text-6xl italic text-gray-300 right-10absolute

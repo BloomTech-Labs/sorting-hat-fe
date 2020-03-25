@@ -4,7 +4,7 @@ import BarGraph from "./BarGraph";
 
 function Results({ scores }) {
   return (
-    <div className="results-wrapper">
+    <div className="flex">
       <BarGraph />
     </div>
   );
