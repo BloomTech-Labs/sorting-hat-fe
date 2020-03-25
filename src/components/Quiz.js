@@ -49,8 +49,8 @@ function Quiz(props) {
     });
   };
   return (
-    <div className="quiz-wrapper">
-      <h1>Quiz</h1>
+    <div className="w-4/5 m-auto">
+      <h1 mt-2>Question {num + 1}</h1>
       <h2>{questions[num].question}</h2>
 
       <div className="flex flex-col m-4">
@@ -66,7 +66,7 @@ function Quiz(props) {
                   setNum(num + 1);
                   updatePoints(point);
                 }}
-                className="bg-gray-200 hover:bg-red-500 w-1/4 p-1 m-auto"
+                className="hover:bg-red-500 w-1/2 p-1 m-auto text-left"
               >
                 {answer.choice}
               </button>

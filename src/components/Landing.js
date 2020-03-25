@@ -5,6 +5,7 @@ import Particles from "react-particles-js";
 import "../styles/landing.css";
 
 const particleOpt = {
+  speed: 1,
   particles: {
     number: {
       value: 150,

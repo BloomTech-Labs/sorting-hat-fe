@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/app.css";
-import { NavLink, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Quiz from "./components/Quiz";
 import Landing from "./components/Landing";
 import Results from "./components/Results";
