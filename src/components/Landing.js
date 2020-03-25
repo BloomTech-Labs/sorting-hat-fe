@@ -6,6 +6,9 @@ import "../styles/landing.css";
 
 const particleOpt = {
   particles: {
+    move: {
+      speed: 0.8
+    },
     number: {
       value: 150,
       density: {
@@ -25,12 +28,12 @@ function Landing() {
       <div className="landing-wrapper">
         <section className="flex flex-wrap w-3/6 m-auto mt-20 ">
           <div className="flex flex-wrap">
-            <div className="relative w-full p-10 rounded shadow mb- bg-gray">
-              <span className="absolute text-6xl italic text-gray-300 right-10"></span>
-              <h2 className="absolute relative z-10 text-2xl text-gray-900">
+            <div className="relative w-full p-10">
+              <span className="text-6xl italic text-white right-10"></span>
+              <h2 className=" z-10 text-2xl text-white text-center">
                 Discover the Tech Career for You
               </h2>
-              <p className="text-gray-700">
+              <p className="text-white playfair-font text-center">
                 Take our 5 minute survey to discover which tech field would be
                 right for you. Discover the opportunity at your fingertips.
               </p>
