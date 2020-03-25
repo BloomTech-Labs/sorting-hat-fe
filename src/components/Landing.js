@@ -18,7 +18,7 @@ const particleOpt = {
 
 function Landing() {
   return (
-    <>
+    <div>
       <div className="particle-wrapper">
         <Particles params={particleOpt} />
       </div>
@@ -51,7 +51,7 @@ function Landing() {
       relative z-10 text-2xl text-gray-900block h-0 mt-5 mb-6 border-t-2
       border-red-500 w-{" "} */}
       </div>
-    </>
+    </div>
   );
 }
 export default Landing;
