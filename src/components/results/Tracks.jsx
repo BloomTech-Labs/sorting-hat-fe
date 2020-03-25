@@ -4,7 +4,6 @@ import data from "./trackData";
 
 function Tracks({ scores }) {
   const [selectedTrack, setSelectedTrack] = useState("fullstack");
-  // const tracks = ;
   return (
     <div className="flex w-1/3 border">
       <ul>
@@ -15,10 +14,13 @@ function Tracks({ scores }) {
       <div className="m-auto">
         <h2>Track: {data[selectedTrack].name}</h2>
         <h3>Score: {scores[selectedTrack]}</h3>
-        <p>Description: {data[selectedTrack].description}</p>
+        <p>Description: </p>
         <p>
           {/* {//todo open new tab} */}
-          Link: <a href={`${data[selectedTrack].link}`}>CLICK ME</a>
+          Link:{" "}
+          <a href={`${data[selectedTrack].link}`} target="_blank">
+            CLICK ME
+          </a>
         </p>
       </div>
     </div>

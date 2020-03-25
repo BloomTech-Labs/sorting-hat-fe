@@ -51,6 +51,8 @@ function Quiz(props) {
         {answers.map(answer => {
           if (answer.question_id === questions[num].id) {
             return (
+              // todo create form to replace button
+              // todo add state for back button
               // <div className="hover:bg-red-500  w-1/2 p-1 m-auto text-left">
               //  <input type="checkbox" props={...props} name="checkbox" />
               <button

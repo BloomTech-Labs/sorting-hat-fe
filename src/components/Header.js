@@ -10,7 +10,7 @@ function Header() {
 
       <div className="text-sm sm:flex-grow">
         <NavLink
-          to="/particles"
+          to=""
           className="block mt-4 sm:inline-block sm:mt-0 text-black hover:text-red-500 mr-4"
         >
           about
