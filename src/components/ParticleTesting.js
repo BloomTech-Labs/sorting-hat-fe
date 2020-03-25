@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
 //https://www.npmjs.com/package/react-particles-js
 const particleOpt = {
+  //   polygon: {
+  //     enable: true,
+  //     type: "inside",
+  //     move: {
+  //       radius: 10
+  //     },
+  //     url: "path/to/svg.svg"
+  //   }
   particles: {
     number: {
       value: 150,

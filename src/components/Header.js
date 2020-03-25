@@ -16,7 +16,7 @@ function Header() {
           about
         </NavLink>
         <NavLink
-          to="/"
+          to="/quiz"
           className="block mt-4 sm:inline-block sm:mt-0 text-black hover:text-red-500 mr-4"
         >
           start quiz
