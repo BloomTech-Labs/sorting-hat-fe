@@ -6,8 +6,11 @@ import data from './results/trackData';
 
 //We need to have the endpoints from the backend
 const trackInfo = {
+	trackid: 1,
 	trackName: 'Fullstack',
-	trackDescription: 'We live in the cloud. Like angles!',
+	trackShortDescription: 'This is a short description',
+	trackDescription:
+		'This is a long Description. We live in the cloud. Like angles!',
 	trackStrengths:
 		'This Paragraph is about your strengths. We speak in Latin. This paragraph is about Participants Strengths n Aute magna laborum officia exercitation magna aliqua cillum. Nulla Lorem cupidatat dolor ullamco sit aliquip excepteur in. Aliqua sit qui labore ullamco tempor cillum laborum exercitation sit consequat excepteur sint. Irure deserunt mollit sunt tempor consequat ad consequat et culpa incididunt. Pariatur duis excepteur adipisicing reprehenderit dolor mollit pariatur do qui pariatur ad exercitation est nisi.',
 	trackVideo: (
@@ -44,7 +47,7 @@ function Results({scores}) {
 					<div className="button-arrow">
 						<i className="material-icons">arrow_left</i>
 					</div>
-					Retake Quiz
+					<span>Retake Quiz</span>
 				</Link>
 			</div>
 			<div className="flex justify-center items-center">
@@ -84,6 +87,7 @@ function Results({scores}) {
 					</div>
 				</section>
 			</div>
+
 			<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
 				<Link
 					to="/quiz"
@@ -96,6 +100,7 @@ function Results({scores}) {
 		</>
 	);
 }
+
 const mapStateToProps = state => {
 	return {scores: state.scores};
 };
