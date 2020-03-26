@@ -41,36 +41,38 @@ function Results({scores}) {
 					to="/quiz"
 					className="bg-red-600 hover:bg-red-500 text-white mr-5 py-0.5 px-10 border border-red-700 rounded"
 				>
-					<i className="material-icons">arrow_left</i>
+					<div className="button-arrow">
+						<i className="material-icons">arrow_left</i>
+					</div>
 					Retake Quiz
 				</Link>
 			</div>
 			<div className="flex justify-center items-center">
 				<section className="flex-column m-10 border-black max-w-5xl">
-					<h2 className="font-bold text-3xl text-black border-b pb-2">
+					<h2 className="font-bold text-3xl text-black border-b-2 p-3">
 						Results
 					</h2>
 					<div className="flex justify-center flex-column">
 						<BarGraph />
 					</div>
 					<div className="container mt-5">
-						<h2 className="font-bold text-xl">You Are</h2>
-						<p>{trackInfo.trackStrengths}</p>
+						<h2 className="font-bold text-xl p-3 border-b-2">You Are</h2>
+						<p className="py-3">{trackInfo.trackStrengths}</p>
 					</div>
-					<div className="flex flex-col justify-center items-center">
-						<h2 className="font-bold text-xl self-start border-b pb-2">
-							Learn More
-						</h2>
-						{trackInfo.trackVideo}
+					<div className="flex-col justify-center items-center">
+						<h2 className="font-bold text-xl self-start p-3">Learn More</h2>
+						<div className="flex justify-center py-2">
+							{trackInfo.trackVideo}
+						</div>
 					</div>
 					<div>
-						<h2 className="font-bold text-2xl text-black  pb-2">
+						<h2 className="font-bold text-2xl text-black border-b-2 p-3 mb-1">
 							Discover Other Tracks
 						</h2>
 						{/*I need to axios all this info*/}
 						{trackInfo.otherTracks.map(el => {
 							return (
-								<div className="font-bold">
+								<div className="font-bold py-1">
 									{el.trackName}
 									<span className="text-gray-800 font-normal">
 										{' '}
@@ -81,6 +83,15 @@ function Results({scores}) {
 						})}
 					</div>
 				</section>
+			</div>
+			<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
+				<Link
+					to="/quiz"
+					className="bg-red-600 hover:bg-red-500 text-white mr-5 py-0.5 px-10 border border-red-700 rounded align-baseline"
+				>
+					<i className="material-icons">arrow_left</i>
+					<span>Retake Quiz</span>
+				</Link>
 			</div>
 		</>
 	);
