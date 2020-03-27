@@ -11,16 +11,21 @@ import {
 	Legend
 } from 'recharts';
 
-function BarGraph({scores, history}) {
+function BarGraph({points, history, tracks}) {
 	const data = [];
-	for (const track in scores) {
-		data.push({track: track, score: scores[track]});
-	}
+	console.log({tracks});
+	console.log({points});
+	let mockScore = 12;
+	tracks.map(track => {
+		mockScore = mockScore + 3;
+		data.push({track: track.name, score: mockScore});
+	});
+
 	//todo have multiple data arrays for each track, each bars
 
 	return (
 		<BarChart
-			width={400}
+			width={600}
 			height={300}
 			data={data}
 			margin={{
@@ -45,7 +50,8 @@ function BarGraph({scores, history}) {
 }
 const mapStateToProps = state => {
 	return {
-		scores: state.scores
+		points: state.points,
+		tracks: state.tracks
 	};
 };
 export default withRouter(connect(mapStateToProps, {})(BarGraph));

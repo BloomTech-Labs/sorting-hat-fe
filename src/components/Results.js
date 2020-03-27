@@ -44,9 +44,7 @@ function Results({scores}) {
 					to="/quiz"
 					className="bg-red-600 hover:bg-red-500 text-white mr-5 py-0.5 px-10 border border-red-700 rounded"
 				>
-					<div className="button-arrow">
-						<i className="material-icons">arrow_left</i>
-					</div>
+					<i className="material-icons">arrow_left</i>
 					<span>Retake Quiz</span>
 				</Link>
 			</div>
@@ -56,7 +54,7 @@ function Results({scores}) {
 						Results
 					</h2>
 					<div className="flex justify-center flex-column">
-						<BarGraph />
+						<BarGraph scores={scores} />
 					</div>
 					<div className="container mt-5">
 						<h2 className="font-bold text-xl p-3 border-b-2">You Are</h2>
