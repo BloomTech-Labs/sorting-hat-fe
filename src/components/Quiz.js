@@ -7,6 +7,7 @@ import { getPoints } from "../redux/actions/getPoints";
 import { getTracks } from "../redux/actions/getTracks";
 import { Redirect } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import BarGraph from "./BarGraph";
 
 function Quiz(props) {
   //Setting State
@@ -84,6 +85,7 @@ function Quiz(props) {
         })}
       </div>
       <ProgressBar progress={questions[num].id / questions.length} />
+      <BarGraph />
     </div>
   );
 }

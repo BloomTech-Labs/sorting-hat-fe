@@ -1,5 +1,6 @@
-import {SCORE} from '../constants';
+import { SCORE } from "../constants";
 
 export const setScores = scores => dispatch => {
-	dispatch({type: SCORE, payload: scores});
+  console.log("SCORE");
+  dispatch({ type: SCORE, payload: scores });
 };

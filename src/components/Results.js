@@ -1,40 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import BarGraph from "./BarGraph";
 import { Link, Redirect } from "react-router-dom";
-
+import { setScores } from "../redux/actions/setScores";
+import BarGraph from "./BarGraph";
 //We need to have the endpoints from the backend
-const trackInfo = {
-  trackid: 1,
-  trackName: "Fullstack",
-  trackShortDescription: "This is a short description",
-  trackDescription:
-    "This is a long Description. We live in the cloud. Like angles!",
-  trackStrengths:
-    "This Paragraph is about your strengths. We speak in Latin. This paragraph is about Participants Strengths n Aute magna laborum officia exercitation magna aliqua cillum. Nulla Lorem cupidatat dolor ullamco sit aliquip excepteur in. Aliqua sit qui labore ullamco tempor cillum laborum exercitation sit consequat excepteur sint. Irure deserunt mollit sunt tempor consequat ad consequat et culpa incididunt. Pariatur duis excepteur adipisicing reprehenderit dolor mollit pariatur do qui pariatur ad exercitation est nisi.",
-  trackVideo: (
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/cc3Dofs_j0E"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  ),
-  otherTracks: [
-    { id: "1", trackName: "UX", trackDescription: "Ours is the Fury" },
-    { id: "2", trackName: "iOS", trackDescription: "We Do Not Sow" },
-    {
-      id: "3",
-      trackName: "Android Development",
-      trackDescription: "Unbowed, Unbent, Unbroken"
-    },
-    { id: "4", trackName: "Data Science", trackDescription: "Winter is Coming" }
-  ]
-};
 
 function Results({ scores, tracks }) {
+  console.log({ scores });
   const [selectedTrack, setSelectedTrack] = useState({});
   useEffect(() => {
     let highest = { track: null, score: 0 };
@@ -72,7 +44,7 @@ function Results({ scores, tracks }) {
             Results
           </h2>
           <div className="flex justify-center flex-column">
-            <BarGraph scores={scores} />
+            <BarGraph />
           </div>
           <div className="container mt-5">
             <h2 className="font-bold text-xl p-3 border-b-2">
@@ -131,4 +103,4 @@ const mapStateToProps = state => {
     tracks: state.tracks
   };
 };
-export default connect(mapStateToProps, {})(Results);
+export default connect(mapStateToProps, { setScores })(Results);
