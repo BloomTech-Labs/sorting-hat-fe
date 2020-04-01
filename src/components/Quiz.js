@@ -24,13 +24,14 @@ function Quiz(props) {
   } = props;
 
   const [num, setNum] = useState(0);
-
+  const [pointHistory, setPointHistory] = useState([]);
   //Running Actions
   useEffect(() => {
     getQuestions();
     getAnswers();
     getTracks();
     getPoints();
+    setScores({});
   }, []);
 
   //If the quiz if finished it will redirect to main page
@@ -42,30 +43,46 @@ function Quiz(props) {
 
   const updatePoints = point => {
     //This action updates the score based on points associated with the tracks
-    // console.log({ scores });
     let newScores = {};
-
     point.forEach(point => {
-      const current = scores[point.track_id];
+      let current = scores[point.track_id];
       const newPoint = JSON.parse(point.points);
+      if (!current) {
+        current = 0;
+      }
       newScores = {
         ...newScores,
         [point.track_id]: current + newPoint
       };
+      setScores(newScores);
     });
-
-    setScores(newScores);
+    // pointHistory.push({ question: num, points: point });
+    // setPointHistory([...pointHistory, { question: num, points: point }]);
   };
-  //   console.log("quiz", tracks);
+
+  const backScore = () => {
+    console.log(num - 1);
+    // let newScores = {}
+    // setPointHistory([pointHistory.filter(e => )])
+    // lastPoint.forEach(point => {
+    //   let current = scores[point.track_id];
+    //   const lastPoint = JSON.parse(point.points)
+    //   newScores = {
+    //     ...newScores,
+    //     [point.track_id]: current - lastPoint
+    //   }
+    // })
+    console.log(pointHistory);
+  };
+
   return (
     <div className="w-4/5 m-auto">
       <h1 className="mt-2">Question {num + 1}</h1>
       <h2>{questions[num].question}</h2>
-
       <div className="flex flex-col m-4">
-        {answers.map(answer => {
-          if (answer.question_id === questions[num].id) {
-            return (
+        {answers.map(
+          answer =>
+            answer.question_id === questions[num].id && (
               <button
                 key={answer.id}
                 onClick={() => {
@@ -80,12 +97,11 @@ function Quiz(props) {
               >
                 {answer.choice}
               </button>
-            );
-          }
-        })}
+            )
+        )}
+        <button onClick={backScore}>Back</button>
       </div>
       <ProgressBar progress={questions[num].id / questions.length} />
-      <BarGraph />
     </div>
   );
 }

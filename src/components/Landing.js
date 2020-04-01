@@ -61,11 +61,11 @@ const particleOpt = {
 function Landing() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="particle-wrapper">
         <Particles params={particleOpt} />
       </div>
-      <section className="flex flex-wrap w-3/6 m-auto mt-20 ">
+      <section className="flex flex-wrap w-3/6 m-auto mt-20">
         <div className="flex flex-wrap">
           <div className="relative w-full p-10">
             <span className="text-6xl italic text-white right-10"></span>

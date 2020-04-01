@@ -11,7 +11,8 @@ import {
   Legend
 } from "recharts";
 
-function BarGraph({ scores, tracks }) {
+function BarGraph({ scores, tracks, top }) {
+  console.log({ top });
   const data = [];
   tracks.map(track => {
     data.push({ track: track.name, score: scores[track.id] });
@@ -31,11 +32,14 @@ function BarGraph({ scores, tracks }) {
           <p>0</p>
         </section>
         <div className="flex w-full justify-around border border-red-400 border-solid ">
-          {Object.values(scores).map(e => (
+          {Object.entries(scores).map(e => (
             <div className=" w-full h-full rounded-lg m-auto border flex flex-col-reverse">
               <div
                 className="bg-blue h-full border-r border-solid border-pink rounded-lg duration-1000 ease-in-out"
-                style={{ height: `${e * 2}%`, background: "pink" }}
+                style={{
+                  height: `${e[1] * 4}%`,
+                  background: top.id == e[0] ? "lightblue" : "pink"
+                }}
               />
             </div>
           ))}

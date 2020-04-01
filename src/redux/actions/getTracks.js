@@ -9,10 +9,7 @@ export const getTracks = () => dispatch => {
   dispatch({ type: TRACKS_GET_START });
   axios
     .get("https://tech-sorting-hat.herokuapp.com/api/tracks")
-    .then(res => {
-      // console.log("This is Track Axios", res.data);
-      dispatch({ type: TRACKS_GET_SUCCESS, payload: res.data });
-    })
+    .then(res => dispatch({ type: TRACKS_GET_SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: TRACKS_GET_FAIL, payload: err }));
 };
 

@@ -9,9 +9,6 @@ export const getPoints = () => dispatch => {
   dispatch({ type: POINTS_GET_START });
   axios
     .get("https://tech-sorting-hat.herokuapp.com/api/points")
-    .then(res => {
-      // console.log('This is Points Axios', res.data);
-      dispatch({ type: POINTS_GET_SUCCESS, payload: res.data });
-    })
+    .then(res => dispatch({ type: POINTS_GET_SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: POINTS_GET_FAIL, payload: err }));
 };

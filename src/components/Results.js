@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-import { setScores } from "../redux/actions/setScores";
+
 import BarGraph from "./BarGraph";
 //We need to have the endpoints from the backend
 
 function Results({ scores, tracks }) {
-  console.log({ scores });
   const [selectedTrack, setSelectedTrack] = useState({});
   useEffect(() => {
     let highest = { track: null, score: 0 };
@@ -44,7 +43,7 @@ function Results({ scores, tracks }) {
             Results
           </h2>
           <div className="flex justify-center flex-column">
-            <BarGraph />
+            <BarGraph top={selectedTrack} />
           </div>
           <div className="container mt-5">
             <h2 className="font-bold text-xl p-3 border-b-2">
@@ -55,6 +54,7 @@ function Results({ scores, tracks }) {
           <div className="flex-col justify-center items-center">
             <h2 className="font-bold text-xl self-start p-3">Learn More</h2>
             <div className="flex justify-center py-2">
+              {selectedTrack.link}
               {/* {selectedTrack. ? trackInfo.trackVideo : } */}
             </div>
           </div>
@@ -103,4 +103,4 @@ const mapStateToProps = state => {
     tracks: state.tracks
   };
 };
-export default connect(mapStateToProps, { setScores })(Results);
+export default connect(mapStateToProps, {})(Results);

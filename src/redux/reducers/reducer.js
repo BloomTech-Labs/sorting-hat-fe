@@ -46,9 +46,7 @@ const initialState = {
   scores: {
     1: 5,
     2: 38,
-    3: 9,
-    4: 12,
-    5: 8
+    3: 9
   },
   error: false
 };
