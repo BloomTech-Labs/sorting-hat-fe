@@ -2,60 +2,60 @@ import React from "react";
 // import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Particles from "react-particles-js";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 const particleOpt = {
   particles: {
     move: {
-      speed: 0.8
+      speed: 0.8,
     },
     color: {
-      value: "#FF0000"
+      value: "#FF0000",
     },
     number: {
       value: 150,
       density: {
         enable: true,
-        value_area: 800
-      }
-    }
+        value_area: 800,
+      },
+    },
   },
   line_linked: {
     enable: true,
     distance: 120,
     color: "#00FFFF",
-    width: 1
+    width: 1,
   },
   interactivity: {
     detect_on: "canvas",
     events: {
       onhover: {
         enable: true,
-        mode: "repulse"
+        mode: "repulse",
       },
       onclick: {
         enable: true,
-        mode: "push"
+        mode: "push",
       },
-      resize: true
+      resize: true,
     },
     modes: {
       grab: {
         distance: 400,
         line_linked: {
-          opacity: 0
-        }
+          opacity: 0,
+        },
       },
       repulse: {
         distance: 200,
-        duration: 0.4
+        duration: 0.4,
       },
       bubble: {
         distance: 100,
-        size: 10
-      }
-    }
+        size: 10,
+      },
+    },
   },
-  retina_detect: true
+  retina_detect: true,
 };
 
 function Landing() {

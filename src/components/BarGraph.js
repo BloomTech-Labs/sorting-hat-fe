@@ -15,7 +15,10 @@ function BarGraph({ scores, tracks, top }) {
       <div className="flex h-56">
         <div className="flex w-full justify-around border border-red-400 border-solid ">
           {Object.entries(scores).map((e) => (
-            <div className=" w-full h-full rounded-lg m-auto border flex flex-col-reverse">
+            <div
+              key={e[0]}
+              className=" w-full h-full rounded-lg m-auto border flex flex-col-reverse"
+            >
               <div
                 className="bg-blue h-full border-r border-solid border-pink rounded-lg duration-1000 ease-in-out flex justify-center"
                 style={{
@@ -31,7 +34,9 @@ function BarGraph({ scores, tracks, top }) {
       </div>
       <section className="x-axis flex justify-around border w-full pl-8 m-auto">
         {tracks.map((track) => (
-          <p className={`w-1/${tracks.length} text-center`}>{track.name}</p>
+          <p key={track.id} className={`w-1/${tracks.length} text-center`}>
+            {track.name}
+          </p>
         ))}
       </section>
     </div>
