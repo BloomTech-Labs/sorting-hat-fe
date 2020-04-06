@@ -48,6 +48,7 @@ function Quiz(props) {
 
   const updatePoints = () => {
     //This action updates the score based on points associated with the tracks
+    console.log(selected);
     setNum(num + 1);
     let newScores = {};
     selected.forEach((point) => {
@@ -80,41 +81,40 @@ function Quiz(props) {
     pointHistory.pop();
   };
 
+  function answerButton(answer) {
+    //todo highlight answer when going back or forward...
+    return (
+      <button
+        key={answer.id}
+        onClick={() =>
+          setSelected(points.filter((point) => point.answer_id === answer.id))
+        }
+        className="hover:bg-red-500  w-1/2 p-1 m-auto text-left"
+      >
+        {answer.choice}
+      </button>
+    );
+  }
+
   return (
     <div className="w-4/5 m-auto">
       <h1 className="mt-2">Question {num + 1}</h1>
       <h2>{questions[num].question}</h2>
+      <ProgressBar progress={questions[num].id / questions.length} />
       <div className="flex flex-col m-4">
         {answers.map(
           (answer) =>
-            answer.question_id === questions[num].id && (
-              <button
-                key={answer.id}
-                onClick={() => {
-                  setSelected(
-                    points.filter((point) => point.answer_id === answer.id)
-                  );
-                  // const point = points.filter(
-                  //   (point) => point.answer_id === answer.id
-                  // );
-                  // updatePoints(point);
-                }}
-                className="hover:bg-red-500  w-1/2 p-1 m-auto text-left"
-                // hover:border-4 hover:border-solid hover:border-black hover:rounded-md
-              >
-                {answer.choice}
-              </button>
-            )
+            answer.question_id === questions[num].id && answerButton(answer)
         )}
-
-        {num > 0 && (
-          // <p className="flex justify-center">
-          <TiArrowBackOutline onClick={backScore} color="purple" />
-          // </p>
-        )}
-        <IoIosArrowForward onClick={updatePoints} color="purple" />
       </div>
-      <ProgressBar progress={questions[num].id / questions.length} />
+      <div className="actions flex m-auto justify-around">
+        {num > 0 ? (
+          <span onClick={backScore}>Back</span>
+        ) : (
+          <span className="text-gray-400">Back</span>
+        )}
+        <span onClick={updatePoints}>Next</span>
+      </div>
     </div>
   );
 }
