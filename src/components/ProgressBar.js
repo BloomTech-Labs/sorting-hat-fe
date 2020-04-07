@@ -1,21 +1,25 @@
-import React, { useRef } from "react";
+import React, {useRef} from 'react';
 
-export default function ProgressBar({ progress }) {
-  const color = useRef("purple-500");
-  if (progress === 1) {
-    color.current = "green-400";
-  }
-  return (
-    <div className="flex justify-around">
-      <div className="relative h-2 w-11/12 border border-solid border-black rounded-lg m-auto flex">
-        <div
-          className={`bg-${color.current} h-full border-r border-solid border-black rounded-lg duration-700 ease-in-out `}
-          style={{ width: `${progress * 100}%` }}
-        />
-      </div>
-      <span className={`m-auto text-${color.current}`}>{`${
-        progress * 100
-      }%`}</span>
-    </div>
-  );
+export default function ProgressBar({progress}) {
+	const color = useRef('#7A11FF');
+	if (progress === 1) {
+		color.current = 'green-400';
+	}
+	return (
+		<div className="flex justify-around mt-1 mb-1">
+			<div
+				className="relative h-1 w-full border border-solid border-black rounded-lg m-auto flex"
+				style={{background: 'rgba(120, 17, 255, 0.5)'}}
+			>
+				<div
+					className={`h-full border-r border-solid border-black rounded-lg duration-700 ease-in-out`}
+					style={{width: `${progress * 100}%`, background: `${color.current}`}}
+				/>
+			</div>
+			{/* //! Percentage here */}
+			{/* <span className={`m-auto text-${color.current}`}>{`${
+				progress * 100
+			}%`}</span> */}
+		</div>
+	);
 }
