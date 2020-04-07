@@ -17,7 +17,7 @@ function BarGraph({scores, tracks, top}) {
 					{Object.entries(scores).map((e) => (
 						<div
 							key={e[0]}
-							className="flex flex-col-reverse justify-start w-full h-full m-auto rounded-lg "
+							className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg "
 						>
 							<div
 								className={`m-1 h-full border-solid border-purple-900 rounded-lg duration-1000 w-1/2 ease-in-out flex justify-center ${
