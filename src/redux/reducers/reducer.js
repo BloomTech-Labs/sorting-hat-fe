@@ -11,42 +11,27 @@ import {
 	POINTS_GET_START,
 	POINTS_GET_SUCCESS,
 	POINTS_GET_FAIL,
-	SCORE
+	SCORE,
 } from '../constants';
 
 const initialState = {
 	isFetching: false,
-	questions: [
-		{question: 'question1', id: 1},
-		{question: 'question2', id: 2}
-	],
-	answers: [
-		{choice: 'Nulla et pellentesque, facilisis pede', id: 1, question_id: 1},
-		{choice: 'This is an answer to the question', id: 2, question_id: 1},
-		{choice: 'Nonummy ante pulvinar', id: 3, question_id: 1},
-		{choice: 'Lectus leo', id: 4, question_id: 1},
-		{choice: 'This is an answer to the question', id: 5, question_id: 2},
-		{choice: 'Amet hendrerit amet, diam arcu et', id: 6, question_id: 2},
-		{
-			choice: 'Cras eleifend litora, pellentesque donec mus, volutpat libero',
-			id: 7,
-			question_id: 2
-		},
-		{choice: 'Elit wisi, et senectus etiam', id: 8, question_id: 2}
-	],
+	questions: [],
+	answers: [],
 	tracks: [],
 	points: [
 		{
 			points: 0,
 			answer_id: 1,
-			track_id: 1
-		}
+			track_id: 1,
+		},
 	],
-
 	scores: {
-		1: 0
+		1: 5,
+		2: 38,
+		3: 9,
 	},
-	error: false
+	error: false,
 };
 
 export default (state = initialState, action) => {
@@ -83,7 +68,7 @@ export default (state = initialState, action) => {
 		case SCORE:
 			return {
 				...state,
-				scores: payload
+				scores: payload,
 			};
 		default:
 			return state;
