@@ -11013,6 +11013,8 @@ video {
   z-index: -1;
 }
 
+/* Fonts ↓ */
+
 .questrial {
   font-family: 'Questrial', sans-serif;
 }
@@ -11029,12 +11031,20 @@ video {
   font-family: 'Fira Sans', sans-serif;
 }
 
+/* End Fonts */
+
+/* Text Color */
+
+.protoGray {
+  color: #777777;
+}
+
 .mark-select:hover + .mark:hover {
-  background: rgb(243, 99, 99);
+  background: #bc88ff;
 }
 
 .mark-select:focus {
-  background: rgb(243, 99, 99);
+  background: #bc88ff;
 }
 
 @media (min-width: 640px) {

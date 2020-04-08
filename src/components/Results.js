@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-
+import VectorImage from '../img/Vector.svg';
 import BarGraph from './BarGraph';
 //We need to have the endpoints from the backend
 
@@ -28,7 +28,8 @@ function Results({scores, tracks}) {
 					to="/quiz"
 					className=" hover:bg-purple-100 text-black mr-5 py-0.5 px-10 border rounded flex align-middle justify-center"
 				>
-					<i className="material-icons">arrow_left</i>
+					<img src={VectorImage} alt="Arrow left" className="m-1" />
+					{/* <i className="material-icons">arrow_left</i> */}
 					<span>Retake Quiz</span>
 				</Link>
 			</div>
@@ -44,7 +45,9 @@ function Results({scores, tracks}) {
 						<h2 className="fira-sans font-bold text-xl p-3 border-b-2">
 							You are {'  '} {selectedTrack.name}
 						</h2>
-						<p className=" noto-sans py-3">{selectedTrack.strengths}</p>
+						<p className=" protoGray noto-sans py-3">
+							{selectedTrack.strengths}
+						</p>
 					</div>
 					<div className=" noto-sans flex-col justify-center items-center">
 						<h2 className=" fira-sans font-bold text-xl self-start p-3">
