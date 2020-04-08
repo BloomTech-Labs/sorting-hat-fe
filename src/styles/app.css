@@ -11013,15 +11013,23 @@ video {
   z-index: -1;
 }
 
+.questrial {
+  font-family: 'Questrial', sans-serif;
+}
+
 .playfair-font {
   font-family: 'Playfair Display', serif;
+}
+
+.noto-sans {
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .fira-sans {
   font-family: 'Fira Sans', sans-serif;
 }
 
-.mark-select:hover {
+.mark-select:hover + .mark:hover {
   background: rgb(243, 99, 99);
 }
 

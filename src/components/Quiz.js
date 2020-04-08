@@ -85,11 +85,11 @@ function Quiz(props) {
 		//todo highlight answer when going back or forward...
 		const markers = document.getElementsByClassName('mark');
 		return (
-			<div className=" flex justify-start items-center w-full mt-1">
+			<div className="fira-sans flex justify-start items-center w-full mt-1">
 				<p
 					key={index}
 					id="marker"
-					className="mark h-3 w-3 bg-white border-2 border-black"
+					className=" fira-sans mark h-3 w-3 bg-white border-2 border-black"
 				/>
 				<button
 					key={index}
@@ -104,7 +104,7 @@ function Quiz(props) {
 						console.log(markers[0]);
 					}}
 					// hover:bg-purple-100 focus:bg-purple-100
-					className="mark-select w-full p-1 ml-2 text-left"
+					className="fira-sans mark-select w-full p-1 ml-2 text-left"
 				>
 					{/* <FaRegSquare key={index} className="mark"/> */}
 					{answer.choice}
@@ -115,9 +115,9 @@ function Quiz(props) {
 
 	return (
 		<div className="w-3/5 m-auto p-1 mt-3 h-screen">
-			<h1 className="mt-2 text-xl pt-4">Question {num + 1}</h1>
+			<h1 className="fira-sans mt-2 text-xl pt-4">Question {num + 1}</h1>
 			<ProgressBar progress={questions[num].id / questions.length} />
-			<h1 className="mt-2">{questions[num].question}</h1>
+			<h1 className="fira-sans mt-2">{questions[num].question}</h1>
 			<div className="flex flex-col w-full mt-4 mb-2">
 				{answers.map(
 					(answer, index) =>
