@@ -13,6 +13,11 @@
 	z-index: -1;
 }
 
+.landingBorderColor {
+	color: #5e00d6;
+	text-decoration: underline;
+}
+
 /* Fonts ↓ */
 .questrial {
 	font-family: 'Questrial', sans-serif;
@@ -37,9 +42,64 @@
 	color: #777777;
 }
 
+.resultsLinkColor {
+	color: #7a11ff;
+}
+
 .mark-select:hover + .mark:hover {
 	background: #bc88ff;
 }
 .mark-select:focus {
 	background: #bc88ff;
+}
+/* Selection Control / Checkbox / On / Enabled */
+.checkmarkOn {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 382px;
+	top: 576px;
+}
+
+/* Checkbox */
+.checkbox {
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+}
+
+/* ic_check_box_24px */
+.ic_check_box_24px {
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 12.5%;
+	bottom: 12.5%;
+
+	background: #7a11ff;
+}
+
+/* Path */
+.pathCheck {
+	position: absolute;
+	left: 12.5%;
+	right: 12.5%;
+	top: 12.5%;
+	bottom: 12.5%;
+
+	background: #dadada;
+}
+
+/* Path */
+
+.pathCheck2 {
+	position: absolute;
+	left: 20.83%;
+	right: 20.83%;
+	top: 27.42%;
+	bottom: 29.17%;
+
+	background: #dadada;
 }

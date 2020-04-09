@@ -23,34 +23,43 @@ function Results({scores, tracks}) {
 	}
 	return (
 		<>
-			<div className="noto-sans flex px-1 py-1 my-8 items-start mx-5 pt-2">
+			<div className="noto-sans justify-center p-1 my-8 mx-5 pt-2 max-w-sm">
 				<Link
 					to="/quiz"
-					className=" hover:bg-purple-100 text-black mr-5 py-0.5 px-10 border rounded flex align-middle justify-center"
+					className="text-lg text-black mr-5 py-0.5 px-10  flex align-baseline"
 				>
 					<img src={VectorImage} alt="Arrow left" className="m-1" />
-					{/* <i className="material-icons">arrow_left</i> */}
-					<span>Retake Quiz</span>
+					<p className="questrial p-1">Retake Quiz</p>
 				</Link>
 			</div>
 			<div className="noto-sans flex justify-center items-center">
 				<section className="noto-sans flex-column m-10 border-black max-w-5xl">
-					<h2 className="font-bold text-3xl text-black border-b-2 p-3">
-						Results
-					</h2>
-					<div className=" questrial flex justify-center flex-column">
-						<BarGraph top={selectedTrack} />
+					<h2 className="font-bold text-5xl text-black border-b-2 ">Results</h2>
+					<div className="questrial flex justify-center flex-column">
+						<BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
 					</div>
+
 					<div className="container mt-5">
-						<h2 className="fira-sans font-bold text-xl p-3 border-b-2">
-							You are {'  '} {selectedTrack.name}
+						<h2 className="fira-sans font-bold text-5xl border-b-2">
+							{'  '} {selectedTrack.name} Traits
 						</h2>
+						{/* This View Courses button needs to be inline with the H2 above ↑ */}
+						{/* <div className="inline-flex px-1 py-1 my-8 mx-5 pt-2">
+							<Link
+								to="/courses"
+								className="flex bg-purple-900 hover:bg-purple-100 text-white mr-5 py-0.5 px-10 border border-purple-900 rounded align-baseline"
+							>
+								<i className="material-icons">arrow_left</i>
+								<span className="questrial">View Courses</span>
+							</Link>
+						</div> */}
+
 						<p className=" protoGray noto-sans py-3">
 							{selectedTrack.strengths}
 						</p>
 					</div>
-					<div className=" noto-sans flex-col justify-center items-center">
-						<h2 className=" fira-sans font-bold text-xl self-start p-3">
+					<div className="noto-sans flex-col justify-center items-center">
+						<h2 className=" fira-sans font-bold text-5xl self-start ">
 							Learn More
 						</h2>
 						<div className="flex justify-center py-2">
@@ -66,7 +75,7 @@ function Results({scores, tracks}) {
 						</div>
 					</div>
 					<div>
-						<h2 className="fira-sans font-bold text-2xl text-black border-b-2 p-3 mb-1">
+						<h2 className="fira-sans font-bold text-5xl text-black border-b-2  mb-1">
 							Discover Other Tracks
 						</h2>
 						{/*I need to axios all this info*/}
@@ -75,11 +84,11 @@ function Results({scores, tracks}) {
 								return (
 									<div
 										key={el.id}
-										className="font-bold py-1"
+										className=" resultsLinkColor font-bold py-1"
 										onClick={() => setSelectedTrack(el)}
 									>
 										{el.name}
-										<span className="text-gray-800 font-normal">
+										<span className="resultsLinkColor font-normal">
 											{' '}
 											- {el.shortDesc}
 										</span>
@@ -90,15 +99,25 @@ function Results({scores, tracks}) {
 					</div>
 				</section>
 			</div>
-
-			<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
-				<Link
-					to="/quiz"
-					className=" flex bg-purple-900 hover:bg-purple-100 text-white mr-5 py-0.5 px-10 border border-purple-900 rounded align-baseline"
-				>
-					<i className="material-icons">arrow_left</i>
-					<span>Retake Quiz</span>
-				</Link>
+			<div className="flex flex-row justify-between">
+				<div className="noto-sans justify-center p-1 my-8 mx-5 pt-2 max-w-sm">
+					<Link
+						to="/quiz"
+						className="text-lg hover:bg-purple-100 text-black mr-5 py-0.5 px-10  flex align-baseline"
+					>
+						<img src={VectorImage} alt="Arrow left" className="m-1" />
+						<p className="questrial p-1">Retake Quiz</p>
+					</Link>
+				</div>
+				<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
+					<Link
+						to="/courses"
+						className="flex bg-purple-900 hover:bg-purple-100 text-white mr-5 py-1 px-10 border border-purple-900 rounded align-baseline"
+					>
+						<span className="questrial">View Courses</span>
+						<i className="material-icons">arrow_right</i>
+					</Link>
+				</div>
 			</div>
 		</>
 	);

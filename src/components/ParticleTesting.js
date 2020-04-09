@@ -22,12 +22,6 @@ function ParticleTesting() {
 				random: true,
 			},
 		},
-		line_linked: {
-			enable: false,
-			distance: 120,
-			color: '#1129FF',
-			width: 1,
-		},
 		interactivity: {
 			detect_on: 'canvas',
 			events: {
@@ -41,11 +35,18 @@ function ParticleTesting() {
 				},
 				resize: true,
 			},
+			line_linked: {
+				enable: false,
+				distance: 300,
+				color: '#ffffff',
+				opacity: 0.4,
+				width: 2,
+			},
 			modes: {
 				grab: {
 					distance: 400,
 					line_linked: {
-						opacity: 0,
+						opacity: 100,
 					},
 				},
 				repulse: {
@@ -62,14 +63,20 @@ function ParticleTesting() {
 	};
 
 	return (
-		<div className="fixed top-0 left-0 w-full h-full particle-wrapper">
-			<Particles params={particleOpt}></Particles>
-		</div>
+		// <div className="fixed top-0 left-0 w-full h-full particle-wrapper">
+		<Particles params={particleOpt} className="absolute h-full w-full" />
+		// </div>
 	);
 }
 
 export default ParticleTesting;
-
+// line_linked: {
+// 	enable: false,
+// 	distance: 120,
+// 	color: '#1129FF',
+// 	opacity: 0,
+// 	width: 1,
+// },
 //https://www.npmjs.com/package/react-particles-js
 // const particleOpt = {
 //   //   polygon: {

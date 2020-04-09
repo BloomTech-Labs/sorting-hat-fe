@@ -8,11 +8,14 @@ import {setScores} from '../redux/actions/setScores';
 //* Components
 import ProgressBar from './ProgressBar';
 import {GoTriangleLeft, GoTriangleRight} from 'react-icons/go';
-import {FaRegSquare} from 'react-icons/fa';
 
 function Quiz(props) {
 	//Setting State
 	const {setScores, questions, answers, scores, points} = props;
+	// const [hoverClass, setHoverClass] = useState('');
+
+	// <p onMouseOver={setBgColor} className={hoverClass} />
+	// <button onMouseOver={setBgColor} className={hoverClass} />
 
 	//State of the Quiz
 	const [num, setNum] = useState(0);
@@ -43,7 +46,7 @@ function Quiz(props) {
 
 		if (selected.length) {
 			//button background settings
-			btnColorBack.current = 'purple-700';
+			btnColorBack.current = 'purple-900';
 			btnColorNext.current = 'purple-400';
 			if (selected === pointHistory[num - 1]) {
 				return null;
@@ -83,13 +86,17 @@ function Quiz(props) {
 
 	function answerButton(answer, index) {
 		//todo highlight answer when going back or forward...
-		const markers = document.getElementsByClassName('mark');
+		//* const markers = document.getElementsByClassName('mark');
+		// console.log(markers);
 		return (
-			<div className="fira-sans flex justify-start items-center w-full mt-1">
+			<div
+				key={`div-${index}`}
+				className="fira-sans flex justify-start items-center w-full mt-1"
+			>
 				<p
-					key={index}
+					key={`mark-${index}`}
 					id="marker"
-					className=" fira-sans mark h-3 w-3 bg-white border-2 border-black"
+					className={`bg-purple-100 fira-sans mark h-3 w-3 bg-white border-2 border-black`}
 				/>
 				<button
 					key={index}
@@ -97,14 +104,17 @@ function Quiz(props) {
 						setSelected(
 							points.filter((point) => point.answer_id === answer.id)
 						);
-						btnColorNext.current = 'purple-700';
+						btnColorNext.current = 'purple-900';
 						// questionMarker.current = 'purple-700';
 						// marker.style.backgroundColor = 'rebeccapurple';
 						// Array.from(marker).forEach(m => m.id));
-						console.log(markers[0]);
+						// console.log(markers[index]);
 					}}
 					// hover:bg-purple-100 focus:bg-purple-100
-					className="fira-sans mark-select w-full p-1 ml-2 text-left"
+					className={`fira-sans mark w-full p-1 ml-2 text-left`}
+					// onMouseOver={
+					// 	// markers ? (markers[index].style.backgroundColor = 'red') : null
+					// }
 				>
 					{/* <FaRegSquare key={index} className="mark"/> */}
 					{answer.choice}
@@ -114,10 +124,12 @@ function Quiz(props) {
 	}
 
 	return (
-		<div className="w-3/5 m-auto p-1 mt-3 h-screen">
-			<h1 className="fira-sans mt-2 text-xl pt-4">Question {num + 1}</h1>
+		<div className="w-1/2 m-auto p-1 mt-3 h-screen">
+			<h1 className="fira-sans text-3xl mt-2 text-xl pt-4">
+				Question {num + 1}
+			</h1>
 			<ProgressBar progress={questions[num].id / questions.length} />
-			<h1 className="fira-sans mt-2">{questions[num].question}</h1>
+			<h1 className="protoGray fira-sans mt-2">{questions[num].question}</h1>
 			<div className="flex flex-col w-full mt-4 mb-2">
 				{answers.map(
 					(answer, index) =>
@@ -125,18 +137,18 @@ function Quiz(props) {
 						answerButton(answer, index)
 				)}
 			</div>
-			<div className="actions flex m-auto mt-8 justify-between items-center">
+			<div className="questrial actions flex m-auto mt-8 justify-between items-center">
 				{num > 0 ? (
 					<button
 						onClick={backScore}
-						className={`flex bg-${btnColorBack.current} text-white p-2 rounded-lg`}
+						className={`questrial flex bg-${btnColorBack.current} text-white p-2 rounded-lg`}
 					>
 						<GoTriangleLeft size="1.3rem" /> Back
 					</button>
 				) : (
 					<button
 						onClick={() => props.history.push('/')}
-						className={`text-white flex bg-purple-400 p-2 rounded-lg`}
+						className={`questrial text-white flex bg-purple-900 p-2 rounded-lg`}
 					>
 						<GoTriangleLeft size="1.3rem" /> Back
 					</button>
@@ -144,7 +156,7 @@ function Quiz(props) {
 				<span className="text-gray-600">{`${questions[num].id}/${questions.length}`}</span>
 				<button
 					onClick={updatePoints}
-					className={`flex bg-${btnColorNext.current} text-white p-2 rounded-lg`}
+					className={`questrial flex bg-${btnColorNext.current} text-white p-2 rounded-lg`}
 				>
 					Next <GoTriangleRight size="1.3rem" />
 				</button>

@@ -8,11 +8,11 @@ export default function ProgressBar({progress}) {
 	return (
 		<div className="flex justify-around mt-1 mb-1">
 			<div
-				className="relative h-1 w-full border border-solid border-purple-900 rounded-lg m-auto flex"
+				className="relative h-1 w-full rounded-lg m-auto flex"
 				style={{background: 'rgba(120, 17, 255, 0.5)'}}
 			>
 				<div
-					className={`h-full border-r border-solid border-purple-900 rounded-lg duration-700 ease-in-out `}
+					className={`h-full border-r rounded-lg duration-700 ease-in-out `}
 					style={{width: `${progress * 100}%`, background: `${color.current}`}}
 				/>
 			</div>

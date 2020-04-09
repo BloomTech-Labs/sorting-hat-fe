@@ -2,32 +2,32 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-function BarGraph({scores, tracks, top}) {
+function BarGraph({scores, tracks, top, setTrack}) {
 	return (
-		<div className="w-4/5 h-full m-10 bargraph">
+		<div className="w-4/5 h-full m-10">
 			<div className="flex h-56">
 				<div className="flex justify-around w-full h-full">
 					{Object.entries(scores).map((e, i) => (
 						<div
 							key={e[0]}
-							className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg "
+							className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg"
 						>
-							<div className="w-1/2 h-full ">
+							<div
+								className="w-1/2 h-full text-center flex flex-col-reverse justify-baseline"
+								onClick={() => setTrack(tracks[i])}
+							>
+								<p className="questrial pt-1">{tracks[i].name}</p>
 								<div
-									className={`m-1 h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-										top.id == e[0]
-											? 'bg-purple-900 text-purple-200'
-											: 'bg-purple-100'
+									className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
+										top.id == e[0] ? 'bg-purple-900' : 'bg-purple-100'
 									} `}
 									style={{
 										height: `${e[1] * 3}%`,
 									}}
-								>
-									{`${Math.round(e[1] * 3)}%`}
+								/>
+								<div className="flex justify-around w-full m-auto x-axis text-center">
+									<p className="text-center">{`${Math.round(e[1] * 3)}%`}</p>
 								</div>
-								<section className="  flex justify-around w-full pl-8 m-auto x-axis text-center">
-									<p className="questrial">{tracks[i].name}</p>
-								</section>
 							</div>
 						</div>
 					))}

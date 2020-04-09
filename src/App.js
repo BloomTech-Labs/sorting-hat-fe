@@ -10,7 +10,8 @@ import Header from './components/Header';
 
 function App() {
 	return (
-		<div className="App">
+		// <div className="App">
+		<>
 			<Header />
 			<Switch>
 				<Route exact path="/" component={Landing} />
@@ -19,7 +20,9 @@ function App() {
 				<Route path="/about" component={About} />
 				<Route path="/courses" component={Courses} />
 			</Switch>
-		</div>
+
+			{/* // </div> */}
+		</>
 	);
 }
 // testing

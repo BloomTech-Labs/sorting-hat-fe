@@ -21,25 +21,25 @@ function Landing(props) {
 		return <Redirect to="/quiz" />;
 	}
 	return (
-		<div>
+		<>
 			<ParticleTesting className="fixed top-0 left-0 w-full h-full particle-wrapper" />
 
-			<section className="flex flex-wrap w-3/6 m-auto  mt-40 pt-2 pb-2 justify-center pointer-events-none ">
-				<h2 className="fira sans z-10 text-2xl pt-2 pb-2 text-center pointer-events-none">
+			<section className=" flex flex-wrap w-1/4 m-auto mt-40 pt-2 pb-2 justify-center">
+				<h2 className=" fira sans z-10 text-5xl pt-2 pb-2 mb-1 text-center font-bold border-b-4 landingBorderColor">
 					Discover the Tech Career for You
 				</h2>
-				<p className="fira-sans text-center pointer-events-none">
+				<p className=" fira-sans text-center text-2xl">
 					Take our 5 minute survey to discover which tech field would be right
 					for you. Discover the opportunity at your fingertips.
 				</p>
 				<Link
 					to="/quiz"
-					className="bg-purple-900 hover:bg-purple-800 text-white py-2 px-20 mt-1 border border-purple-900 rounded pointer-events-auto"
+					className="fira-sans bg-purple-900 hover:bg-purple-700 text-white py-2 px-20 mt-4 border border-purple-900 rounded pointer-events-auto z-10"
 				>
 					Start Quiz
 				</Link>
 			</section>
-		</div>
+		</>
 	);
 }
 
