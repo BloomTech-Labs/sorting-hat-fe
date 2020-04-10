@@ -11013,6 +11013,10 @@ video {
   z-index: -1;
 }
 
+.halfOpacityPurple {
+  color: #7a11ff;
+}
+
 .newBorderColor {
   color: #5d00d6;
 }
@@ -11025,19 +11029,19 @@ video {
 /* Fonts ↓ */
 
 .questrial {
-  font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
 }
 
 .playfair-font {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .noto-sans {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .fira-sans {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 /* End Fonts */
