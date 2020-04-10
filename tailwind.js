@@ -109,7 +109,7 @@ module.exports = {
 			},
 			purple: {
 				100: '#BC88FF',
-				200: '#5d00d6',
+				200: '#DFCCF7',
 				300: '#d6bcfa',
 				400: '#b794f4',
 				500: '#9f7aea',

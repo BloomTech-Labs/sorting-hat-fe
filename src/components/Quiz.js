@@ -20,7 +20,7 @@ function Quiz(props) {
 	const [pointHistory] = useState([]);
 	const [selected, setSelected] = useState([]);
 	const [selectedAnsId, setSelectedAnsId] = useState({});
-	// todo DRY btn color state w/ object as state
+	const [selectedAnsHistory] = useState([]);
 	const [btnColor, setBtnColor] = useState('purple-400');
 
 	//Running Actions
@@ -61,6 +61,7 @@ function Quiz(props) {
 				setScores(newScores);
 			});
 			pointHistory.push(selected);
+			selectedAnsHistory.push(selectedAnsId);
 		}
 	};
 
@@ -77,6 +78,7 @@ function Quiz(props) {
 			setScores(newScores);
 		});
 		pointHistory.pop();
+		setSelectedAnsId(selectedAnsHistory[num]);
 	};
 	//* renders buttons for each answer
 	//Checkbox and index define relationship with the button and image
@@ -131,7 +133,7 @@ function Quiz(props) {
 						onClick={backScore}
 						className={`questrial flex text-purple-700 border-2 border-purple-700 text-white p-2 rounded-lg`}
 					>
-						<GoTriangleLeft size="1.3rem" onClick={backScore} /> Back
+						<GoTriangleLeft size="1.3rem" /> Back
 					</button>
 				) : (
 					<button

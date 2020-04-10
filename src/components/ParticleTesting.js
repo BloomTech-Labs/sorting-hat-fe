@@ -38,8 +38,8 @@ function ParticleTesting() {
 			line_linked: {
 				enable: false,
 				distance: 300,
-				color: '#ffffff',
-				opacity: 0.4,
+				color: '#FFFF00',
+				opacity: 1.0,
 				width: 2,
 			},
 			modes: {
@@ -64,7 +64,7 @@ function ParticleTesting() {
 
 	return (
 		// <div className="fixed top-0 left-0 w-full h-full particle-wrapper">
-		<Particles params={particleOpt} className="absolute h-full w-full" />
+		<Particles params={particleOpt} className="absolute w-full h-full" />
 		// </div>
 	);
 }
