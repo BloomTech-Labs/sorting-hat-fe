@@ -1,29 +1,27 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Redirect} from 'react-router-dom';
-
 //* Redux
 import {connect} from 'react-redux';
 import {setScores} from '../redux/actions/setScores';
-
 //* Components
 import ProgressBar from './ProgressBar';
+// import AnswerButton from './Button';
+//* Checkbox Images
+import Checkbox from '../img/Checkbox.svg';
+import UnCheckbox from '../img/UnCheckbox.svg';
 import {GoTriangleLeft, GoTriangleRight} from 'react-icons/go';
 
 function Quiz(props) {
 	//Setting State
 	const {setScores, questions, answers, scores, points} = props;
-	// const [hoverClass, setHoverClass] = useState('');
-
-	// <p onMouseOver={setBgColor} className={hoverClass} />
-	// <button onMouseOver={setBgColor} className={hoverClass} />
 
 	//State of the Quiz
 	const [num, setNum] = useState(0);
 	const [pointHistory] = useState([]);
 	const [selected, setSelected] = useState([]);
-	const btnColorNext = useRef('purple-400');
-	const btnColorBack = useRef('purple-400');
-	// const questionMarker = useRef('purple-100');
+	const [selectedAnsId, setSelectedAnsId] = useState({});
+	// todo DRY btn color state w/ object as state
+	const [btnColor, setBtnColor] = useState('purple-400');
 
 	//Running Actions
 	useEffect(() => {
@@ -32,10 +30,8 @@ function Quiz(props) {
 
 	if (!questions.length) {
 		return <Redirect to="/" />;
-	}
-
-	//If the quiz if finished it will redirect to main page
-	if (num === questions.length) {
+	} else if (num === questions.length) {
+		//If the quiz if finished it will redirect Results component
 		return <Redirect to="/results" />;
 	}
 
@@ -46,8 +42,7 @@ function Quiz(props) {
 
 		if (selected.length) {
 			//button background settings
-			btnColorBack.current = 'purple-900';
-			btnColorNext.current = 'purple-400';
+			setBtnColor('purple-400');
 			if (selected === pointHistory[num - 1]) {
 				return null;
 			}
@@ -83,53 +78,46 @@ function Quiz(props) {
 		});
 		pointHistory.pop();
 	};
-
-	function answerButton(answer, index) {
-		//todo highlight answer when going back or forward...
-		//* const markers = document.getElementsByClassName('mark');
-		// console.log(markers);
-		return (
-			<div
-				key={`div-${index}`}
-				className="fira-sans flex justify-start items-center w-full mt-1"
+	//* renders buttons for each answer
+	//Checkbox and index define relationship with the button and image
+	const answerButton = (answer, index) => (
+		<div
+			key={`div-${index}`}
+			className="flex items-center justify-start w-full mt-1 fira-sans"
+		>
+			{/* Changes based off of whether it is selected or not. 
+			Checkbox contains the id of the current selected answer.
+			If the current question matches the id stored as checkbox, a 
+			checkbox is displayed.
+			*/}
+			<img
+				src={selectedAnsId === index + 1 ? Checkbox : UnCheckbox}
+				alt="checkbox"
+			/>
+			<button
+				key={index}
+				onClick={() => {
+					setSelected(points.filter((point) => point.answer_id === answer.id));
+					setSelectedAnsId(answer.id);
+					console.log(index, answers[index].id);
+					setBtnColor('purple-900');
+				}}
+				className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${
+					selectedAnsId === answer.id ? 'purple-100' : 'white'
+				}`}
 			>
-				<p
-					key={`mark-${index}`}
-					id="marker"
-					className={`bg-purple-100 fira-sans mark h-3 w-3 bg-white border-2 border-black`}
-				/>
-				<button
-					key={index}
-					onClick={() => {
-						setSelected(
-							points.filter((point) => point.answer_id === answer.id)
-						);
-						btnColorNext.current = 'purple-900';
-						// questionMarker.current = 'purple-700';
-						// marker.style.backgroundColor = 'rebeccapurple';
-						// Array.from(marker).forEach(m => m.id));
-						// console.log(markers[index]);
-					}}
-					// hover:bg-purple-100 focus:bg-purple-100
-					className={`fira-sans mark w-full p-1 ml-2 text-left`}
-					// onMouseOver={
-					// 	// markers ? (markers[index].style.backgroundColor = 'red') : null
-					// }
-				>
-					{/* <FaRegSquare key={index} className="mark"/> */}
-					{answer.choice}
-				</button>
-			</div>
-		);
-	}
+				{answer.choice}
+			</button>
+		</div>
+	);
 
 	return (
-		<div className="w-1/2 m-auto p-1 mt-3 h-screen">
-			<h1 className="fira-sans text-3xl mt-2 text-xl pt-4">
+		<div className="w-1/2 h-screen p-1 m-auto mt-3">
+			<h1 className="pt-4 mt-2 text-xl text-3xl fira-sans">
 				Question {num + 1}
 			</h1>
 			<ProgressBar progress={questions[num].id / questions.length} />
-			<h1 className="protoGray fira-sans mt-2">{questions[num].question}</h1>
+			<h1 className="mt-2 protoGray fira-sans">{questions[num].question}</h1>
 			<div className="flex flex-col w-full mt-4 mb-2">
 				{answers.map(
 					(answer, index) =>
@@ -137,26 +125,26 @@ function Quiz(props) {
 						answerButton(answer, index)
 				)}
 			</div>
-			<div className="questrial actions flex m-auto mt-8 justify-between items-center">
+			<div className="flex items-center justify-between m-auto mt-8 questrial actions">
 				{num > 0 ? (
 					<button
 						onClick={backScore}
-						className={`questrial flex bg-${btnColorBack.current} text-white p-2 rounded-lg`}
+						className={`questrial flex text-purple-700 border-2 border-purple-700 text-white p-2 rounded-lg`}
 					>
-						<GoTriangleLeft size="1.3rem" /> Back
+						<GoTriangleLeft size="1.3rem" onClick={backScore} /> Back
 					</button>
 				) : (
 					<button
 						onClick={() => props.history.push('/')}
-						className={`questrial text-white flex bg-purple-900 p-2 rounded-lg`}
+						className={`questrial text-purple-700 border-2 border-purple-700 flex p-2 rounded-lg`}
 					>
-						<GoTriangleLeft size="1.3rem" /> Back
+						<GoTriangleLeft size="1.3rem" /> Home
 					</button>
 				)}
 				<span className="text-gray-600">{`${questions[num].id}/${questions.length}`}</span>
 				<button
 					onClick={updatePoints}
-					className={`questrial flex bg-${btnColorNext.current} text-white p-2 rounded-lg`}
+					className={`questrial flex bg-${btnColor} text-white p-2 rounded-lg`}
 				>
 					Next <GoTriangleRight size="1.3rem" />
 				</button>

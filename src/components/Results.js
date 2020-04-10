@@ -35,7 +35,7 @@ function Results({scores, tracks}) {
 			<div className="noto-sans flex justify-center items-center">
 				<section className="noto-sans flex-column m-10 border-black max-w-5xl">
 					<h2 className="font-bold text-5xl text-black border-b-2 ">Results</h2>
-					<div className="questrial flex justify-center flex-column">
+					<div className="text-lg questrial flex justify-center flex-column">
 						<BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
 					</div>
 

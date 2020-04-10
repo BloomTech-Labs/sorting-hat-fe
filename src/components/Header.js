@@ -6,19 +6,19 @@ import VectorImage from '../img/Vector.svg';
 function Header(props) {
 	const {history} = props;
 	return (
-		<nav className=" fira-sans flex items-center justify-between flex-wrap p-6 ">
+		<nav className="flex flex-wrap items-center justify-between p-6 fira-sans">
 			<img src={mainIcon} alt="wizard hat" />
 			<NavLink
 				to="/"
-				className="font-bold text-2xl text-black hover:text-purple-900 mr-6"
+				className="mr-6 text-2xl font-bold text-black hover:text-purple-900"
 			>
 				Tech Sorting Hat
 			</NavLink>
 
-			<div className="sm:flex-grow flex flex-end justify-end">
+			<div className="flex justify-end sm:flex-grow flex-end">
 				{/* <NavLink
 					to=""
-					className="block hidden mt-4 text-black hover:text-red-500 mr-4 "
+					className="hidden block mt-4 mr-4 text-black hover:text-red-500 "
 				>
 					about
 				</NavLink> */}
@@ -29,14 +29,16 @@ function Header(props) {
 							? '/quiz'
 							: {pathname: '/', state: {}}
 					}
-					className="text-lg text-black hover:text-purple-900 mr-4 mt-auto"
+					className="mt-auto mr-4 text-lg text-black protoGray hover:text-purple-900"
 				>
-					{history.location.pathname === '/' ? 'Take Quiz' : 'Restart Quiz'}
+					{history.location.pathname === ('/about' || '/')
+						? 'Take Quiz'
+						: 'Restart Quiz'}
 				</NavLink>
 				{/* <div className="flex text-sm sm:flex-end"> */}
 				<NavLink
 					to="/about"
-					className="text-lg text-black hover:text-purple-900 mr-4 mt-auto"
+					className="mt-auto mr-4 text-lg text-black protoGray hover:text-purple-900"
 				>
 					About
 				</NavLink>

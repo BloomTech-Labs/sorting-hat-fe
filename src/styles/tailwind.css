@@ -13,6 +13,10 @@
 	z-index: -1;
 }
 
+.newBorderColor {
+	color: #5d00d6;
+}
+
 .landingBorderColor {
 	color: #5e00d6;
 	text-decoration: underline;
