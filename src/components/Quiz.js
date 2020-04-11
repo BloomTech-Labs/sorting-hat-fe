@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import {Redirect} from 'react-router-dom';
 //* Redux
 import {connect} from 'react-redux';
@@ -30,11 +30,6 @@ function Quiz(props) {
 	//are added to the back end.
 	const totalNumQues = questions.length;
 
-	/* why not initiate setScore with {} instead of this useEffect?? */
-	useEffect(() => {
-		setScores({});
-	}, []);
-
 	if (!totalNumQues) {
 		return <Redirect to="/" />;
 	} else if (curQuesIndex === totalNumQues) {
@@ -46,7 +41,6 @@ function Quiz(props) {
 
 	const updatePoints = () => {
 		//This action updates the score based on points associated with the tracks
-
 		if (selAnsPoints.length) {
 			//button background settings
 			setBtnColor('purple-400');
@@ -56,23 +50,38 @@ function Quiz(props) {
 			if (selAnsPoints === pointHistory[curQuesIndex - 1]) {
 				return null;
 			}
-			setCurQuesIndex(curQuesIndex + 1);
+
 			let newScores = {};
+			// loops through all the points associated w/ the answer
+      // and adds it to the corresponding track in scores
+      console.log('selAnsPoints', selAnsPoints);
+      
+      // if(answers.question_id) {
+      //     replace 
+      // }
+      // console.log(answers.question_id);
+
 			selAnsPoints.forEach((point) => {
-				let current = scores[point.track_id];
-				const newPoint = JSON.parse(point.points);
-				if (!current) {
-					current = 0;
-				}
-				newScores = {
-					...newScores,
-					[point.track_id]: current + newPoint,
-				};
-				setScores(newScores);
-			});
-			pointHistory.push(selAnsPoints);
-			selAnsHistory.push(selAnsId);
+        // add point to the right track in scores
+        scores[point.track_id] += JSON.parse(point.points);
+          
+          /*	let current = scores[point.track_id];
+          const trackPoint = JSON.parse(point.points);
+          
+          newScores = {
+            ...newScores,
+            [point.track_id]: current + trackPoint,
+          };
+          setScores(newScores); */
+        });
+        console.log('scores:', scores);
 		}
+	};
+
+	const nextQuestion = () => {
+		setCurQuesIndex(curQuesIndex + 1);
+		pointHistory.push(selAnsPoints);
+		selAnsHistory.push(selAnsId);
 	};
 
 	/*Backscore updates the index of current question
@@ -97,6 +106,7 @@ function Quiz(props) {
 		pointHistory.pop();
 		setSelAnsId(selAnsHistory.pop());
 	};
+
 	//* renders buttons for each answer
 	//Checkbox and index define relationship with the button and image
 	const answerButton = (answer, index) => (
@@ -122,6 +132,8 @@ function Quiz(props) {
 					setSelAnsId(answer.id);
 					// console.log(index, answers[index].id);
 					setBtnColor('purple-900');
+					//AJ and Jake working on making the points get updated at everyselected answer
+					updatePoints();
 				}}
 				className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${
 					selAnsId === answer.id ? 'purple-100' : 'white'
@@ -138,7 +150,9 @@ function Quiz(props) {
 			<h1 className="pt-4 mt-2 text-xl text-3xl fira-sans">
 				Question {curQuesIndex + 1}
 			</h1>
-
+    {console.log('answers',answers)}
+    {console.log('questions', questions)}
+    {console.log('points',points)}
 			<ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 			{/*Question Text*/}
 			<h1 className="mt-2 protoGray fira-sans">
@@ -146,7 +160,8 @@ function Quiz(props) {
 			</h1>
 			{/*Answers to the Questions*/}
 			<div className="flex flex-col w-full mt-4 mb-2">
-				{answers.map(
+        {
+        answers.map(
 					(answer, index) =>
 						answer.question_id === questions[curQuesIndex].id &&
 						answerButton(answer, index)
@@ -154,9 +169,8 @@ function Quiz(props) {
 			</div>
 			<div className="flex items-center justify-between m-auto mt-8 questrial actions">
 				{/*Back Button
-        
-          If it isn't the first question, the back button says back and updates history.
-           If it is the first question it redirects the user to landing page
+        If it isn't the first question, the back button says back and updates history.
+        If it is the first question it redirects the user to landing page
         */}
 				{curQuesIndex > 0 ? (
 					<button
@@ -183,7 +197,7 @@ function Quiz(props) {
 
 				{/*Next Button*/}
 				<button
-					onClick={updatePoints}
+					onClick={nextQuestion}
 					className={`questrial flex bg-${btnColor} text-white p-2 rounded-lg`}
 				>
 					Next <GoTriangleRight size="1.3rem" />
