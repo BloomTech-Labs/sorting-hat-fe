@@ -34,6 +34,7 @@ const initialState = {
 	error: false,
 };
 
+//If axios calls state is a success/failure updates state to match
 export default (state = initialState, action) => {
 	const {type, payload} = action;
 	switch (type) {

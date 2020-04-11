@@ -23,6 +23,7 @@ function Results({scores, tracks}) {
 	}
 	return (
 		<>
+			{/*Retake Quiz Button*/}
 			<div className="noto-sans justify-center p-1 my-8 mx-5 pt-2 max-w-sm">
 				<Link
 					to="/quiz"
@@ -32,6 +33,7 @@ function Results({scores, tracks}) {
 					<p className="questrial p-1">Retake Quiz</p>
 				</Link>
 			</div>
+			{/*Results Body*/}
 			<div className="noto-sans flex justify-center items-center">
 				<section className="noto-sans flex-column m-10 border-black max-w-5xl">
 					<h2 className="font-bold text-5xl text-black border-b-2 ">Results</h2>
@@ -67,9 +69,9 @@ function Results({scores, tracks}) {
 								width="560"
 								height="315"
 								src={selectedTrack.link}
-								frameborder="0"
+								frameBorder="0"
 								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
+								allowFullScreen
 							></iframe>
 							{/* {selectedTrack. ? trackInfo.trackVideo : } */}
 						</div>
@@ -99,7 +101,9 @@ function Results({scores, tracks}) {
 					</div>
 				</section>
 			</div>
+			{/*Bottom Nav Bar */}
 			<div className="flex flex-row justify-between">
+				{/*Retake Quiz Button */}
 				<div className="noto-sans justify-center p-1 my-8 mx-5 pt-2 max-w-sm">
 					<Link
 						to="/quiz"
@@ -109,6 +113,7 @@ function Results({scores, tracks}) {
 						<p className="questrial p-1">Retake Quiz</p>
 					</Link>
 				</div>
+				{/*View Courses Button*/}
 				<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
 					<Link
 						to="/courses"
