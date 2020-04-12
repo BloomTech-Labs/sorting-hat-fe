@@ -33,7 +33,24 @@ const initialState = {
 		4: 0,
 		5: 0,
 	},
-	jakeQuestionAnswers:{},
+	//store answer_id, selected boolean, question_id
+	QuestionAnswers:[
+		{
+			answer_id: 1,
+			selected: true,
+			question_id: 1
+		},
+		{
+			answer_id: 5,
+			selected: true,
+			question_id: 2
+		}
+	],
+	
+	// jakeQuestionAnswers:{
+	// 	questionid : {answer_id:1, selected:false},
+	// 	questionid : {answer_id, selected}
+	// },
 	error: false,
 };
 /*
