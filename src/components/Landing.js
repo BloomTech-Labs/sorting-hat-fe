@@ -25,7 +25,7 @@ function Landing(props) {
 		<>
 			<ParticleTesting className="fixed top-0 left-0 w-full h-full particle-wrapper" />
 
-			<section className="flex flex-wrap justify-center w-1/4 pt-2 pb-2 m-auto mt-40 ">
+			<section className="flex flex-wrap justify-center w-1/3 pt-2 pb-2 m-auto mt-40 ">
 				<h2 className="z-10 pt-2 pb-2 mb-1 text-5xl font-bold text-center border-b-4 border-purple-200 fira sans">
 					Discover the Tech Career for You
 				</h2>
@@ -40,7 +40,7 @@ function Landing(props) {
 					Start Quiz
 				</Link>
 			</section>
-			<About />
+			{/* <About /> */}
 		</>
 	);
 }

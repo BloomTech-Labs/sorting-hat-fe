@@ -19,7 +19,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 <p className="pt-1 questrial">{tracks[i].name}</p>
                 <div
                   className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                    top.id == e[0] ? "bg-purple-900" : "bg-purple-100"
+                    top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
                   } `}
                   style={{
                     height: `${e[1] * 3}%`,

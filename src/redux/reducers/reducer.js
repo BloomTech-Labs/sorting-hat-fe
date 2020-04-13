@@ -12,6 +12,7 @@ import {
 	POINTS_GET_SUCCESS,
 	POINTS_GET_FAIL,
 	SCORE,
+	SELECTED_ANSWER,
 } from '../constants';
 
 const initialState = {
@@ -26,27 +27,27 @@ const initialState = {
 			track_id: 1,
 		},
 	],
-	scores: {
-		1: 0,
-		2: 0,
-		3: 0,
-		4: 0,
-		5: 0,
-	},
-	//store answer_id, selected boolean, question_id
-	QuestionAnswers:[
+	scores: [
 		{
-			answer_id: 1,
-			selected: true,
-			question_id: 1
+			1: 0,
+			2: 0,
+			3: 0,
+			4: 0,
+			5: 0,
 		},
-		{
-			answer_id: 5,
-			selected: true,
-			question_id: 2
-		}
 	],
-	
+	//store answer_id, selected boolean, question_id
+	questionAnswers: [],
+	// {
+	// 	answer_id: 1,
+	// 	selected: true,
+	// 	question_id: 1
+	// },
+	// {
+	// 	answer_id: 5,
+	// 	selected: true,
+	// 	question_id: 2
+	// }
 	// jakeQuestionAnswers:{
 	// 	questionid : {answer_id:1, selected:false},
 	// 	questionid : {answer_id, selected}
@@ -91,8 +92,6 @@ export default (state = initialState, action) => {
 		case QUESTION_GET_START:
 			return {...state, isFetching: true, error: false};
 		case QUESTION_GET_SUCCESS:
-
-
 			return {...state, isFetching: false, questions: payload};
 		case QUESTION_GET_FAIL:
 			return {...state, isFetching: false, error: payload};
@@ -117,7 +116,11 @@ export default (state = initialState, action) => {
 			return {...state, isFetching: false, points: payload};
 		case POINTS_GET_FAIL:
 			return {...state, isFetching: false, error: payload};
-
+		case SELECTED_ANSWER:
+			return {
+				...state,
+				questionAnswers: [...state.questionAnswers, payload],
+			};
 		case SCORE:
 			return {
 				...state,

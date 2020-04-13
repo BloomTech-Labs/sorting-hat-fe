@@ -1,15 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import arrowPurple from '../img/arrowPurple.svg';
 
 const About = () => {
 	return (
-		<div className="flex justify-center items-center">
+		<div className="flex items-center justify-center">
 			<div className="flex flex-col max-w-5xl">
-				<section className="mt-4 mb-4 pb-2 ">
-					<h2 className="noto-sans font-bold text-5xl text-black border-b-2  mb-1">
+				<section className="pb-2 mt-4 mb-4 ">
+					<h2 className="mb-1 text-5xl font-bold text-black border-b-2 noto-sans">
 						About
 					</h2>
-					<p className="protoGray noto-sans flex-col justify-center items-center leading-relaxed mt-4">
+					<p className="flex-col items-center justify-center mt-4 leading-relaxed protoGray noto-sans">
 						Tech Sorting Hat was inspired and built by tech students. We aim to
 						have a fun and informative quiz to help potential tech students make
 						a decision about their future careers.
@@ -17,10 +18,10 @@ const About = () => {
 				</section>
 
 				<section className="">
-					<h2 className="fira-sans text-5xl text-black border-b-2 mb-1">
+					<h2 className="mb-1 text-5xl text-black border-b-2 fira-sans">
 						Philosophy
 					</h2>
-					<p className="protoGray noto-sans flex-col justify-center items-center leading-relaxed mt-4">
+					<p className="flex-col items-center justify-center mt-4 leading-relaxed protoGray noto-sans">
 						We wanted to showcase the different industries in the tech field for
 						people who are seeking an informed decision on which subsection to
 						choose. We threw away technical jargon in order to show empathy to
@@ -32,10 +33,8 @@ const About = () => {
 				</section>
 
 				<section className="container mt-5">
-					<h2 className="fira-sans text-5xl text-black border-b-2  mb-1">
-						How
-					</h2>
-					<p className="protoGray noto-sans flex-col justify-center items-center leading-loose mt-4">
+					<h2 className="mb-1 text-5xl text-black border-b-2 fira-sans">How</h2>
+					<p className="flex-col items-center justify-center mt-4 leading-loose protoGray noto-sans">
 						We surveyed 70 current tech students, interviewed 13 tech students,
 						and 2 tech instructors. We discovered that all tracks in the tech
 						field are extremely similar, but subtle differences between each
@@ -46,13 +45,27 @@ const About = () => {
 						particular tech field.
 					</p>
 				</section>
-				<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
+				<div className="flex justify-start px-1 py-1 pt-2 mx-5 my-8 ">
+					<Link
+						to="/quiz"
+						className={`questrial halfOpacityPurple border-2 border-purple-200 flex p-2 rounded-lg justify-center items-center`}
+					>
+						<img
+							src={arrowPurple}
+							alt="leftArrow"
+							size="1.3rem"
+							className="m-1"
+						/>{' '}
+						<span className="halfOpacityPurple">Take Quiz</span>
+					</Link>
+				</div>
+				<div className="flex justify-end px-1 py-1 pt-2 mx-5 my-8 ">
 					<Link
 						to="/courses"
 						className="flex bg-purple-900 hover:bg-purple-100 text-white mr-5 py-0.5 px-10 border border-purple-900 rounded align-baseline"
 					>
-						<i className="material-icons">arrow_left</i>
 						<span className="questrial">View Courses</span>
+						<i className="material-icons">arrow_right</i>
 					</Link>
 				</div>
 			</div>

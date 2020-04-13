@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 //* Redux
 import {connect} from 'react-redux';
 import {setScores} from '../redux/actions/setScores';
+import {setSelectedAnswers} from '../redux/actions/setSelectedAnswers';
 //* Components
 import ProgressBar from './ProgressBar';
 // import AnswerButton from './Button';
@@ -16,12 +17,20 @@ import ArrowWhite from '../img/ArrowWhite.svg';
 
 function Quiz(props) {
 	//Setting State
-	const {setScores, questions, answers, scores, points} = props;
+	const {
+		setScores,
+		questions,
+		answers,
+		scores,
+		points,
+		setSelectedAnswers,
+		questionAnswers,
+	} = props;
 
 	//State of the Quiz
 	const [curQuesIndex, setCurQuesIndex] = useState(0);
 	const [pointHistory] = useState([]);
-	const [selAnsPoints, setSelAnsPoints] = useState([]);
+	const [selAnswer, setSelAnswer] = useState([]);
 	const [selAnsId, setSelAnsId] = useState({});
 	const [selAnsHistory] = useState([]);
 	const [btnColor, setBtnColor] = useState('purple-400');
@@ -37,41 +46,58 @@ function Quiz(props) {
 
 	if (!totalNumQues) {
 		return <Redirect to="/" />;
-	} else if (curQuesIndex === totalNumQues) {
+	} else if (curQuesIndex === 4) {
+		// totalNumQues
 		//If the quiz is finished it will redirect Results component
-		return <Redirect to="/results" />;
+		//! return <Redirect to="/results" />;
+		// console.log({questionAnswers});
+		// [{id: 0, question:id}]
+		let totalScores = {};
+		questionAnswers.forEach((answer) => {
+			const currentPoints = points.filter(
+				(point) => point.answer_id === answer.id
+			);
+			// [{0: 1.5, 1: 6.8}, 2: 5.4]
+			console.log(currentPoints);
+			for (const key in currentPoints) {
+				const testPoint = currentPoints[key];
+				console.log(testPoint);
+				/ console.log('pointParse', JSON.parse(currentPoints[key].point));
+			
+		console.log({totalScores});
+		// points.filter((point) => point.point_id === answer.id)))
 	}
 
 	//Scores are being updated based off of user selections
 
-	const updatePoints = () => {
+	const updateSelAnswers = () => {
 		//This action updates the score based on points associated with the tracks
 
-		if (selAnsPoints.length) {
+		if (selAnswer) {
 			//button background settings
 			setBtnColor('purple-400');
 			/*Adds the selected answer points object to history
-      Currently there is an err where you lose changes if you 
-      don't select everything. Also looses history if you change ans*/
-			if (selAnsPoints === pointHistory[curQuesIndex - 1]) {
-				return null;
-			}
+			Currently there is an err where you lose changes if you 
+			don't select everything. Also looses history if you change ans*/
 			setCurQuesIndex(curQuesIndex + 1);
-			let newScores = {};
-			selAnsPoints.forEach((point) => {
-				let current = scores[point.track_id];
-				const newPoint = JSON.parse(point.points);
-				if (!current) {
-					current = 0;
-				}
-				newScores = {
-					...newScores,
-					[point.track_id]: current + newPoint,
-				};
-				setScores(newScores);
+			setSelectedAnswers({
+				question_id: selAnswer.question_id,
+				id: selAnswer.id,
 			});
-			pointHistory.push(selAnsPoints);
-			selAnsHistory.push(selAnsId);
+			// selAnsPoints.forEach((point) => {
+			// 	let current = scores[point.track_id];
+			// 	const newPoint = JSON.parse(point.points);
+			// 	if (!current) {
+			// 		current = 0;
+			// 	}
+			// 	newScores = {
+			// 		...newScores,
+			// 		[point.track_id]: current + newPoint,
+			// 	};
+			// 	setScores(newScores);
+			// });
+			// pointHistory.push(selAnswer);
+			// selAnsHistory.push(selAnsId);
 		}
 	};
 
@@ -95,8 +121,8 @@ function Quiz(props) {
 			console.log('newScores', newScores);
 			setScores(newScores);
 		});
-		pointHistory.pop();
-		setSelAnsId(selAnsHistory.pop());
+		// pointHistory.pop();
+		// setSelAnsId(selAnsHistory.pop());
 	};
 	//* renders buttons for each answer
 	//Checkbox and index define relationship with the button and image
@@ -117,11 +143,10 @@ function Quiz(props) {
 			<button
 				key={index}
 				onClick={() => {
-					setSelAnsPoints(
-						points.filter((point) => point.answer_id === answer.id)
-					);
+					// answer
+					// updateSelAnswers(answer);
+					setSelAnswer(answer);
 					setSelAnsId(answer.id);
-					// console.log(index, answers[index].id);
 					setBtnColor('purple-900');
 				}}
 				className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${
@@ -162,9 +187,15 @@ function Quiz(props) {
 				{curQuesIndex > 0 ? (
 					<button
 						onClick={backScore}
-						className={`questrial flex text-purple-700 border-2 border-purple-200 text-white p-2 rounded-lg`}
+						className={`questrial halfOpacityPurple border-2 border-purple-200 flex p-2 rounded-lg justify-center items-center`}
 					>
-						<img src={arrowPurple} alt="leftArrow" size="1.3rem" /> Back
+						<img
+							src={arrowPurple}
+							alt="leftArrow"
+							size="1.3rem"
+							className="m-1"
+						/>{' '}
+						Back
 					</button>
 				) : (
 					<button
@@ -184,7 +215,7 @@ function Quiz(props) {
 
 				{/*Next Button*/}
 				<button
-					onClick={updatePoints}
+					onClick={updateSelAnswers}
 					className={`questrial flex bg-${btnColor} text-white p-2 rounded-lg`}
 				>
 					Next <GoTriangleRight size="1.3rem" />
@@ -200,9 +231,9 @@ const mapStateToProps = (state) => {
 	return {
 		questions: state.questions,
 		answers: state.answers,
-		scores: state.scores,
+		questionAnswers: state.questionAnswers,
 		points: state.points,
 	};
 };
 
-export default connect(mapStateToProps, {setScores})(Quiz);
+export default connect(mapStateToProps, {setScores, setSelectedAnswers})(Quiz);
