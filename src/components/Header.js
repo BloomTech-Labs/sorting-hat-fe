@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import MainIcon from "../img/MainIcon.svg";
-import VectorImage from "../img/Vector.svg";
+import MainIcon from "../img/mainIcon.svg";
 
 function Header(props) {
   const { history } = props;
