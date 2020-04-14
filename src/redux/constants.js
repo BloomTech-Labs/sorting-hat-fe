@@ -15,3 +15,5 @@ export const POINTS_GET_SUCCESS = 'POINTS_GET_SUCCESS';
 export const POINTS_GET_FAIL = 'POINTS_GET_FAIL';
 
 export const SCORE = 'SCORE';
+
+export const SELECTED_ANSWER = 'SELECTED_ANSWER';
