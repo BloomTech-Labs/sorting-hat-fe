@@ -162,28 +162,28 @@ function Quiz(props) {
         {curQuesIndex > 0 ? (
           <button
             onClick={backScore}
-            className={`questrial halfOpacityPurple border-2 hover:bg-purple-100 px-8 border-purple-200 flex p-2 rounded-lg justify-center items-center`}
+            className={`questrial border-2 hover:bg-purple-100 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
           >
             <img
               src={ArrowPurpleL}
               alt="leftArrow"
               size="1.3rem"
-              className="m-1"
+              className="pr-4"
             />{" "}
-            <span className="text-purple-200">Back</span>
+            <span className="text-purple-100">Back</span>
           </button>
         ) : (
           <button
             onClick={() => props.history.push("/")}
-            className={`questrial halfOpacityPurple border-2 hover:bg-purple-100 px-8 border-purple-200 flex p-2 rounded-lg justify-center items-center`}
+            className={`questrial border-2 hover:bg-purple-100 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
           >
             <img
               src={ArrowPurpleL}
               alt="leftArrow"
               size="1.3rem"
-              className="m-1"
+              className="pr-4 "
             />{" "}
-            <span className="text-purple-200">Home</span>
+            <span className="text-purple-100">Home</span>
           </button>
         )}
         <span className="text-gray-600">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
@@ -191,10 +191,10 @@ function Quiz(props) {
         {/*Next Button*/}
         <button
           onClick={updatePoints}
-          className={`questrial flex bg-${btnColor} hover:bg-purple-100  p-2 px-4 rounded-lg justify-start items-center`}
+          className={`questrial flex bg-${btnColor} hover:bg-purple-100  p-2 px-4 rounded-lg items-center`}
         >
           <span className="pr-4 text-white">Next</span>
-          <img src={ArrowWhiteR} alt="leftArrow" size="1.3rem" />
+          <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
           {/* <span>Next</span> <ArrowWhiteR /> */}
         </button>
       </div>

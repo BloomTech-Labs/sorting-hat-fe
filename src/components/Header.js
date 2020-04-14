@@ -25,7 +25,7 @@ function Header(props) {
         >
           {history.location.pathname === ("/" || "/about")
             ? "Take Quiz"
-            : "Restart Quiz"}
+            : "Restart"}
         </NavLink>
         <NavLink
           to="/about"

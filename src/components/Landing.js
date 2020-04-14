@@ -25,11 +25,11 @@ function Landing(props) {
     <>
       <ParticleTesting className="fixed top-0 left-0 w-full h-full particle-wrapper" />
 
-      <section className="flex flex-wrap justify-center w-1/4 pt-2 pb-2 m-auto mt-40 ">
-        <h2 className="z-10 pt-2 pb-2 mb-1 text-5xl font-bold text-center border-b-4 border-purple-200 fira sans">
+      <section className="flex flex-col flex-wrap justify-center p-4 m-auto mt-40 lg:w-1/4 ">
+        <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold text-center border-b-4 border-purple-200 lg:text-5xl fira sans">
           Discover the Tech Career for You
         </h2>
-        <p className="mt-5 mb-5 text-2xl fira-sans">
+        <p className="mt-5 mb-5 text:xl lg:text-2xl fira-sans">
           Take our 5 minute survey to discover which tech field would be right
           for you. Discover the opportunity at your fingertips.
         </p>

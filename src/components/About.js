@@ -51,18 +51,18 @@ const About = () => {
           <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
             <Link
               to="/quiz"
-              className={`halfOpacityPurple border-2 border-purple-200 flex p-2 px-12 rounded-lg justify-center items-center btnRound`}
+              className={`border-2 border-purple-100 hover:border-purple-900  flex p-2 px-8 rounded-lg justify-center items-center btnRound`}
             >
               <img
                 src={ArrowPurpleL}
                 alt="leftArrow"
                 size="1.3rem"
-                className="m-1"
+                className="pr-4 m-1"
               />{" "}
-              <span className="text-purple-200 questrial">Take Quiz</span>
+              <span className="text-purple-100 questrial">Take Quiz</span>
             </Link>
           </div>
-          <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5 ">
+          <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
             <Link
               to="/courses"
               className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded btnRound "
