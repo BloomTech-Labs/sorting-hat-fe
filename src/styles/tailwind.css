@@ -14,7 +14,8 @@
 }
 
 .halfOpacityPurple {
-  color: #7a11ff;
+  color: rgba(122, 17, 255, 0.5);
+  opacity: 0.5;
 }
 
 .newBorderColor {
@@ -42,6 +43,7 @@
 .fira-sans {
   font-family: "Fira Sans", sans-serif;
 }
+
 /* End Fonts */
 
 /* Text Color */
@@ -55,12 +57,14 @@
   text-decoration: underline;
 }
 
-.mark-select:hover + .mark:hover {
+.mark-select:hover+.mark:hover {
   background: #bc88ff;
 }
+
 .mark-select:focus {
   background: #bc88ff;
 }
+
 /* Selection Control / Checkbox / On / Enabled */
 .checkmarkOn {
   position: absolute;
@@ -111,4 +115,10 @@
   bottom: 29.17%;
 
   background: #dadada;
+}
+
+/*Button About */
+.btnRound {
+  border-radius: .75rem;
+
 }
