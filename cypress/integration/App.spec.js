@@ -17,14 +17,16 @@ describe('Render App', () => {
     it('finds the appropriate elements for Landing Page', () => {
         cy.visit('/');
 
+        // cy.get('h2').should('contian', 'Discover the Tech Career for You');
         cy.contains('Discover the Tech Career for You');
         cy.contains('Take our 5 minute survey to discover which tech field would be right for you. Discover the opportunity at your fingertips.');
         cy.contains('Start Quiz');
     });
 
-    it('Start Quiz', () => {
+    it('Button onclick should work', () => {
         cy.visit('/');
-        cy.get('Link').click();
+
+        cy.get('.z-10.w-full').click();
         cy.contains('Question 1');
     });
 });
