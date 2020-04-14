@@ -4,7 +4,7 @@ import {getQuestions} from '../redux/actions/getQuestions';
 import {getAnswers} from '../redux/actions/getAnswers';
 import {getPoints} from '../redux/actions/getPoints';
 import {getTracks} from '../redux/actions/getTracks';
-import {Link, Redirect} from 'react-router-dom';
+import {Link, Redirect, withRouter} from 'react-router-dom';
 import ParticleTesting from './ParticleTesting';
 import About from './About';
 // import Header from "../components/Header";
@@ -18,7 +18,8 @@ function Landing(props) {
 		getTracks();
 		getPoints();
 	}, []);
-	if (props.location.state) {
+	if (props.location) {
+		// props.location.state
 		return <Redirect to="/quiz" />;
 	}
 	return (
@@ -45,9 +46,10 @@ function Landing(props) {
 	);
 }
 
-export default connect(null, {
+export default withRouter(connect(null, {
 	getQuestions,
 	getAnswers,
 	getTracks,
 	getPoints,
-})(Landing);
+})(Landing)
+);
