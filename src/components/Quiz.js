@@ -16,6 +16,8 @@ import ArrowWhiteL from '../img/ArrowWhiteL.svg';
 import ArrowWhiteR from '../img/ArrowWhiteR.svg';
 // import ArrowWhite from "../img/ArrowWhite.svg";
 
+//! todo: implement enter shortcut for next button
+
 function Quiz(props) {
 	//Setting State
 	const {
