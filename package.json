@@ -46,6 +46,7 @@
 		"eject": "react-app-rewired eject",
 		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
 		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
+		"test:cypress": "cypress open",
 		"coverage": "CI=true yarn test --coverage --watchAll=false || true"
 	},
 	"eslintConfig": {
@@ -65,6 +66,8 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",
+		"chance": "^1.1.4",
+		"cypress": "^4.4.0",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^25.1.0",
 		"postcss-cli": "^7.1.0",
