@@ -1,105 +1,159 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
+import ArrowWhiteR from '../img/ArrowWhiteR.svg';
+import ArrowPurpleL from '../img/ArrowPurpleL.svg';
 import BarGraph from './BarGraph';
-import {Link, NavLink} from 'react-router-dom';
-import data from './results/trackData';
-
+import {setSelectedAnswers} from '../redux/actions/setSelectedAnswers';
 //We need to have the endpoints from the backend
-const trackInfo = {
-	trackid: 1,
-	trackName: 'Fullstack',
-	trackShortDescription: 'This is a short description',
-	trackDescription:
-		'This is a long Description. We live in the cloud. Like angles!',
-	trackStrengths:
-		'This Paragraph is about your strengths. We speak in Latin. This paragraph is about Participants Strengths n Aute magna laborum officia exercitation magna aliqua cillum. Nulla Lorem cupidatat dolor ullamco sit aliquip excepteur in. Aliqua sit qui labore ullamco tempor cillum laborum exercitation sit consequat excepteur sint. Irure deserunt mollit sunt tempor consequat ad consequat et culpa incididunt. Pariatur duis excepteur adipisicing reprehenderit dolor mollit pariatur do qui pariatur ad exercitation est nisi.',
-	trackVideo: (
-		<iframe
-			width="560"
-			height="315"
-			src="https://www.youtube.com/embed/cc3Dofs_j0E"
-			frameborder="0"
-			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-		></iframe>
-	),
-	otherTracks: [
-		{id: '1', trackName: 'UX', trackDescription: 'Ours is the Fury'},
-		{id: '2', trackName: 'iOS', trackDescription: 'We Do Not Sow'},
-		{
-			id: '3',
-			trackName: 'Android Development',
-			trackDescription: 'Unbowed, Unbent, Unbroken'
-		},
-		{id: '4', trackName: 'Data Science', trackDescription: 'Winter is Coming'}
-	]
-};
 
-function Results({scores}) {
-	const [selectedTrack, setSelectedTrack] = useState('fullstack');
+function Results({scores, tracks, setSelectedAnswers}) {
+	const [selectedTrack, setSelectedTrack] = useState({});
+
+	useEffect(() => {
+		let highest = {track: null, score: 0};
+		for (let score in scores) {
+			if (scores[score] > highest.score) {
+				highest = {track: score, score: scores[score]};
+			}
+		}
+		setSelectedTrack(tracks.find((track) => track.id == highest.track));
+		setSelectedAnswers([]);
+	}, []);
+
+	if (!tracks.length) {
+		return <Redirect to="/" />;
+	}
 	return (
 		<>
-			<div className="flex px-1 py-1 my-8 items-start mx-5 pt-2">
-				<Link
-					to="/quiz"
-					className="bg-red-600 hover:bg-red-500 text-white mr-5 py-0.5 px-10 border border-red-700 rounded"
-				>
-					<i className="material-icons">arrow_left</i>
-					<span>Retake Quiz</span>
-				</Link>
-			</div>
-			<div className="flex justify-center items-center">
-				<section className="flex-column m-10 border-black max-w-5xl">
-					<h2 className="font-bold text-3xl text-black border-b-2 p-3">
-						Results
-					</h2>
-					<div className="flex justify-center flex-column">
-						<BarGraph scores={scores} />
+			{/*Results Body*/}
+			<div className="flex items-center justify-center noto-sans">
+				<section className="max-w-3xl m-10 border-black noto-sans flex-column">
+					<h2 className="text-3xl font-bold text-black border-b-2 ">Results</h2>
+					<div className="">
+						<p className="py-3 protoGray noto-sans">
+							We sorted you into these categories with your primary strengths in
+							{'  '} {selectedTrack.name}. Take this into consideration all
+							tracks and percentages, and remember this is just a quiz. Follow
+							your heart.
+						</p>
 					</div>
+					<div className="flex justify-center text-lg questrial flex-column">
+						<BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
+					</div>
+					<div>
+						<h2 className="text-3xl border-b-2 fira-sans">
+							{selectedTrack.name}
+						</h2>
+						<p className="py-3 protoGray noto-sans">
+							{selectedTrack.description}
+						</p>
+					</div>
+
+					{/* Selected Track Name Traits */}
 					<div className="container mt-5">
-						<h2 className="font-bold text-xl p-3 border-b-2">You Are</h2>
-						<p className="py-3">{trackInfo.trackStrengths}</p>
+						<h2 className="text-3xl border-b-2 fira-sans">
+							{'  '} {selectedTrack.name} Traits
+						</h2>
+						{/* This View Courses button needs to be inline with the H2 above ↑ */}
+						{/* <div className="inline-flex px-1 py-1 pt-2 mx-5 my-8">
+							<Link
+								to="/courses"
+								className="flex bg-purple-900 hover:bg-purple-100 text-white mr-5 py-0.5 px-10 border border-purple-900 rounded align-baseline"
+							>
+								<i className="material-icons">arrow_left</i>
+								<span className="questrial">View Courses</span>
+							</Link>
+						</div> */}
+
+						<p className="py-3 protoGray noto-sans">
+							{selectedTrack.strengths}
+						</p>
 					</div>
-					<div className="flex-col justify-center items-center">
-						<h2 className="font-bold text-xl self-start p-3">Learn More</h2>
+					<div className="flex-col items-center justify-center noto-sans">
+						<h2 className="self-start text-3xl fira-sans">Learn More</h2>
 						<div className="flex justify-center py-2">
-							{trackInfo.trackVideo}
+							<iframe
+								width="100%"
+								height="315"
+								src={selectedTrack.link}
+								frameBorder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowFullScreen
+							></iframe>
+							{/* {selectedTrack. ? trackInfo.trackVideo : } */}
 						</div>
 					</div>
 					<div>
-						<h2 className="font-bold text-2xl text-black border-b-2 p-3 mb-1">
+						<h2 className="mb-2 text-3xl text-black border-b-2 fira-sans">
 							Discover Other Tracks
 						</h2>
 						{/*I need to axios all this info*/}
-						{trackInfo.otherTracks.map(el => {
-							return (
-								<div className="font-bold py-1">
-									{el.trackName}
-									<span className="text-gray-800 font-normal">
-										{' '}
-										- {el.trackDescription}
-									</span>
-								</div>
-							);
+						{tracks.map((el) => {
+							if (el.id != selectedTrack.id) {
+								return (
+									<div
+										key={el.id}
+										className="py-1 resultsLinkColor"
+										onClick={() => setSelectedTrack(el)}
+									>
+										{el.name}
+										<span className="font-normal cursor-pointer resultsLinkColor">
+											{' '}
+											- {el.shortDesc}
+										</span>
+									</div>
+								);
+							}
 						})}
 					</div>
+
+					{/* Bottom Buttons Section ↓ */}
+
+					<section className="flex flex-row justify-between mt-20">
+						<div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
+							<Link
+								to="/quiz"
+								className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-8 rounded-lg justify-center items-center btnRound`}
+							>
+								<img
+									src={ArrowPurpleL}
+									alt="leftArrow"
+									size="1.3rem"
+									className="pr-4 m-1"
+								/>{' '}
+								<span className="text-purple-100 questrial">Retake Quiz</span>
+							</Link>
+						</div>
+						<div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
+							<Link
+								to="/courses"
+								className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded btnRound "
+							>
+								<span className="flex items-center justify-end questrial">
+									View Courses
+								</span>
+								<img
+									src={ArrowWhiteR}
+									alt="rightArrow"
+									size="1.3rem"
+									className="pl-4 m-1"
+								/>{' '}
+							</Link>
+						</div>
+					</section>
 				</section>
 			</div>
-
-			<div className="flex justify-center px-1 py-1 my-8 mx-5 pt-2">
-				<Link
-					to="/quiz"
-					className="bg-red-600 hover:bg-red-500 text-white mr-5 py-0.5 px-10 border border-red-700 rounded align-baseline"
-				>
-					<i className="material-icons">arrow_left</i>
-					<span>Retake Quiz</span>
-				</Link>
-			</div>
+			{/*Bottom Nav Bar */}
 		</>
 	);
 }
 
-const mapStateToProps = state => {
-	return {scores: state.scores};
+//Redux Interface
+const mapStateToProps = (state) => {
+	return {
+		scores: state.scores,
+		tracks: state.tracks,
+	};
 };
-export default connect(mapStateToProps, {})(Results);
+export default connect(mapStateToProps, {setSelectedAnswers})(Results);

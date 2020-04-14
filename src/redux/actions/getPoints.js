@@ -2,16 +2,13 @@ import axios from 'axios';
 import {
 	POINTS_GET_START,
 	POINTS_GET_SUCCESS,
-	POINTS_GET_FAIL
+	POINTS_GET_FAIL,
 } from '../constants';
 
-export const getPoints = () => dispatch => {
+export const getPoints = () => (dispatch) => {
 	dispatch({type: POINTS_GET_START});
 	axios
 		.get('https://tech-sorting-hat.herokuapp.com/api/points')
-		.then(res => {
-			console.log('This is Points Axios', res.data);
-			dispatch({type: POINTS_GET_SUCCESS, payload: res.data});
-		})
-		.catch(err => dispatch({type: POINTS_GET_FAIL, payload: err}));
+		.then((res) => dispatch({type: POINTS_GET_SUCCESS, payload: res.data}))
+		.catch((err) => dispatch({type: POINTS_GET_FAIL, payload: err}));
 };
