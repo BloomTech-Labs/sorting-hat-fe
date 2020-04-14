@@ -5,33 +5,120 @@
 @tailwind utilities;
 
 .particle-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
+.halfOpacityPurple {
+  color: rgba(122, 17, 255, 0.5);
+  opacity: 0.5;
+}
+
+.newBorderColor {
+  color: #5d00d6;
+}
+
+.landingBorderColor {
+  color: #5e00d6;
+  text-decoration: underline;
+}
+
+/* Fonts ↓ */
 .questrial {
-	font-family: 'Questrial', sans-serif;
+  font-family: "Questrial", sans-serif;
 }
 
 .playfair-font {
-	font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .noto-sans {
-	font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .fira-sans {
-	font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
-.mark-select:hover + .mark:hover {
-	background: rgb(243, 99, 99);
+/* End Fonts */
+
+/* Text Color */
+
+.protoGray {
+  color: #777777;
 }
+
+.resultsLinkColor {
+  color: #7a11ff;
+  text-decoration: underline;
+}
+
+.mark-select:hover+.mark:hover {
+  background: #bc88ff;
+}
+
 .mark-select:focus {
-	background: rgb(243, 99, 99);
+  background: #bc88ff;
+}
+
+/* Selection Control / Checkbox / On / Enabled */
+.checkmarkOn {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 382px;
+  top: 576px;
+}
+
+/* Checkbox */
+.checkbox {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+
+/* ic_check_box_24px */
+.ic_check_box_24px {
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 12.5%;
+  bottom: 12.5%;
+
+  background: #7a11ff;
+}
+
+/* Path */
+.pathCheck {
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 12.5%;
+  bottom: 12.5%;
+
+  background: #dadada;
+}
+
+/* Path */
+
+.pathCheck2 {
+  position: absolute;
+  left: 20.83%;
+  right: 20.83%;
+  top: 27.42%;
+  bottom: 29.17%;
+
+  background: #dadada;
+}
+
+/*Button About */
+.btnRound {
+  border-radius: .75rem;
+
 }
