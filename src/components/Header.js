@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
-import MainIcon from '../img/mainIcon.svg';
+import MainIcon from '../img/MainIcon.svg';
 
 function Header(props) {
 	const {history} = props;
