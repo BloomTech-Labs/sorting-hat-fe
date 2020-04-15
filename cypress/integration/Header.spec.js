@@ -15,8 +15,12 @@ describe('Header', () => {
 		cy.url('contains', '/');
 	});
 
+	it('click start quiz', () => {
+		cy.contains('a', 'Take Quiz').click();
+		cy.url('contains', '/quiz');
+	});
+
 	it('Quiz contains header', () => {
-		cy.start();
 		cy.url('contains', '/quiz');
 		for (let i = 1; i <= 8; i++) {
 			cy.contains(`Question ${i}`);

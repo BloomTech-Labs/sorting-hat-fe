@@ -19,13 +19,11 @@ describe('Render Quiz Component', () => {
 	it('Next works if answer selected', () => {
 		for (let i = 1; i <= 7; i++) {
 			// unsucceful button click: checks if current question is still rendered if answer is chosen
-			// todo fix quiz component button if answer not selected
-			// cy.contains(`Question ${i}`);
-			// cy.get('.bg-purple-400').click();
-			// tests a successful next button click
 			cy.contains(`Question ${i}`);
-			cy.clickAnswer();
-			cy.clickNext();
+			cy.get('.bg-purple-400').click();
+			// tests a successful next button click/enter
+			cy.contains(`Question ${i}`);
+			cy.clickAnswer().type('{enter}');
 		}
 	});
 
