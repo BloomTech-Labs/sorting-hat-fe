@@ -25,8 +25,14 @@ describe('Header', () => {
 			cy.clickNext();
 		}
 	});
+
 	it('Results contains header', () => {
 		cy.url('contains', '/results');
 		cy.get('nav');
+	});
+
+	it('Takes user back to start of quiz from Results', () => {
+		cy.contains('a', 'Restart').click();
+		cy.url('contains', '/quiz');
 	});
 });
