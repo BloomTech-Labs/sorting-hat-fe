@@ -16,7 +16,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 className="flex flex-col-reverse w-1/2 h-full text-center justify-baseline"
                 onClick={() => setTrack(tracks[i])}
               >
-                <p className="pt-1 questrial">{tracks[i].name}</p>
+                <p className="pt-1 questrial whitespace-no-wrap md:whitespace-wrap sm:whitespace-wrap">{tracks[i].name}</p>
                 <div
                   className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
                     top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
