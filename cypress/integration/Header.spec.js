@@ -4,6 +4,17 @@ describe('Header', () => {
 		cy.url('contains', '/');
 		cy.get('nav');
 	});
+
+	it('Navigates to About', () => {
+		cy.get('a[href="/about"]').click();
+		cy.url('contains', '/about');
+	});
+
+	it('Click hat back to home', () => {
+		cy.get('.mr-6').click();
+		cy.url('contains', '/');
+	});
+
 	it('Quiz contains header', () => {
 		cy.start();
 		cy.url('contains', '/quiz');
