@@ -11,6 +11,11 @@ describe('Render Quiz Component', () => {
 		cy.get('div[class="flex items-center justify-start w-full mt-1 fira-sans"]').should('have.length', 4);
 	});
 
+	it('Returns to Landing page', () => {
+		cy.clickBack();
+		cy.start();
+	});
+
 	it('Clicks through Quiz', () => {
 		for (let i = 1; i <= 7; i++) {
 			cy.contains(`Question ${i}`);
