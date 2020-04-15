@@ -7,7 +7,7 @@ import { getTracks } from "../redux/actions/getTracks";
 import { Link, Redirect } from "react-router-dom";
 import ParticleTesting from "./ParticleTesting";
 
-// import Header from "../components/Header";
+import Header from "./Header";
 
 function Landing(props) {
   const { getQuestions, getAnswers, getTracks, getPoints } = props;
@@ -22,10 +22,11 @@ function Landing(props) {
     return <Redirect to="/quiz" />;
   }
   return (
-    <>
+    <div className="max-h-screen">
+      <Header />
       <ParticleTesting className="fixed top-0 left-0 w-full h-full particle-wrapper" />
 
-      <section className="flex flex-col flex-wrap lg:justify-center p-4 m-auto mt-40 lg:w-1/4 ">
+      <section className="flex flex-col flex-wrap lg:justify-center p-4 m-auto mt-40 lg:w-1/4 md:w-1/3 sm:w-1/3 ">
         <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold text-center border-b-4 border-purple-200 lg:text-5xl fira sans">
           Discover the Tech Career for You
         </h2>
@@ -35,13 +36,13 @@ function Landing(props) {
         </p>
         <Link
           to="/quiz"
-          className="z-10 w-full px-20 py-2 mt-4 text-center self-end lg:auto text-white bg-purple-900 border border-purple-900 rounded pointer-events-auto fira-sans hover:bg-purple-700"
+          className="rounded-lg z-10 w-full px-20 py-2 mt-4 text-center self-end lg:auto text-white bg-purple-900 border border-purple-900 pointer-events-auto fira-sans hover:bg-purple-700"
         >
           Start Quiz
         </Link>
       </section>
       {/* <About /> */}
-    </>
+    </div>
   );
 }
 

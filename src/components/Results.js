@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Header from "./Header";
 
 // Redux
 import { connect } from "react-redux";
 
-//Arrow Images
+//SVG Images
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 
@@ -32,6 +33,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
   }
   return (
     <>
+      <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
         <section className="max-w-3xl m-10 border-black noto-sans flex-column">
@@ -39,7 +41,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             Results
           </h2>
           <div>
-            <p className="py-3 protoGray noto-sans">
+            <p className="py-3 protoGray noto-sans mb-6">
               We sorted you into these categories with your primary strengths in
               <span className="font-bold">
                 {"  "} {selectedTrack.name}
@@ -95,11 +97,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 return (
                   <div
                     key={el.id}
-                    className="py-3 resultsLinkColor"
+                    className="hover:underline py-3 newBorderColor no-underline "
                     onClick={() => setSelectedTrack(el)}
                   >
                     {el.name}
-                    <span className="font-normal cursor-pointer resultsLinkColor">
+                    <span className="hover:underline noto-sans cursor-pointer newBorderColor no-underline">
                       {" "}
                       - {el.shortDesc}
                     </span>
@@ -115,7 +117,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
               <Link
                 to="/quiz"
-                className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-8 rounded-lg justify-center items-center btnRound`}
+                className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-8 rounded-lg justify-center items-center`}
               >
                 <img
                   src={ArrowPurpleL}
@@ -123,15 +125,17 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                   size="1.3rem"
                   className="pr-4 m-1"
                 />
-                <span className="text-purple-100 questrial">Retake Quiz</span>
+                <span className="text-purple-100 questrial text-lg">
+                  Retake Quiz
+                </span>
               </Link>
             </div>
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
               <Link
                 to="/courses"
-                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded btnRound "
+                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
               >
-                <span className="flex items-center justify-end questrial">
+                <span className="flex items-center justify-end questrial text-lg">
                   View Courses
                 </span>
                 <img

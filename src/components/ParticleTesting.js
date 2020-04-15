@@ -64,7 +64,10 @@ function ParticleTesting() {
 
   return (
     // <div className="fixed top-0 left-0 w-full h-full particle-wrapper">
-    <Particles params={particleOpt} className="absolute w-full h-full" />
+    <Particles
+      params={particleOpt}
+      className="absolute w-full h-full max-h-screen"
+    />
     // </div>
   );
 }
