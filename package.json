@@ -68,6 +68,7 @@
 		"autoprefixer": "^9.7.4",
 		"chance": "^1.1.4",
 		"cypress": "^4.4.0",
+		"cypress-plugin-tab": "^1.0.5",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^25.1.0",
 		"postcss-cli": "^7.1.0",

@@ -62,10 +62,10 @@ function Quiz(props) {
 
 	//Scores are being updated based off of user selections
 
-	window.document.addEventListener('keypress', function(e) {
-		console.log('e.key:', e.key);
-		// shortcut is implemented for enter key
-		if (e.key === 'Enter') {
+	window.document.addEventListener('keydown', function(e) {
+		console.log('e.key:', e);
+		// shortcut is implemented for enter and tab key
+		if (e.keyCode === 9 || 13) {
 			updateSelAnswers();
 		}
 	});
