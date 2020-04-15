@@ -23,8 +23,7 @@ describe('Render Quiz Component', () => {
 			cy.get('.bg-purple-400').click();
 			// tests a successful next button click/enter
 			cy.contains(`Question ${i}`);
-			cy.clickAnswer().tab();
-			// cy.clickAnswer().type('{Enter}');
+			i%2 = 0 ? cy.clickAnswer().type('{Enter}') : cy.clickAnswer().tab();
 		}
 	});
 
