@@ -28,8 +28,15 @@ Cypress.Commands.add('start', () => {
 	cy.visit('/');
 	cy.get('.z-10.w-full').click();
 });
+
 Cypress.Commands.add('clickAnswer', () => {
-	// cy.get('.z-10.w-full').click();
-	cy.get('.flex-col > :nth-child(2) > .fira-sans').click();
+	cy.get('.flex-col > :nth-child(1) > .fira-sans').click();
+});
+
+Cypress.Commands.add('clickNext', () => {
 	cy.get('.bg-purple-900').click();
+});
+
+Cypress.Commands.add('clickBack', () => {
+	cy.get('.border-2').click();
 });

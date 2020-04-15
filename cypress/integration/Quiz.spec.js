@@ -12,9 +12,20 @@ describe('Render Quiz Component', () => {
 	});
 
 	it('Clicks through Quiz', () => {
-		for (let i = 1; i <= 8; i++) {
+		for (let i = 1; i <= 7; i++) {
 			cy.contains(`Question ${i}`);
 			cy.clickAnswer();
+			cy.clickNext();
+		}
+	});
+
+	it('Clicks back through Quiz and forward again', () => {
+		for (let i = 0; i <= 6; i++) {
+			cy.clickBack();
+		}
+		for (let i = 0; i <= 7; i++) {
+			cy.clickAnswer();
+			cy.clickNext();
 		}
 	});
 
