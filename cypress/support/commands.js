@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('start', () => {
+	cy.visit('/');
+	cy.get('.z-10.w-full').click();
+});
+Cypress.Commands.add('clickAnswer', () => {
+	// cy.get('.z-10.w-full').click();
+	cy.get('.flex-col > :nth-child(2) > .fira-sans').click();
+	cy.get('.bg-purple-900').click();
+});

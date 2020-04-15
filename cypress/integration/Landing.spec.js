@@ -3,6 +3,10 @@ describe('Render Landing Page', () => {
 		cy.visit('/');
 	});
 
+	// it('checks whether particles.js is rendered', () => {
+
+	// })
+
 	it('finds the appropriate elements for Landing Page', () => {
 		// cy.get('h2').should('contian', 'Discover the Tech Career for You');
 		cy.contains('Discover the Tech Career for You');
