@@ -12,7 +12,7 @@ import Checkbox from '../img/Checkbox.svg';
 import UnCheckbox from '../img/UnCheckbox.svg';
 //Arrow Images
 import ArrowPurpleL from '../img/ArrowPurpleL.svg';
-import ArrowWhiteL from '../img/ArrowWhiteL.svg';
+// import ArrowWhiteL from '../img/ArrowWhiteL.svg';
 import ArrowWhiteR from '../img/ArrowWhiteR.svg';
 // import ArrowWhite from "../img/ArrowWhite.svg";
 
@@ -63,7 +63,7 @@ function Quiz(props) {
 	//Scores are being updated based off of user selections
 
 	window.document.addEventListener('keydown', function(e) {
-		console.log('e.key:', e);
+		// console.log('e.key:', e);
 		// shortcut is implemented for enter and tab key
 		if (e.keyCode === 9 || 13) {
 			updateSelAnswers();
@@ -74,7 +74,7 @@ function Quiz(props) {
 	function updateSelAnswers() {
 		//This action updates the score based on points associated with the tracks
 		const existingNextAns = questionAnswers.find((answer) => answer.question_id === questions[curQuesIndex].id + 1);
-		console.log({ selAnswer });
+		// console.log({ selAnswer });
 		setSelAnswer(existingNextAns ? existingNextAns : false);
 
 		if (selAnswer) {

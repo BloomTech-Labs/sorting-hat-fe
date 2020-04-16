@@ -8,7 +8,7 @@ import {setSelectedAnswers} from '../redux/actions/setSelectedAnswers';
 //We need to have the endpoints from the backend
 
 function Results({scores, tracks, setSelectedAnswers}) {
-	const [selectedTrack, setSelectedTrack] = useState({});
+	const [selectedTrack, setSelectedTrack] = useState(false);
 
 	useEffect(() => {
 		let highest = {track: null, score: 0};
@@ -17,7 +17,7 @@ function Results({scores, tracks, setSelectedAnswers}) {
 				highest = {track: score, score: scores[score]};
 			}
 		}
-		setSelectedTrack(tracks.find((track) => track.id == highest.track));
+		setSelectedTrack(tracks.find((track) => track.id === JSON.parse(highest.track) + 1));
 		setSelectedAnswers([]);
 	}, []);
 
@@ -27,10 +27,11 @@ function Results({scores, tracks, setSelectedAnswers}) {
 	return (
 		<>
 			{/*Results Body*/}
+			{selectedTrack && 
 			<div className="flex items-center justify-center noto-sans">
 				<section className="max-w-3xl m-10 border-black noto-sans flex-column">
 					<h2 className="text-3xl font-bold text-black border-b-2 ">Results</h2>
-					<div className="">
+					<div>
 						<p className="py-3 protoGray noto-sans">
 							We sorted you into these categories with your primary strengths in
 							{'  '} {selectedTrack.name}. Take this into consideration all
@@ -144,6 +145,7 @@ function Results({scores, tracks, setSelectedAnswers}) {
 					</section>
 				</section>
 			</div>
+}
 			{/*Bottom Nav Bar */}
 		</>
 	);

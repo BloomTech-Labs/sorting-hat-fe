@@ -9,8 +9,8 @@ function BarGraph({ scores, tracks, top, setTrack }) {
         <div className="flex justify-around w-full h-full">
           {Object.entries(scores).map((e, i) => (
             <div
-              key={e[0]}
-              className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg"
+            key={e[0]}
+            className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg"
             >
               <div
                 className="flex flex-col-reverse w-1/2 h-full text-center justify-baseline"
@@ -19,7 +19,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 <p className="pt-1 questrial whitespace-no-wrap md:whitespace-wrap sm:whitespace-wrap">{tracks[i].name}</p>
                 <div
                   className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                    top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
+                    top.id-1 === JSON.parse(e[0]) ? "bg-purple-900" : "bg-purple-100"
                   } `}
                   style={{
                     height: `${e[1] * 3}%`,
