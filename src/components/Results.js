@@ -32,7 +32,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
     return <Redirect to="/" />;
   }
   return (
-    <>
+    <div className="pt-10">
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
@@ -150,7 +150,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
         </section>
       </div>
       {/*Bottom Nav Bar */}
-    </>
+    </div>
   );
 }
 

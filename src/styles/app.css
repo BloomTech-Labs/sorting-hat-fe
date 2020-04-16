@@ -11111,7 +11111,7 @@ video {
   transition-delay: 0s, 0.2s;
 }
 
-*/ .particle-wrapper {
+.particle-wrapper {
   position: fixed;
   top: 0;
   left: 0;

@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import MainIcon from "../img/mainIcon.svg";
-
+import HamburgerBtn from "../img/HamburgerBtn.svg";
 function Header(props) {
   const { history } = props;
   const [isToggled, setToggled] = useState(false);
   return (
-    //
-    <nav className="flex flex-wrap justify-between lg:fixed p-6 fira-sans w-full lg:top-0 lg:left-0">
+    //lg:fixed lg:left-0 lg:top-0 bg-transparent p-10
+    <nav className="flex flex-wrap justify-between  px-10 fira-sans w-full top-0 left-0 ">
       <NavLink
         to="/"
         className="flex lg:top-0 lg:left-0 mr-6 text-2xl font-bold text-black hover:text-purple-900"
       >
         <div className="flex items-center">
           <img src={MainIcon} alt="wizard hat" />
-          <p>Tech Sorting Hat</p>
+          <p className="hidden lg:block">Tech Sorting Hat</p>
         </div>
       </NavLink>
 
-      <div className="flex flex-row justify-end sm:flex-grow flex-end">
+      <div className="flex flex-row justify-end sm:flex-grow flex-end md:hidden">
         <div
           className={
+            //p-4
             isToggled
-              ? "menubox flex flex-col p-4 z-10 bg-white slide-down fadeIn"
-              : "menubox flex flex-col p-4 z-10 bg-white slide-up fadeOut"
+              ? "menubox flex flex-col z-10 bg-white slide-down fadeIn"
+              : "menubox flex flex-col z-10 bg-white slide-up fadeOut"
           }
         >
           <NavLink
@@ -46,6 +47,12 @@ function Header(props) {
             About
           </NavLink>
         </div>
+        {/* <button onClick={() => setToggled(!isToggled)}>
+          <img src={HamburgerBtn} alt="Menu Button" />
+        </button> */}
+        {
+          //We will get this animation working eventually
+        }
         <a
           href="#"
           className={
@@ -55,8 +62,9 @@ function Header(props) {
         >
           <span></span>
         </a>
-
-        {/* <NavLink
+      </div>
+      <div className="hidden md:flex">
+        <NavLink
           to={
             history.location.pathname === "/"
               ? "/quiz"
@@ -74,7 +82,7 @@ function Header(props) {
           className="hidden md:block mt-auto mr-4 text-lg text-black protoGray hover:text-purple-900"
         >
           About
-        </NavLink> */}
+        </NavLink>
       </div>
     </nav>
   );

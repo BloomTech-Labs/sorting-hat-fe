@@ -11,6 +11,7 @@ import ProgressBar from "./ProgressBar";
 import Header from "./Header";
 
 //* Checkbox Images
+import Frame from "../img/Frame.svg";
 import Checkbox from "../img/Checkbox.svg";
 import UnCheckbox from "../img/UnCheckbox.svg";
 
@@ -30,14 +31,15 @@ function Quiz(props) {
   } = props;
 
   //State of the Quiz
+
   const [curQuesIndex, setCurQuesIndex] = useState(0);
-  const [selAnswer, setSelAnswer] = useState(false);
+  const [selAnswer, setSelAnswer] = useState(false); //Is True if the user has selected an answer. Do you confuse with setSelectedAnswer from state
   const [btnColor, setBtnColor] = useState("purple-400");
 
   //May need to create a cap on this later if too many questions
   //are added to the back end.
-  const totalNumQues = 1;
-  //   questions.length; slot this in to fix quiz instead of 1
+  const totalNumQues = questions.length;
+  //  1 ; slot this in to fix quiz instead of 1
 
   /* why not initiate setScore with {} instead of this useEffect?? */
   useEffect(() => {
@@ -127,6 +129,8 @@ function Quiz(props) {
       selAnswer.id === index + 1
     ) {
       return Checkbox;
+    } else if (!selAnswer) {
+      return Frame;
     } else {
       return UnCheckbox;
     }
@@ -162,7 +166,9 @@ function Quiz(props) {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center max-h-screen h-screen">
+    //Redborder remove Highlight
+
+    <div className="flex flex-col justify-center items-center max-h-screen h-screen pt-10">
       <Header />
       {/* <div className="lg:w-1/2 p-2 m-auto  lg:mt-40"> */}
 
@@ -196,7 +202,7 @@ function Quiz(props) {
           {curQuesIndex > 0 ? (
             <button
               onClick={handleBack}
-              className={`questrial border-2 hover:bg-purple-100 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
+              className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
             >
               <img
                 src={ArrowPurpleL}
@@ -209,7 +215,7 @@ function Quiz(props) {
           ) : (
             <button
               onClick={() => props.history.push("/")}
-              className={`questrial border-2 hover:bg-purple-100 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
+              className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
             >
               <img
                 src={ArrowPurpleL}
@@ -225,7 +231,7 @@ function Quiz(props) {
           {/*Next Button*/}
           <button
             onClick={updateSelAnswers}
-            className={`questrial flex bg-${btnColor} hover:bg-purple-100  p-2 px-4 rounded-lg items-center`}
+            className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
           >
             <span className="pr-4 text-white text-lg">Next</span>
             <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
