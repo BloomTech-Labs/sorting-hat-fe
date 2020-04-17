@@ -33,10 +33,9 @@
 			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
 			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
 		},
-		"collectCoverageFrom": [
-			"**/*.{js,jsx}",
-			"!**/node_modules/**",
-			"!**/vendor/**"
+		"collectCoverageFrom": [ 
+			"!**/__tests__/**",
+			"**/*.test.js"
 		]
 	},
 	"scripts": {
@@ -53,16 +52,8 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",
