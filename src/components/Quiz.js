@@ -34,6 +34,7 @@ function Quiz(props) {
 	/* why not initiate setScore with {} instead of this useEffect?? */
 	useEffect(() => {
 		setScores({});
+		setSelectedAnswers([])
 	}, []);
 
 	if (!totalNumQues) {
@@ -151,11 +152,11 @@ function Quiz(props) {
 	return (
 		<div className="w-1/2 h-screen p-1 m-auto mt-3">
 			{/*Current Question number*/}
-			<h1 className="pt-4 mt-2 text-xl text-3xl fira-sans">Question {curQuesIndex + 1}</h1>
+			<h1 className="pt-4 mt-2 text-xl text-3xl fira-sans" >Question {curQuesIndex + 1}</h1>
 
 			<ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 			{/*Question Text*/}
-			<h1 className="mt-2 protoGray fira-sans">{questions[curQuesIndex].question}</h1>
+			<h1 className="mt-2 protoGray fira-sans" questionIdTest="curQuesIndex">{questions[curQuesIndex].question}</h1>
 			{/*Answers to the Questions*/}
 			<div className="flex flex-col w-full mt-4 mb-2">
 				{answers.map(

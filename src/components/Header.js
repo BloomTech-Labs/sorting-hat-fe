@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
-import MainIcon from '../img/MainIcon.svg';
+import MainIcon from '../img/mainIcon.svg';
 
 function Header(props) {
-	const { history } = props;
+	const { history, setSelectedAnswers } = props;
 	return (
 		<nav className="flex flex-wrap items-center justify-between p-6 fira-sans">
 			<img src={MainIcon} alt="wizard hat" />

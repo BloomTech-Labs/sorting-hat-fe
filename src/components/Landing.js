@@ -19,7 +19,10 @@ function Landing(props) {
 		getTracks();
 		getPoints();
 	}, []);
+	console.log('state:', props);
 	if (props.location.state) {
+		console.log('IN:', props.location.state);
+		
 		return <Redirect to="/quiz" />;
 	}
 	return (
