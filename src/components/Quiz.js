@@ -114,13 +114,13 @@ function Quiz(props) {
     );
   }
   //todo use like a useEffect, (not reRendering component)
-  function highlightButton(answerBtn) {
-    if (selAnswer && answerBtn && selAnswer.id === answerBtn.id) {
-      return "purple-100";
-    } else {
-      return "white";
-    }
-  }
+  // function highlightButton(answerBtn) {
+  //   if (selAnswer && answerBtn && selAnswer.id === answerBtn.id) {
+  //     return "purple-100";
+  //   } else {
+  //     return "white";
+  //   }
+  // }
 
   //todo use like a useEffect, (not reRendering component)
   function checkBoxButton(answerBtn, index) {
@@ -155,10 +155,11 @@ function Quiz(props) {
           setSelAnswer(answer);
           setBtnColor("purple-900");
         }}
-        className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-          answer,
-          index
-        )}`}
+        className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
+        // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+        //   answer,
+        //   index
+        // )}`}
       >
         {answer.choice}
       </button>
@@ -167,75 +168,76 @@ function Quiz(props) {
 
   return (
     //Redborder remove Highlight
+    <div className="mr-8 ml-8">
+      <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
+        <Header />
+        {/* <div className="lg:w-1/2 p-2 m-auto  lg:mt-40"> */}
 
-    <div className="flex flex-col justify-center items-center max-h-screen h-screen pt-10">
-      <Header />
-      {/* <div className="lg:w-1/2 p-2 m-auto  lg:mt-40"> */}
+        <div className="lg:w-1/2 p-2 mt-10 w-full">
+          {/*Current Question number*/}
+          <h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-black">
+            Question {curQuesIndex + 1}
+          </h1>
+          <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 
-      <div className="lg:w-1/2 p-2">
-        {/*Current Question number*/}
-        <h1 className="pt-4 mt-2 text-xl text-4xl fira-sans text-gray-700 lg:text-black">
-          Question {curQuesIndex + 1}
-        </h1>
-        <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
+          {/*Question Text*/}
+          <h1 className="mt-2 text-black lg:text-gray-700 fira-sans">
+            {questions[curQuesIndex].question}
+          </h1>
+          <p className="text-xs text-gray-700 italic">Select one</p>
 
-        {/*Question Text*/}
-        <h1 className="mt-2 text-black lg:text-gray-700 fira-sans text-2xl">
-          {questions[curQuesIndex].question}
-        </h1>
-        <p className="text-xs text-gray-700 italic">Select one</p>
-
-        {/*Answers to the Questions*/}
-        <div className="flex flex-col w-full mt-4 mb-2 text-lg py-5">
-          {answers.map(
-            (answer, index) =>
-              answer.question_id === questions[curQuesIndex].id &&
-              answerButton(answer, index)
-          )}
-        </div>
-        <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
-          {/*Back Button
+          {/*Answers to the Questions*/}
+          <div className="flex flex-col w-full mt-4 mb-2 py-5 text-sm lg:text-lg">
+            {answers.map(
+              (answer, index) =>
+                answer.question_id === questions[curQuesIndex].id &&
+                answerButton(answer, index)
+            )}
+          </div>
+          <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
+            {/*Back Button
         
           If it isn't the first question, the back button says back and updates history.
           If it is the first question it redirects the user to landing page
           */}
-          {curQuesIndex > 0 ? (
-            <button
-              onClick={handleBack}
-              className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
-            >
-              <img
-                src={ArrowPurpleL}
-                alt="leftArrow"
-                size="1.3rem"
-                className="pr-4"
-              />
-              <span className="text-purple-100 text-lg">Back</span>
-            </button>
-          ) : (
-            <button
-              onClick={() => props.history.push("/")}
-              className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
-            >
-              <img
-                src={ArrowPurpleL}
-                alt="leftArrow"
-                size="1.3rem"
-                className="pr-4 "
-              />
-              <span className="text-purple-100 text-lg">Home</span>
-            </button>
-          )}
-          <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
+            {curQuesIndex > 0 ? (
+              <button
+                onClick={handleBack}
+                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
+              >
+                <img
+                  src={ArrowPurpleL}
+                  alt="leftArrow"
+                  size="1.3rem"
+                  className="pr-4"
+                />
+                <span className="text-purple-100">Back</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => props.history.push("/")}
+                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
+              >
+                <img
+                  src={ArrowPurpleL}
+                  alt="leftArrow"
+                  size="1.3rem"
+                  className="pr-4 "
+                />
+                <span className="text-purple-100">Home</span>
+              </button>
+            )}
+            <span className="text-gray-700">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
-          {/*Next Button*/}
-          <button
-            onClick={updateSelAnswers}
-            className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
-          >
-            <span className="pr-4 text-white text-lg">Next</span>
-            <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
-          </button>
+            {/*Next Button*/}
+            <button
+              onClick={updateSelAnswers}
+              className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
+            >
+              <span className="pr-4 text-white">Next</span>
+              <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

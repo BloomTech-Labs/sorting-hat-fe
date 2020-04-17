@@ -32,12 +32,12 @@ function Results({ scores, tracks, setSelectedAnswers }) {
     return <Redirect to="/" />;
   }
   return (
-    <div className="pt-10">
+    <div className="mr-8 ml-8 mt-32 text-xs sm:text-sm md:text-lg lg:text-2xl">
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
         <section className="max-w-3xl m-10 border-black noto-sans flex-column">
-          <h2 className="pb-1 text-3xl font-bold text-black border-b-2 ">
+          <h2 className="pb-1 font-bold text-black border-b-2 lg:text-3xl ">
             Results
           </h2>
           <div>
@@ -54,7 +54,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
           </div>
           <div>
-            <h2 className="pb-1 text-3xl border-b-2 fira-sans">
+            <h2 className="pb-1 border-b-2 fira-sans lg:lg:text-3xl">
               {selectedTrack.name}
             </h2>
             <p className="py-3 protoGray noto-sans mb-20">
@@ -64,7 +64,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
 
           {/* Selected Track Name Traits */}
           <div className="container mt-5">
-            <h2 className="pb-1 text-3xl border-b-2 fira-sans">
+            <h2 className="pb-1 border-b-2 fira-sans lg:text-3xl">
               {"  "} {selectedTrack.name} Traits
             </h2>
             {/* This View Courses button needs to be inline with the H2 above ↑ */}
@@ -74,7 +74,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             </p>
           </div>
           <div className="flex-col items-center justify-center noto-sans mb-10">
-            <h2 className="pb-1 self-start text-3xl fira-sans">Learn More</h2>
+            <h2 className="pb-1 self-start fira-sans text-3xl">Learn More</h2>
             <div className="flex justify-center py-2 mb-20">
               <iframe
                 width="100%"
@@ -88,7 +88,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             </div>
           </div>
           <div>
-            <h2 className="pb-1 mb-2 text-3xl text-black border-b-2 fira-sans">
+            <h2 className="pb-1 mb-2 text-black border-b-2 fira-sans text-3xl">
               Discover Other Tracks
             </h2>
             {/*I need to axios all this info*/}
@@ -125,9 +125,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                   size="1.3rem"
                   className="pr-4 m-1"
                 />
-                <span className="text-purple-100 questrial text-lg">
-                  Retake Quiz
-                </span>
+                <span className="text-purple-100 questrial">Retake Quiz</span>
               </Link>
             </div>
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
@@ -135,7 +133,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 to="/courses"
                 className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
               >
-                <span className="flex items-center justify-end questrial text-lg">
+                <span className="flex items-center justify-end questrial">
                   View Courses
                 </span>
                 <img

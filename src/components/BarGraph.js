@@ -16,17 +16,22 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 className="flex flex-col-reverse w-1/2 h-full text-center justify-baseline"
                 onClick={() => setTrack(tracks[i])}
               >
-                <p className="pt-1 questrial">{tracks[i].name}</p>
+                {tracks[i].name === "Full Stack" ? (
+                  <p className="pt-1 questrial">Web</p>
+                ) : (
+                  <p className="pt-1 questrial">{tracks[i].name}</p>
+                )}
+                {/* <p className="pt-1 questrial">{tracks[i].name}</p> */}
                 <div
                   className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
                     top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
                   } `}
                   style={{
-                    height: `${e[1] * 3}%`,
+                    height: `${e[1] * 2}%`,
                   }}
                 />
                 <div className="flex justify-around w-full m-auto text-center x-axis">
-                  <p className="text-center">{`${Math.round(e[1] * 3)}%`}</p>
+                  <p className="text-center">{`${Math.round(e[1] * 2)}%`}</p>
                 </div>
               </div>
             </div>
