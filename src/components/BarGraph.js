@@ -23,11 +23,10 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 )}
                 {/* <p className="pt-1 questrial">{tracks[i].name}</p> */}
                 <div
-                  className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                    top.id === JSON.parse(e[0]) + 1 ? "bg-purple-900" : "bg-purple-100"
-                  } `}
+                  className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center 
+                  bg-purple-100`}
                   style={{
-                    height: `${e[1] * 2}%`,
+                    height: `${e[1] * 2 === 0 ? 3 : e[1] * 2}%`,
                   }}
                 />
                 <div className="flex justify-around w-full m-auto text-center x-axis">
