@@ -19,6 +19,8 @@ import UnCheckbox from "../img/UnCheckbox.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 
+//! todo: implement enter shortcut for next button
+
 function Quiz(props) {
   //Setting State
   const {
@@ -71,6 +73,16 @@ function Quiz(props) {
     setScores(totalScores);
     return <Redirect to="/results" />;
   }
+
+//Scores are being updated based off of user selections
+
+window.document.addEventListener('keydown', function(e) {
+  // console.log('e.key:', e);
+  // shortcut is implemented for enter and tab key
+  if (e.keyCode === 9 || 13) {
+    updateSelAnswers();
+  }
+});
 
   //Scores are being updated based off of user selections
 
@@ -247,14 +259,12 @@ function Quiz(props) {
 //Redux interface
 
 const mapStateToProps = (state) => {
-  return {
-    questions: state.questions,
-    answers: state.answers,
-    questionAnswers: state.questionAnswers,
-    points: state.points,
-  };
+	return {
+		questions: state.questions,
+		answers: state.answers,
+		questionAnswers: state.questionAnswers,
+		points: state.points
+	};
 };
 
-export default connect(mapStateToProps, { setScores, setSelectedAnswers })(
-  Quiz
-);
+export default connect(mapStateToProps, { setScores, setSelectedAnswers })(Quiz);

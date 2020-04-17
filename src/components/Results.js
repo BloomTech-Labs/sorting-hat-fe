@@ -24,7 +24,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
         highest = { track: score, score: scores[score] };
       }
     }
-    setSelectedTrack(tracks.find((track) => track.id == highest.track));
+		setSelectedTrack(tracks.find((track) => track.id === JSON.parse(highest.track) + 1));
     setSelectedAnswers([]);
   }, []);
 

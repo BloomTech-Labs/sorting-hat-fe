@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 function BarGraph({ scores, tracks, top, setTrack }) {
   return (
@@ -24,7 +24,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 {/* <p className="pt-1 questrial">{tracks[i].name}</p> */}
                 <div
                   className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                    top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
+                    top.id === JSON.parse(e[0]) + 1 ? "bg-purple-900" : "bg-purple-100"
                   } `}
                   style={{
                     height: `${e[1] * 2}%`,
@@ -42,9 +42,9 @@ function BarGraph({ scores, tracks, top, setTrack }) {
   );
 }
 const mapStateToProps = (state) => {
-  return {
-    scores: state.scores,
-    tracks: state.tracks,
-  };
+	return {
+		scores: state.scores,
+		tracks: state.tracks
+	};
 };
 export default withRouter(connect(mapStateToProps, {})(BarGraph));

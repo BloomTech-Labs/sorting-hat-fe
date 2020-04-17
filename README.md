@@ -25,3 +25,5 @@ Fullstack Developer | UX Developer | Section Lead | Team Lead |
 [![Deployed](https://img.shields.io/badge/Deployed-AWS%20Amplify-black)](https://master.d2560iuusixetb.amplifyapp.com/)
 ![Testing](https://img.shields.io/badge/testing-jest-yellow)
 ![State Management](https://img.shields.io/badge/state%20management-Redux-blue)
+
+
