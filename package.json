@@ -36,12 +36,13 @@
 		"collectCoverageFrom": [ 
 			"!**/__tests__/**",
 			"**/*.test.js"
-		]
+		],
+		"testPathIgnorePatterns": ["/cypress/"]
 	},
 	"scripts": {
 		"start": "npm run build:css && react-app-rewired start",
 		"build": "npm run build:css && react-app-rewired build",
-		"test": "jest --watchAll",
+		"test": "jest",
 		"eject": "react-app-rewired eject",
 		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
 		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
