@@ -141,6 +141,7 @@ function Quiz(props) {
 			<img src={checkBoxButton(answer, index)} alt="checkbox" />
 			<button
 				key={index}
+				cy="ansBtn"
 				onClick={() => {
 					setSelAnswer(answer);
 					setBtnColor('purple-900');
@@ -165,7 +166,7 @@ function Quiz(props) {
 
 				<div className="lg:w-1/2 p-2 mt-10 w-full">
 					{/*Current Question number*/}
-					<h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-black">
+					<h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-black" cy="question">
 						Question {curQuesIndex + 1}
 					</h1>
 					<ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
