@@ -26,7 +26,7 @@
 
 // takes the entire quiz
 Cypress.Commands.add('quiz', () => {
-	for (let i = 1; i <= 7; i++) {
+	for (let i = 1; i <= 8; i++) {
 		cy.contains(`Question ${i}`);
 		cy.clickAnswer();
 		cy.clickNext();
@@ -39,7 +39,8 @@ Cypress.Commands.add('start', () => {
 });
 
 Cypress.Commands.add('clickAnswer', () => {
-	cy.get('.flex-col > :nth-child(1) > .fira-sans').click();
+	console.log(cy.get('button'));
+	cy.get(':nth-child(3) > .fira-sans').click();
 });
 
 Cypress.Commands.add('clickNext', () => {

@@ -79,7 +79,7 @@ function Quiz(props) {
   window.document.addEventListener("keydown", function (e) {
     // console.log('e.key:', e);
     // shortcut is implemented for enter and tab key
-    if (e.keyCode === 9 || 13) {
+    if (e.keyCode === 9 || 13 || 32) {
       updateSelAnswers();
     }
   });
@@ -91,12 +91,11 @@ function Quiz(props) {
     const existingNextAns = questionAnswers.find(
       (answer) => answer.question_id === questions[curQuesIndex].id + 1
     );
-    console.log({ selAnswer });
     setSelAnswer(existingNextAns ? existingNextAns : false);
     // setBtnColor("purple-400");
     if (selAnswer) {
       //button background settings
-      setBtnColor("purple-900");
+      setBtnColor("purple-400");
       // Adds the selected answer points object to history
       setCurQuesIndex(curQuesIndex + 1);
 
@@ -153,7 +152,7 @@ function Quiz(props) {
   const answerButton = (answer, index) => (
     <div
       key={`div-${index}`}
-      className="flex items-center justify-start w-full mt-1 fira-sans mb-5"
+      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5"
     >
       {/* Changes based off of whether it is selected or not. 
 			Checkbox contains the id of the current selected answer.
@@ -163,6 +162,7 @@ function Quiz(props) {
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
       <button
         key={index}
+        cy="ansBtn"
         onClick={() => {
           setSelAnswer(answer);
           setBtnColor("purple-900");
@@ -213,7 +213,10 @@ function Quiz(props) {
 
         <div className="lg:w-1/2 p-2 mt-10 w-full">
           {/*Current Question number*/}
-          <h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
+          <h1
+            className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray"
+            cy="question"
+          >
             Question {curQuesIndex + 1}
           </h1>
           <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />

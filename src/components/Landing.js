@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
@@ -8,10 +9,12 @@ import { Link, Redirect } from "react-router-dom";
 import ParticleTesting from "./ParticleTesting";
 import About from "./About";
 
-import Header from "./Header";
+
+import Header from './Header';
 
 function Landing(props) {
-  const { getQuestions, getAnswers, getTracks, getPoints } = props;
+	const { getQuestions, getAnswers, getTracks, getPoints } = props;
+
 
   useEffect(() => {
     getQuestions();
@@ -57,8 +60,8 @@ function Landing(props) {
 }
 
 export default connect(null, {
-  getQuestions,
-  getAnswers,
-  getTracks,
-  getPoints,
+	getQuestions,
+	getAnswers,
+	getTracks,
+	getPoints
 })(Landing);

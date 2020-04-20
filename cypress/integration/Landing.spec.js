@@ -1,4 +1,4 @@
-import {getQuestions} from '../../src/redux/actions/getQuestions';
+import { getQuestions } from '../../src/redux/actions/getQuestions';
 
 describe('Render Landing Page', () => {
 	beforeEach(() => {
@@ -6,8 +6,8 @@ describe('Render Landing Page', () => {
 	});
 
 	it('checks getQuestions', () => {
-		cy.expect(true).to.be(true)
-		if(getQuestions) {
+		// cy.expect(true).toBe(true)
+		if (getQuestions) {
 			console.log('IN Landing.spec');
 			return true;
 		}
@@ -29,7 +29,8 @@ describe('Render Landing Page', () => {
 	it('Button onclick should work', () => {
 		cy.get('.z-10.w-full').click();
 		cy.contains('Question 1');
-		cy.get('div[class="flex flex-col w-full mt-4 mb-2"]').should('have.length', 1);
-		cy.get('div[class="flex items-center justify-start w-full mt-1 fira-sans"]').should('have.length', 4);
+		cy.get('[cy="question"]').should('have.length', 1);
+		cy.get('button[cy=ansBtn]').should('have.length', 4);
+		cy.get('button[cy=ansBtn]').first().should('have.length', 1);
 	});
 });

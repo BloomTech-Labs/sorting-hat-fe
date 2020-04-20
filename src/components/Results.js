@@ -121,6 +121,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe> */}
+
               {/* {selectedTrack. ? trackInfo.trackVideo : } */}
             </div>
           </div>
@@ -136,6 +137,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     key={el.id}
                     className={"py-3 " + linkedStyle}
                     onClick={() => setSelectedTrack(el)}
+                    cy="trackLink"
                   >
                     {el.name}
                     <span className={"cursor-pointer" + linkedStyle}>

@@ -2,7 +2,7 @@
 import React from 'react'
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom";
-import App from "../App.js";
+import App from "../App.js.js";
 import Landing from "../components/Landing"
 
 afterEach(rtl.cleanup);
@@ -71,4 +71,3 @@ it('Question is rendered in Quiz.js', () => {
     const { queryAllByTestId } = rtl.render(<Quiz questions={questions[0].question}/>);
     expect(queryAllByTestId(/curQuesIndex/i)).toHaveLength(1);
 })
-
