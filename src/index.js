@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 //* REDUX
 import { createStore, applyMiddleware } from 'redux';
-import { Provider, ReactReduxContext } from 'react-redux';
+import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers/reducer';
 
 //* REDUX MIDDLEWARE
@@ -18,7 +18,6 @@ const middleware = [ thunk ];
 const store = createStore(rootReducer, applyMiddleware(...middleware));
 
 ReactDOM.render(
-	// <ReactReduxContext.Consumer>
 	<Provider store={store}>
 		<Router>
 			<Switch>
@@ -26,7 +25,6 @@ ReactDOM.render(
 			</Switch>
 		</Router>
 	</Provider>,
-	// </ReactReduxContext.Consumer>,
 	document.getElementById('root')
 );
 
