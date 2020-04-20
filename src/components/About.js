@@ -1,34 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import Header from "./Header";
 
 // SVG Images
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 
-const About = () => {
+const About = (props) => {
+  const { history } = props;
   return (
     <div>
-      <Header />
-      <div className="flex items-center justify-center">
+      {history.location.pathname !== "/" ? <Header /> : <></>}
+      <div className="flex items-center justify-center mt-40">
         <div className="flex flex-col m-4 max-w-5xl">
-          <section className="pb-5 mt-4 mb-4">
-            <h2 className="mb-1 text-2xl lg:text-5xl font-bold text-black border-b-2 noto-sans pb-5">
+          <section className=" mt-4 mb-4">
+            <h2 className="mb-1 text-2xl lg:text-5xl font-bold text-black border-b-2 noto-sans">
               About
             </h2>
             {/* There needs to be more text here below! */}
-            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 mb-6 leading-relaxed protoGray noto-sans">
+            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-24 leading-relaxed protoGray noto-sans">
               Tech Sorting Hat was inspired and built by tech students. We aim
               to have a fun and informative quiz to help potential tech students
               make a decision about their future careers.
             </p>
           </section>
 
-          <section className="pb-5">
-            <h2 className="mb-1 text-2xl lg:text-5xl text-black border-b-2 fira-sans pb-5 ">
+          <section className="">
+            <h2 className="mb-1 text-2xl lg:text-5xl text-black border-b-2 fira-sans  ">
               Philosophy
             </h2>
-            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 mb-6 leading-relaxed protoGray noto-sans">
+            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-24 leading-relaxed protoGray noto-sans">
               We wanted to showcase the different industries in the tech field
               for people who are seeking an informed decision on which
               subsection to choose. We threw away technical jargon in order to
@@ -39,11 +40,11 @@ const About = () => {
             </p>
           </section>
 
-          <section className="container mt-5 pb-5">
-            <h2 className="mb-1 text-2xl lg:text-5xl text-black border-b-2 fira-sans pb-5 ">
+          <section className="container mt-5 ">
+            <h2 className="mb-1 text-2xl lg:text-5xl text-black border-b-2 fira-sans  ">
               How
             </h2>
-            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 mb-6 leading-loose protoGray noto-sans">
+            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-32 leading-loose protoGray noto-sans">
               We surveyed 70 current tech students, interviewed 13 tech
               students, and 2 tech instructors. We discovered that all tracks in
               the tech field are extremely similar, but subtle differences
@@ -55,14 +56,31 @@ const About = () => {
             </p>
           </section>
 
-          <section className="flex flex-row justify-end">
-            <div className="block py-3 px-4 my-8 ml-5">
+          <section className="flex flex-row justify-between">
+            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5">
               <Link
                 to="/quiz"
-                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
+                className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-6 rounded-lg justify-center items-center`}
               >
-                <span className="flex items-center justify-end questrial">
-                  Start Quiz
+                {/* class="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg */}
+                <img
+                  src={ArrowPurpleL}
+                  alt="leftArrow"
+                  size="1.3rem"
+                  className="pr-4 m-1"
+                />
+                <span className="text-purple-100 questrial text-sm lg:text-lg">
+                  Take Quiz
+                </span>
+              </Link>
+            </div>
+            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5">
+              <Link
+                to="/courses"
+                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-1 px-4 border border-purple-900 rounded-lg "
+              >
+                <span className="flex items-center justify-end questrial text-sm lg:text-lg">
+                  View Courses
                 </span>
                 <img
                   src={ArrowWhiteR}
@@ -79,7 +97,7 @@ const About = () => {
   );
 };
 
-export default About;
+export default withRouter(About);
 
 {
   /* <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">

@@ -5,7 +5,7 @@ function ParticleTesting() {
   const particleOpt = {
     particles: {
       number: {
-        value: 80,
+        value: 60,
         density: {
           enable: true,
           value_area: 800,
@@ -30,7 +30,7 @@ function ParticleTesting() {
         },
       },
       opacity: {
-        value: 0.5,
+        value: 0.2,
         random: false,
         anim: {
           enable: false,

@@ -1,4 +1,5 @@
 {
+
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -72,4 +73,5 @@
     "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.2.0"
   }
+
 }
