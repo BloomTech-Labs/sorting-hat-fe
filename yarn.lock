@@ -1263,10 +1263,10 @@
     through2 "^2.0.0"
     watchify "3.11.1"
 
-"@cypress/code-coverage@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.3.1.tgz#e0b228520769e57198bfec3cdf6fc42db02ebf20"
-  integrity sha512-0IaVUxYJgFItJ+VN3wR4Z48HiSiOBRWGrIP2+anqRG/IQ5kHHh8sqOWyGeq9OhkK0U+wm1Q2t+ZmW0dNumz/Jg==
+"@cypress/code-coverage@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@cypress/code-coverage/-/code-coverage-3.4.0.tgz#50be77cb3a20880f9041fd514a6ebf3eda91e0a9"
+  integrity sha512-N6VJbuyJU5PMTW4MS0LH9aLCSHMmsNL9vRyqk2vgJgHXgspRR+mkx4+jf8b2OJsDf8lINyCv3keyWP++CC3vCg==
   dependencies:
     "@cypress/browserify-preprocessor" "2.2.1"
     debug "4.1.1"
@@ -2625,6 +2625,11 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+arg@4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
+  integrity sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -3769,6 +3774,14 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+check-code-coverage@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/check-code-coverage/-/check-code-coverage-1.1.0.tgz#e8c9a8ce978d939236a0a0be4088d1251d5ad242"
+  integrity sha512-l9FJyUN2S6+tP2AjaMWg+DqwJZCcSs8NbtOCxGIYQ85w8RR3O/0zi7jq/T0irGnVNcVdxIHJU5sHEI4f0KjxDA==
+  dependencies:
+    arg "4.1.3"
+    lodash "4.17.15"
 
 check-more-types@2.24.0:
   version "2.24.0"
@@ -9980,7 +9993,7 @@ nwsapi@^2.0.7, nwsapi@^2.1.3, nwsapi@^2.2.0:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
 
-nyc@15.0.1:
+nyc@15.0.1, nyc@^15.0.1:
   version "15.0.1"
   resolved "https://registry.yarnpkg.com/nyc/-/nyc-15.0.1.tgz#bd4d5c2b17f2ec04370365a5ca1fc0ed26f9f93d"
   integrity sha512-n0MBXYBYRqa67IVt62qW1r/d9UH/Qtr7SF1w/nQLJ9KxvWF6b2xCHImRAixHN9tnMMYHC2P14uo6KddNGwMgGg==
