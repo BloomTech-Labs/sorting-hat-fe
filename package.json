@@ -19,6 +19,7 @@
 		"react": "^16.13.1",
 		"react-app-rewired": "^2.1.5",
 		"react-dom": "^16.13.1",
+		"react-headroom": "^3.0.0",
 		"react-icons": "^3.9.0",
 		"react-particles-js": "^2.7.1",
 		"react-redux": "^7.2.0",
@@ -30,7 +31,6 @@
 		"redux-thunk": "^2.3.0",
 		"tailwindcss-pseudo": "^1.0.3"
 	},
-	
 	"scripts": {
 		"start": "npm run build:css && react-app-rewired start",
 		"build": "npm run build:css && react-app-rewired build",
@@ -42,19 +42,31 @@
 		"coverage": "CI=true yarn test --coverage --watchAll=false || true"
 	},
 	"jest": {
-
 		"moduleNameMapper": {
 			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
 			"\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
 		},
-		"collectCoverageFrom": [ "**/*.{js,jsx}", "!**/__tests__/**", "!**/vendor/**", "**/*.test.js" ]
+		"collectCoverageFrom": [
+			"**/*.{js,jsx}",
+			"!**/__tests__/**",
+			"!**/vendor/**",
+			"**/*.test.js"
+		]
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.7.4",

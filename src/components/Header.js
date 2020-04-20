@@ -25,7 +25,11 @@ function Header(props) {
               src={MainIcon}
               alt="wizard hat"
               className={
-                history.location.pathname === "/quiz" ? "hidden lg:block" : ""
+                (history.location.pathname === "/quiz") |
+                (history.location.pathname === "/about") |
+                (history.location.pathname === "/results")
+                  ? "hidden lg:block"
+                  : ""
               }
             />
             <p className="hidden lg:block">Tech Sorting Hat</p>

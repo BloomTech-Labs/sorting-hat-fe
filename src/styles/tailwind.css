@@ -153,6 +153,10 @@
   font-family: "Fira Sans", sans-serif;
 }
 
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* End Fonts */
 
 /* Text Color */
@@ -167,11 +171,11 @@
 }
 
 .mark-select:hover + .mark:hover {
-  background: #bc88ff;
+  background: #f9f4ff;
 }
 
 .mark-select:focus {
-  background: #bc88ff;
+  background: #f9f4ff;
 }
 
 /* Selection Control / Checkbox / On / Enabled */
