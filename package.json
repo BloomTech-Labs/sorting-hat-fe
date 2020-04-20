@@ -36,7 +36,7 @@
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
     "test:cypress": "cypress open",
-    "coverage": "CI=true yarn test --coverage --watchAll=false || true"
+    "coverage": "yarn nyc report --reporter=text-summary"
   },
   "nyc": {
     "report-dir": "coverage/cypress-coverage"
