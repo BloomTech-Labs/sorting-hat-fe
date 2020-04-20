@@ -32,7 +32,7 @@
   "scripts": {
     "start": "npm run build:css && react-app-rewired start",
     "build": "npm run build:css && react-app-rewired build",
-    "test": "jest",
+    "test": "jest __test__",
     "eject": "react-app-rewired eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
