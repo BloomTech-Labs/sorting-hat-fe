@@ -6775,6 +6775,7 @@ video {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -11155,6 +11156,10 @@ video {
   font-family: "Fira Sans", sans-serif;
 }
 
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* End Fonts */
 
 /* Text Color */
@@ -11169,11 +11174,11 @@ video {
 }
 
 .mark-select:hover + .mark:hover {
-  background: #bc88ff;
+  background: #f9f4ff;
 }
 
 .mark-select:focus {
-  background: #bc88ff;
+  background: #f9f4ff;
 }
 
 /* Selection Control / Checkbox / On / Enabled */
@@ -17405,6 +17410,7 @@ video {
   }
 
   .sm\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -27804,6 +27810,7 @@ video {
   }
 
   .md\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -38203,6 +38210,7 @@ video {
   }
 
   .lg\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -48602,6 +48610,7 @@ video {
   }
 
   .xl\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 

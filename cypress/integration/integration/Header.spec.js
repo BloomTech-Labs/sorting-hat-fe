@@ -12,7 +12,7 @@ describe("Header", () => {
 
   it("Click hat back to home", () => {
     cy.get(".mr-6").click({ force: true });
-    cy.url("contains", "/");
+    cy.url().should("eq", "http://localhost:3000/");
   });
 
   it("click start quiz", () => {
