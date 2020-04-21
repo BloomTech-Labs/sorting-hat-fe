@@ -16,8 +16,8 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                 className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg "
               >
                 <div
-
                   className="flex flex-col-reverse w-1/2 h-full text-center justify-baseline"
+                  cy={`bar-${tracks[i].name}`}
                   onClick={() => setTrack(tracks[i])}
                 >
                   <p className="pt-1 questrial whitespace-no-wrap">

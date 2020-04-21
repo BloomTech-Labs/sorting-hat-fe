@@ -137,7 +137,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     key={el.id}
                     className={"py-3 " + linkedStyle}
                     onClick={() => setSelectedTrack(el)}
-                    cy="trackLink"
+                    cy={`trackLink-${el.name}`}
                   >
                     {el.name}
                     <span className={"cursor-pointer" + linkedStyle}>

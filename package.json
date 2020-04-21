@@ -32,6 +32,7 @@
     "autoprefixer": "^9.7.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-plugin-import": "^1.13.0",
     "babel-plugin-istanbul": "^6.0.0",
     "cypress": "^4.4.1",
     "cypress-plugin-tab": "^1.0.5",
@@ -67,9 +68,6 @@
     "report-dir": "coverage/cypress-coverage"
   },
   "eslintConfig": {
-    "jest": {
-      "type": "module"
-    },
     "extends": "react-app"
   },
   "browserslist": {

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
@@ -9,12 +8,10 @@ import { Link, Redirect } from "react-router-dom";
 import ParticleTesting from "./ParticleTesting";
 import About from "./About";
 
-
-import Header from './Header';
+import Header from "./Header";
 
 function Landing(props) {
-	const { getQuestions, getAnswers, getTracks, getPoints } = props;
-
+  const { getQuestions, getAnswers, getTracks, getPoints } = props;
 
   useEffect(() => {
     getQuestions();
@@ -26,7 +23,7 @@ function Landing(props) {
     return <Redirect to="/quiz" />;
   }
   return (
-    <div className="max-h-screen pt-10 mx-6">
+    <section className="max-h-screen pt-10 mx-6">
       <Header />
       <ParticleTesting />
       {/* // md:justify-center */}
@@ -46,6 +43,7 @@ function Landing(props) {
             <Link
               to="/quiz"
               className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-purple-900 border border-purple-900 pointer-events-auto fira-sans hover:bg-purple-700"
+              cy="startBtn"
             >
               Start Quiz
             </Link>
@@ -55,13 +53,13 @@ function Landing(props) {
       {/* <section className="bg-white w-full xl:hidden">
         <About />
       </section> */}
-    </div>
+    </section>
   );
 }
 
 export default connect(null, {
-	getQuestions,
-	getAnswers,
-	getTracks,
-	getPoints
+  getQuestions,
+  getAnswers,
+  getTracks,
+  getPoints,
 })(Landing);

@@ -153,6 +153,7 @@ function Quiz(props) {
     <div
       key={`div-${index}`}
       className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5"
+      cy={`answer-${index}`}
     >
       {/* Changes based off of whether it is selected or not. 
 			Checkbox contains the id of the current selected answer.
@@ -162,7 +163,6 @@ function Quiz(props) {
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
       <button
         key={index}
-        cy="ansBtn"
         onClick={() => {
           setSelAnswer(answer);
           setBtnColor("purple-900");
@@ -213,16 +213,13 @@ function Quiz(props) {
 
         <div className="lg:w-1/2 p-2 mt-10 w-full">
           {/*Current Question number*/}
-          <h1
-            className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray"
-            cy="question"
-          >
+          <h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
             Question {curQuesIndex + 1}
           </h1>
           <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 
           {/*Question Text*/}
-          <h1 className="mt-2 text-black lg:text-black fira-sans">
+          <h1 className="mt-2 text-black lg:text-black fira-sans" cy="question">
             {questions[curQuesIndex].question}
           </h1>
           <p className="text-xs text-gray-700 italic">Select one</p>
@@ -274,6 +271,7 @@ function Quiz(props) {
             <button
               onClick={updateSelAnswers}
               className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
+              cy="nextBtn"
             >
               <span className="pr-4 text-white text-lg">Next</span>
               <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
