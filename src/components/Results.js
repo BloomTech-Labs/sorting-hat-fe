@@ -49,7 +49,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
-        <section className="max-w-3xl m-10 border-black flex-column">
+        <section className="max-w-3xl m-12 lg:m-10 border-black flex-column">
           <h2
             className={
               "noto-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
@@ -62,8 +62,8 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <p className={sectBodyStyle + "pb-16"}>
               We sorted you into these categories with your primary strengths in
               <span className="font-bold">
-                {"  "} {selectedTrack.name} .
-              </span>
+                {"  "} {selectedTrack.name}
+              </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
             </p>
