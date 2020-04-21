@@ -157,6 +157,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               <Link
                 to="/quiz"
                 className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-6 rounded-lg justify-center items-center`}
+                cy="retakeBtn"
               >
                 {/* class="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg */}
                 <img
@@ -175,7 +176,8 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
               <Link
                 to="/courses"
-                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
+                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg"
+                cy="coursesBtnB"
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses

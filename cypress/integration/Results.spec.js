@@ -57,14 +57,16 @@ describe("Results", () => {
     cy.get('[cy="trackLink-Android"]').click();
     cy.contains("Android Traits");
   });
-  // it('restarts quiz w/ btn button', () => {
-  // 	cy.get('.border-2').contains('Retake Quiz').click();
-  // 	cy.url('contains', '/quiz');
-  // 	cy.quiz();
-  // });
-  // it('view courses Btn', () => {
-  // 	cy.get('.align-baseline').contains('View Courses').click();
-  // 	cy.url('contains', '/courses');
-  // 	cy.contains(/work in progress come back later/i);
-  // });
+  it("restarts quiz w/ retake btn", () => {
+    cy.get('[cy="retakeBtn"]').click();  
+    cy.url("contains", "/quiz");okay return a
+    // cy.quiz(); 
+    cy.clickAnswer();
+    cy.clickNext();
+    cy.url().should("contain", "/results");
+  });
+  it("view courses Btn bottom", () => {
+    cy.get('[cy="coursesBtnB"]').click();
+    cy.url().contains("/courses");
+  });
 });
