@@ -58,9 +58,9 @@ describe("Results", () => {
     cy.contains("Android Traits");
   });
   it("restarts quiz w/ retake btn", () => {
-    cy.get('[cy="retakeBtn"]').click();  
-    cy.url("contains", "/quiz");okay return a
-    // cy.quiz(); 
+    cy.get('[cy="retakeBtn"]').click();
+    cy.url("contains", "/quiz");
+    // cy.quiz();
     cy.clickAnswer();
     cy.clickNext();
     cy.url().should("contain", "/results");
