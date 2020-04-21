@@ -24,7 +24,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
 
   const sectHeadStyle = " fira-sans text-2xl lg:text-3xl ";
   const sectBodyStyle = " py-3 protoGray noto-sans text-base lg:text-lg ";
-  const sectDivider = " border-b-2 pb-1 ";
+  const sectDivider = " border-b-2 pb-1";
   const linkedStyle =
     " hover:underline newBorderColor no-underline text-sm lg:text-lg noto-sans ";
 

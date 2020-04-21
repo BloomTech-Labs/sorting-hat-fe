@@ -28,14 +28,16 @@ function Header(props) {
 		//history.location.pathname === "/quiz" ?
 		<div
 			className={
-				history.location.pathname === '/quiz' || '/results' ? (
-					`fixed bg-white w-full h-32 top-0 z-20  ${hiddenStyle} ease-in`
+				history.location.pathname === '/quiz' || '/results' || 'about'? (
+					`fixed bg-white w-full h-32 top-0 z-20  ${hiddenStyle} ease-in-out`
 				) : (
-					`bg-transparent w-full h-32 top-0 -ml-10 z-20 ${hiddenStyle} ease-in`
+					`bg-transparent w-full h-32 top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
 				)
 			}
 		>
-			<nav className="flex flex-wrap justify-between fira-sans w-full top-0 left-0 fixed py-6 px-10 lg:px-0 ">
+			<nav 
+			
+			className="flex flex-wrap justify-between fira-sans w-full top-0 left-0 fixed py-6 px-10 lg:px-0 ">
 				<NavLink
 					to="/"
 					className="flex lg:top-0 lg:left-0 mr-6 lg:ml-20 text-2xl font-bold text-black hover:text-purple-900"
