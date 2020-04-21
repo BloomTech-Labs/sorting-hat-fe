@@ -17,8 +17,7 @@ module.exports = {
   // Automatically clear mock calls and instances between every test
   // clearMocks: false,
 
-  // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  // Indicates whether the coverage information should be collected while   collectCoverage:   // collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: null,
@@ -181,6 +180,10 @@ module.exports = {
   // verbose: null,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
+  // watchPathIgnorePatterns: [],
+
+  // Whether to use watchman for file crawling
+  // watchman: true,
   // watchPathIgnorePatterns: [],
 
   // Whether to use watchman for file crawling

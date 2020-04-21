@@ -27,10 +27,14 @@
     "tailwindcss-pseudo": "^1.0.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
     "@cypress/code-coverage": "^3.5.1",
     "autoprefixer": "^9.7.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-istanbul": "^6.0.0",
     "cypress": "^4.4.1",
+    "cypress-plugin-tab": "^1.0.5",
     "identity-obj-proxy": "^3.0.0",
     "istanbul-lib-coverage": "^3.0.0",
     "it": "^1.1.1",
@@ -47,7 +51,7 @@
     "cy:open": "cypress open",
     "test:jest": "jest __tests__",
     "test:cy": "cypress run",
-    "test": "jest",
+    "test": "yarn test:jest && yarn test:cy",
     "pretest": "rm -rf .nyc_output || true",
     "posttest": "yarn report:combined",
     "mkdir:reports": "mkdir reports || true",
@@ -63,6 +67,9 @@
     "report-dir": "coverage/cypress-coverage"
   },
   "eslintConfig": {
+    "jest": {
+      "type": "module"
+    },
     "extends": "react-app"
   },
   "browserslist": {

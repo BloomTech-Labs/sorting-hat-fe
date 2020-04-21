@@ -22,12 +22,16 @@ describe("Header", () => {
 
   it("Quiz contains header", () => {
     cy.url("contains", "/quiz");
-    for (let i = 1; i <= 8; i++) {
-      cy.contains(`Question ${i}`);
-      cy.get("nav");
-      cy.clickAnswer();
-      cy.clickNext();
-    }
+    // for (let i = 1; i <= 8; i++) {
+    //   cy.contains(`Question ${i}`);
+    //   cy.get("nav");
+    //   cy.clickAnswer();
+    //   cy.clickNext();
+    // }
+    cy.contains(`Question 1`);
+    cy.get("nav");
+    cy.clickAnswer();
+    cy.clickNext();
   });
 
   it("Results contains header", () => {
