@@ -19,8 +19,6 @@ import UnCheckbox from "../img/UnCheckbox.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 
-//! todo: implement enter shortcut for next button
-
 function Quiz(props) {
   //Setting State
   const {
@@ -41,7 +39,7 @@ function Quiz(props) {
   //May need to create a cap on this later if too many questions
   //are added to the back end.
   const totalNumQues = 1;
-  // questions.length questions.length ; slot this in to fix quiz instead of 1
+  //  questions.length ; slot this in to fix quiz instead of 1
 
   /* why not initiate setScore with {} instead of this useEffect?? */
   useEffect(() => {

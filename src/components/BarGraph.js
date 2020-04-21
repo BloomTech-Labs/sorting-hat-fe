@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 function BarGraph({ scores, tracks, top, setTrack }) {
   console.log({ scores });
   return (
-    <div className="w-4/5 h-full m-10 bg-gray-100">
+    <div className="w-4/5 h-full m-10">
       <div className="flex h-56">
         <div className="flex justify-around w-full h-full">
           {Object.entries(scores).map((e, i) => (
@@ -21,7 +21,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
                   onClick={() => setTrack(tracks[i])}
                 >
                   <p className="pt-1 questrial whitespace-no-wrap">
-                    {tracks[i].name}
+                    {tracks[i].name ==="Full Stack"?"Web":tracks[i].name}
                   </p>
                   <div
                     className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${

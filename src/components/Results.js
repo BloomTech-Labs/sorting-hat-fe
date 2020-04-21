@@ -75,12 +75,12 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           {/* Selected Track Name */}
 
           <div>
-            <div className="flex pb-2 border-b-2 justify-between align-baseline">
+            <div className="flex border-b-2 justify-between align-baseline">
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
-              <div className="flex justify-end py-1 pt-2 pl-1 ml-5">
+              <div className="pb-1">
                 <Link
                   to="/courses"
-                  className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
+                  className="flex align-baseline justify-end bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg"
                 >
                   <span className="flex items-center justify-end questrial text-sm lg:text-lg py-2">
                     View Courses
@@ -92,7 +92,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     className="pl-4 m-1"
                   />{" "}
                 </Link>
-              </div>
+                </div>
             </div>
             <p className={sectBodyStyle + "pb-24"}>
               {selectedTrack.description}

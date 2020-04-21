@@ -4,6 +4,12 @@
 
 @tailwind utilities;
 
+.shadowHeader {
+  box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13);
+}
+.hiddenHeader {
+  transform: translateY(-110%);
+  }
 .fadeOut {
   visibility: hidden;
   opacity: 0;
