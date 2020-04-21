@@ -11182,11 +11182,11 @@ video {
 }
 
 .mark-select:hover + .mark:hover {
-  background: #f9f4ff;
+  background: #F9F4FF;
 }
 
 .mark-select:focus {
-  background: #f9f4ff;
+  background: #F9F4FF;
 }
 
 /* Selection Control / Checkbox / On / Enabled */
@@ -11240,6 +11240,16 @@ video {
   top: 27.42%;
   bottom: 29.17%;
   background: #dadada;
+}
+
+.coursesbtn {
+  background-color: #22283A;
+  color: #F6F7F8;
+  width: 27%;
+  font-size: 1rem;
+  padding: 7px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /*Button About */

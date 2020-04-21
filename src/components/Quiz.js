@@ -38,8 +38,8 @@ function Quiz(props) {
 
   //May need to create a cap on this later if too many questions
   //are added to the back end.
-  const totalNumQues = 1;
-  //  questions.length ; slot this in to fix quiz instead of 1
+  const totalNumQues = questions.length;
+  //  1 questions.length ; slot this in to fix quiz instead of 1
 
   /* why not initiate setScore with {} instead of this useEffect?? */
   useEffect(() => {
@@ -93,7 +93,7 @@ function Quiz(props) {
     // setBtnColor("purple-400");
     if (selAnswer) {
       //button background settings
-      setBtnColor("purple-400");
+      setBtnColor("highlightColor");
       // Adds the selected answer points object to history
       setCurQuesIndex(curQuesIndex + 1);
 
@@ -165,11 +165,11 @@ function Quiz(props) {
           setSelAnswer(answer);
           setBtnColor("purple-900");
         }}
-        className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
-        // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-        //   answer,
-        //   index
-        // )}`}
+        className={`fira-sans mark w-full p-1 ml-2 text-left hover:highlightColor`}
+      // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+      //   answer,
+      //   index
+      // )}`}
       >
         {answer.choice}
       </button>
@@ -203,7 +203,7 @@ function Quiz(props) {
   //   </div>
   // );
   return (
-    //Redborder remove Highlight
+
     <div className="mr-8 ml-8">
       <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
         <Header />
@@ -253,19 +253,19 @@ function Quiz(props) {
                 <span className="text-purple-100 text-lg">Back</span>
               </button>
             ) : (
-              <button
-                onClick={() => props.history.push("/")}
-                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
-              >
-                <img
-                  src={ArrowPurpleL}
-                  alt="leftArrow"
-                  size="1.3rem"
-                  className="pr-4 "
-                />
-                <span className="text-purple-100 text-lg">Home</span>
-              </button>
-            )}
+                <button
+                  onClick={() => props.history.push("/")}
+                  className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
+                >
+                  <img
+                    src={ArrowPurpleL}
+                    alt="leftArrow"
+                    size="1.3rem"
+                    className="pr-4 "
+                  />
+                  <span className="text-purple-100 text-lg">Home</span>
+                </button>
+              )}
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
             {/*Next Button*/}
