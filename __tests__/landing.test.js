@@ -1,7 +1,7 @@
 import React from "react";
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom";
-import App from "../App.js.js";
+import App from "../src/App.js";
 import Landing from "../components/Landing";
 
 afterEach(rtl.cleanup);
