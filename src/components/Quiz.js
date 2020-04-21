@@ -38,8 +38,8 @@ function Quiz(props) {
 
   //May need to create a cap on this later if too many questions
   //are added to the back end.
-  const totalNumQues = questions.length;
-  //   ; slot this in to fix quiz instead of 1
+  const totalNumQues = 1;
+  //  questions.length ; slot this in to fix quiz instead of 1
 
   /* why not initiate setScore with {} instead of this useEffect?? */
   useEffect(() => {
