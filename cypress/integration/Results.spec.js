@@ -7,7 +7,6 @@ describe("Results", () => {
     cy.url().should("contain", "/results");
   });
   it("Takes user back to start of quiz from Results", () => {
-    //todo fix restart btn add in custom attr
     cy.get('[cy="hRestart"]').click({ force: true });
     cy.url("contains", "/quiz");
     cy.contains(/question 1/i);
