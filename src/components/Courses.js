@@ -41,6 +41,60 @@ color: #BD88FF;
 }
 `;
 
+// const SelectedNextBtn = styled.div`
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-family: questrial;
+// background: #7A11FF;
+// border: 1px solid;
+// border-radius: 10px;
+// width: 96px;
+// height: 36px;
+// color: white;
+// &:hover {
+//   color: #BD88FF;
+//   text-decoration: none;
+// }
+// `;
+
+// This background needs to be 50% transparency
+// const GrayedNextBtn = styled.div`
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-family: questrial;
+// background: #7A11FF;
+// border: 1px solid;
+// border-radius: 10px;
+// width: 96px;
+// height: 36px;
+// color: white;
+// &:hover {
+//   color: #BD88FF;
+//   text-decoration: none;
+// }
+// `;
+
+// const BackBtn = styled.div`
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-family: questrial;
+// background: white;
+// border: 1px solid;
+// border-radius: 10px;
+// width: 96px;
+// height: 36px;
+// color: #BD88FF;
+// &:hover {
+//   color: #7A11FF;
+//   text-decoration: none;
+// }
+// `;
+
+
+
 
 
 
