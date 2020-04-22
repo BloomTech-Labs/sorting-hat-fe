@@ -11,13 +11,14 @@ import About from "./About";
 import Header from "./Header";
 
 function Landing(props) {
-  const { getQuestions, getAnswers, getTracks, getPoints } = props;
-
+  const { getQuestions, getAnswers, getTracks, getPoints, questions } = props;
   useEffect(() => {
-    getQuestions();
-    getAnswers();
-    getTracks();
-    getPoints();
+    if (!questions.length) {
+      getQuestions();
+      getAnswers();
+      getTracks();
+      getPoints();
+    }
   }, []);
   if (props.location.state) {
     return <Redirect to="/quiz" />;
@@ -25,7 +26,7 @@ function Landing(props) {
   return (
     <section className="max-h-screen pt-10 mx-6">
       <Header />
-      <ParticleTesting />
+      {/* <ParticleTesting /> */}
       {/* // md:justify-center */}
       {/* Make left aligned */}
       {/*Make Hamburger aligned with button edge and line on mobile */}
@@ -57,9 +58,15 @@ function Landing(props) {
   );
 }
 
-export default connect(null, {
+const mapStateToProps = state => {
+  return {
+    questions: state.questions
+  }
+};
+export default connect(mapStateToProps, {
   getQuestions,
   getAnswers,
   getTracks,
   getPoints,
+
 })(Landing);

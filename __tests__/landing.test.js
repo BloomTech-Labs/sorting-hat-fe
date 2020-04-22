@@ -1,40 +1,18 @@
 import React from "react";
-import * as rtl from "@testing-library/react";
-import "@testing-library/jest-dom";
 import App from "../src/App.js";
 import Landing from "../src/components/Landing";
-import Quiz from "../src/components/Quiz";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-//* REDUX
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import rootReducer from "../src/redux/reducers/reducer";
-
-//* REDUX MIDDLEWARE
-import thunk from "redux-thunk";
-// import logger from "redux-logger";
-
-const middleware = [thunk];
-const store = createStore(rootReducer, applyMiddleware(...middleware));
-
-afterEach(rtl.cleanup);
+import { renderWithRedux } from "../__mocks__/reduxMock.js";
 
 describe("<App />", () => {
-  // it('should render', () => {
-  //   rtl.render(<App />)
-  // })
-
   describe("<Landing />", () => {
     it("should render", () => {
-      const mockGetQuestions = jest.fn();
-      const {} = rtl.render(
-        <Provider store={store}>
-          <Router>
-            <Switch>
-              <Landing getQuestions={mockGetQuestions} />
-            </Switch>
-          </Router>
-        </Provider>
+      renderWithRedux(
+        <Router>
+          <Switch>
+            <Landing />
+          </Switch>
+        </Router>
       );
     });
     //   it('should welcome user', () => {
@@ -87,16 +65,3 @@ const questions = [
     id: 8,
   },
 ];
-
-it("Question is rendered in Quiz.js", () => {
-  const { queryAllByTestId } = rtl.render(
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          <Quiz questions={questions[0].question} />
-        </Switch>
-      </Router>
-    </Provider>
-  );
-  expect(queryAllByTestId(/curQuesIndex/i)).toHaveLength(1);
-});

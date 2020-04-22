@@ -4,9 +4,7 @@ describe("Render Quiz Component", () => {
   });
 
   it("Start of the Quiz", () => {
-    //   todo fix get classNames
     cy.contains("Question 1");
-
     cy.get('[cy="question"]').should("have.length", 1);
     cy.get(".ansBtn").should("have.length", 4);
   });

@@ -39,6 +39,7 @@
     "identity-obj-proxy": "^3.0.0",
     "istanbul-lib-coverage": "^3.0.0",
     "it": "^1.1.1",
+    "jest": "^25.4.0",
     "nyc": "^15.0.1",
     "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.2.0"
@@ -52,7 +53,7 @@
     "cy:open": "cypress open",
     "test:jest": "jest __tests__",
     "test:cy": "cypress run",
-    "test": "yarn test:cy",
+    "test": "yarn test:cy && yarn test:jest",
     "pretest": "rm -rf .nyc_output || true",
     "posttest": "yarn report:combined",
     "mkdir:reports": "mkdir reports || true",
