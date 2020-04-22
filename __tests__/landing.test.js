@@ -1,8 +1,11 @@
 import React from "react";
-import App from "../src/App.js";
 import Landing from "../src/components/Landing";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { renderWithRedux } from "../__mocks__/reduxMock.js";
+
+jest.mock("../src/components/ParticleTesting", () => () => (
+  <div>Hello World</div>
+));
 
 describe("<App />", () => {
   describe("<Landing />", () => {

@@ -26,7 +26,7 @@ function Landing(props) {
   return (
     <section className="max-h-screen pt-10 mx-6">
       <Header />
-      {/* <ParticleTesting /> */}
+      <ParticleTesting />
       {/* // md:justify-center */}
       {/* Make left aligned */}
       {/*Make Hamburger aligned with button edge and line on mobile */}
@@ -58,15 +58,14 @@ function Landing(props) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    questions: state.questions
-  }
+    questions: state.questions,
+  };
 };
 export default connect(mapStateToProps, {
   getQuestions,
   getAnswers,
   getTracks,
   getPoints,
-
 })(Landing);
