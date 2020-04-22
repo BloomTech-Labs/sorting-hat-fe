@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import MainIcon from "../img/MainIcon.svg";
+import MainIcon from "../img/mainIcon.svg";
 import useDocumentScrollThrottled from "./useDocumentScrollThrottled";
 
 // import HamburgerBtn from '../img/HamburgerBtn.svg';
