@@ -8,7 +8,7 @@ function Header(props) {
 	const { history } = props;
 	const [isToggled, setToggled] = useState(false);
 	const [shouldHideHeader, setShouldHideHeader] = useState(false);
-
+	const [headerBg, setHeaderBg] = useState('');
 	const hiddenStyle = shouldHideHeader ? 'hiddenHeader' : '';
 	const MINIMUM_SCROLL = 80;
 	const TIMEOUT_DELAY = 400;
@@ -26,12 +26,13 @@ function Header(props) {
 	return (
 		//lg:fixed lg:left-0 lg:top-0 bg-transparent p-10
 		//history.location.pathname === "/quiz" ?
+
 		<div
 			className={
 				history.location.pathname === '/results' || 'about' ? (
-					`fixed bg-white w-full h-32 top-0 z-20  ${hiddenStyle} ease-in-out`
+					`fixed bg-white w-full top-0 z-20  ${hiddenStyle} ease-in-out`
 				) : (
-						`bg-transparent w-full h-32 top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
+						`bg-transparent w-full top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
 					)
 			}
 		>
