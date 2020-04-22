@@ -23,8 +23,8 @@ function BarGraph({ scores, tracks, top, setTrack }) {
               {console.log("top.id", top.id, "e[0}", e[0])}
 
               <div
-                className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                  top.id === JSON.parse(e[0]) + 1 ? "bg-purple-900" : "bg-purple-100"
+                className={`h-56 border-solid border-primary rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
+                  top.id === JSON.parse(e[0]) + 1 ? "bg-primary" : "bg-purple-100"
                   }`}
                 style={{
                   height: `${e[1] * 2 === 0 ? 3 : e[1] * 2}%`,

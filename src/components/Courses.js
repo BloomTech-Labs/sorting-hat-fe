@@ -93,12 +93,6 @@ color: #BD88FF;
 // }
 // `;
 
-
-
-
-
-
-
 const Courses = () => {
   return (
     <div>
@@ -142,6 +136,30 @@ const Courses = () => {
           <span>Retake Quiz</span>
         </TakeQuizBtn>
       </Link>
+
+      {/* <Link to="/">
+        <SelectedNextBtn>
+          <span>Next</span>
+          <img
+            src={ArrowWhiteR}
+            alt="rightArrow"
+            size="1.3rem"
+            className="ml-4"
+          />
+        </SelectedNextBtn>
+      </Link>
+
+      <Link to="/">
+        <BackBtn>
+          <span>Next</span>
+          <img
+            src={ArrowWhiteR}
+            alt="rightArrow"
+            size="1.3rem"
+            className="ml-4"
+          />
+        </BackBtn>
+      </Link> */}
     </div>
 
 

@@ -93,7 +93,7 @@ function Quiz(props) {
     // setBtnColor("purple-400");
     if (selAnswer) {
       //button background settings
-      setBtnColor("purple-900");
+      setBtnColor("primary");
       // Adds the selected answer points object to history
       setCurQuesIndex(curQuesIndex + 1);
 
@@ -115,7 +115,7 @@ function Quiz(props) {
 
   function handleBack() {
     setCurQuesIndex(curQuesIndex - 1);
-    setBtnColor("purple-900");
+    setBtnColor("primary");
     setSelAnswer(
       questionAnswers.find(
         (answer) => answer.question_id + 1 === questions[curQuesIndex].id
@@ -153,7 +153,7 @@ function Quiz(props) {
       className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5 hover:bg-complimentary"
       onClick={() => {
         setSelAnswer(answer);
-        setBtnColor("purple-900");
+        setBtnColor("primary");
       }}
     >
       {/* Changes based off of whether it is selected or not. 
@@ -189,7 +189,7 @@ function Quiz(props) {
   //       key={index}
   //       onClick={() => {
   //         setSelAnswer(answer);
-  //         setBtnColor("purple-900");
+  //         setBtnColor("primary");
   //       }}
   //       className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
   //       // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
@@ -268,7 +268,7 @@ function Quiz(props) {
             {/*Next Button*/}
             <button
               onClick={updateSelAnswers}
-              className={`questrial flex ${selAnswer ? 'bg-purple-900' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
+              className={`questrial flex ${selAnswer ? 'bg-primary' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
             >
               <span className="pr-4 text-white text-lg">Next</span>
               <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />

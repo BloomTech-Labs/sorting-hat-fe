@@ -41,7 +41,7 @@ function Header(props) {
 				className="flex flex-wrap justify-between fira-sans w-full top-0 left-0 fixed py-6 px-10 lg:px-0 ">
 				<NavLink
 					to="/"
-					className="flex lg:top-0 lg:left-0 mr-6 lg:ml-20 text-2xl font-bold text-black hover:text-purple-900"
+					className="flex lg:top-0 lg:left-0 mr-6 lg:ml-20 text-2xl font-bold text-black hover:text-primary"
 				>
 					<div className="flex items-center">
 						<img
@@ -74,7 +74,7 @@ function Header(props) {
 					>
 						<NavLink
 							to={history.location.pathname === '/' ? '/quiz' : { pathname: '/', state: {} }}
-							className="mt-auto mr-1 text-lg text-black protoGray hover:text-purple-900"
+							className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary"
 						>
 							{history.location.pathname === '/' || history.location.pathname === '/about' ? (
 								'Take Quiz'
@@ -84,7 +84,7 @@ function Header(props) {
 						</NavLink>
 						<NavLink
 							to="/about"
-							className="mt-auto mr-1 text-lg text-black protoGray hover:text-purple-900"
+							className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary"
 						>
 							About
 						</NavLink>
@@ -106,13 +106,13 @@ function Header(props) {
 				<div className="hidden md:flex px-10">
 					<NavLink
 						to="/about"
-						className="hidden md:block mt-auto mr-10 text-lg text-black protoGray hover:text-purple-900"
+						className="hidden md:block mt-auto mr-10 text-lg text-black protoGray hover:text-primary"
 					>
 						About
 					</NavLink>
 					<NavLink
 						to={history.location.pathname === '/' ? '/quiz' : { pathname: '/', state: {} }}
-						className="hidden md:block mt-auto mr-4 text-lg text-black protoGray hover:text-purple-900"
+						className="hidden md:block mt-auto mr-4 text-lg text-black protoGray hover:text-primary"
 					>
 						{history.location.pathname === '/' || history.location.pathname === '/about' ? (
 							'Take Quiz'
