@@ -1,44 +1,44 @@
 import React from "react";
 // import Header from "./Header";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import styled from "styled-components";
 
 // This hover color needs to be worked on to apply to the whole button in the same manner as quiz
 const ViewCoursesBtn = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: questrial;
-background: #7A11FF;
-border: 1px solid;
-border-radius: 10px;
-width: 167px;
-height: 36px;
-color: white;
-&:hover {
-  color: #BD88FF;
-  text-decoration: none;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: questrial;
+  background: #7a11ff;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 167px;
+  height: 36px;
+  color: white;
+  &:hover {
+    color: #bd88ff;
+    text-decoration: none;
+  }
 `;
 
 // This hover color needs to be worked on to apply to the whole button in the same manner as quiz
 const TakeQuizBtn = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: questrial;
-background: white;
-border: 1px solid;
-border-radius: 10px;
-width: 141px;
-height: 36px;
-color: #BD88FF;
-&:hover {
-  color: #7A11FF;
-  text-decoration: none;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: questrial;
+  background: white;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 141px;
+  height: 36px;
+  color: #bd88ff;
+  &:hover {
+    color: #7a11ff;
+    text-decoration: none;
+  }
 `;
 
 // const SelectedNextBtn = styled.div`
@@ -161,12 +161,6 @@ const Courses = () => {
         </BackBtn>
       </Link> */}
     </div>
-
-
-
-
-
-
   );
 };
 

@@ -36,11 +36,11 @@ function Landing(props) {
           <div>
             <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold border-b-4 border-purple-200 lg:text-5xl fira sans mt-56">
               Discover the Tech Career for You
-          </h2>
+            </h2>
             <p className="protoGray pt-6 text:xl lg:text-2xl fira-sans">
-              Take our 5 minute survey to discover which tech field would be right
-              for you. Discover the opportunity at your fingertips.
-          </p>
+              Take our 5 minute survey to discover which tech field would be
+              right for you. Discover the opportunity at your fingertips.
+            </p>
           </div>
           <div className="flex pt-10 w-full mb-4 md:mt-0 lg:mt-0">
             <Link
@@ -56,7 +56,8 @@ function Landing(props) {
       {/* <section className="bg-white w-full xl:hidden">
         <About />
       </section> */}
-    </section>
+      {/* </section> */}
+    </div>
   );
 }
 

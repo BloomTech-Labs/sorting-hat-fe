@@ -1126,14 +1126,6 @@ video {
   --divide-x-reverse: 1;
 }
 
-.divide-primary > :not(template) ~ :not(template) {
-  border-color: #1129FF;
-}
-
-.divide-secondary > :not(template) ~ :not(template) {
-  border-color: #fff;
-}
-
 .divide-transparent > :not(template) ~ :not(template) {
   border-color: transparent;
 }
@@ -1144,6 +1136,22 @@ video {
 
 .divide-white > :not(template) ~ :not(template) {
   border-color: #fff;
+}
+
+.divide-primary > :not(template) ~ :not(template) {
+  border-color: #8111FF;
+}
+
+.divide-secondary > :not(template) ~ :not(template) {
+  border-color: #C088FF;
+}
+
+.divide-tertiary > :not(template) ~ :not(template) {
+  border-color: #E6CFFF;
+}
+
+.divide-complimentary > :not(template) ~ :not(template) {
+  border-color: #F9F3FF;
 }
 
 .divide-gray-100 > :not(template) ~ :not(template) {
@@ -7791,7 +7799,6 @@ video {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -12004,7 +12011,6 @@ video {
   transition-duration: 1000ms;
 }
 
-<<<<<<< HEAD
 .delay-75 {
   transition-delay: 75ms;
 }
@@ -12035,14 +12041,14 @@ video {
 
 .delay-1000 {
   transition-delay: 1000ms;
-=======
+}
+
 .shadowHeader {
   box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13);
 }
 
 .hiddenHeader {
   transform: translateY(-110%);
->>>>>>> origin/development
 }
 
 .fadeOut {
@@ -12223,19 +12229,11 @@ video {
 }
 
 .mark-select:hover + .mark:hover {
-<<<<<<< HEAD
-  background: #f9f4ff;
-}
-
-.mark-select:focus {
-  background: #f9f4ff;
-=======
   background: #F9F4FF;
 }
 
 .mark-select:focus {
   background: #F9F4FF;
->>>>>>> origin/development
 }
 
 /* Selection Control / Checkbox / On / Enabled */
@@ -12356,7 +12354,6 @@ video {
     margin-left: calc(0.75rem * calc(1 - var(--space-x-reverse)));
   }
 
-<<<<<<< HEAD
   .sm\:space-y-4 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--space-y-reverse)));
@@ -12373,10 +12370,6 @@ video {
     --space-y-reverse: 0;
     margin-top: calc(1.25rem * calc(1 - var(--space-y-reverse)));
     margin-bottom: calc(1.25rem * var(--space-y-reverse));
-=======
-  .sm\:bg-transparent {
-    background-color: transparent;
->>>>>>> origin/development
   }
 
   .sm\:space-x-5 > :not(template) ~ :not(template) {
@@ -12391,31 +12384,10 @@ video {
     margin-bottom: calc(1.5rem * var(--space-y-reverse));
   }
 
-<<<<<<< HEAD
   .sm\:space-x-6 > :not(template) ~ :not(template) {
     --space-x-reverse: 0;
     margin-right: calc(1.5rem * var(--space-x-reverse));
     margin-left: calc(1.5rem * calc(1 - var(--space-x-reverse)));
-=======
-  .sm\:bg-primary {
-    background-color: #8111FF;
-  }
-
-  .sm\:bg-secondary {
-    background-color: #C088FF;
-  }
-
-  .sm\:bg-tertiary {
-    background-color: #E6CFFF;
-  }
-
-  .sm\:bg-complimentary {
-    background-color: #F9F3FF;
-  }
-
-  .sm\:bg-gray-100 {
-    background-color: #f7fafc;
->>>>>>> origin/development
   }
 
   .sm\:space-y-8 > :not(template) ~ :not(template) {
@@ -12854,14 +12826,6 @@ video {
     --divide-x-reverse: 1;
   }
 
-  .sm\:divide-primary > :not(template) ~ :not(template) {
-    border-color: #1129FF;
-  }
-
-  .sm\:divide-secondary > :not(template) ~ :not(template) {
-    border-color: #fff;
-  }
-
   .sm\:divide-transparent > :not(template) ~ :not(template) {
     border-color: transparent;
   }
@@ -12872,6 +12836,22 @@ video {
 
   .sm\:divide-white > :not(template) ~ :not(template) {
     border-color: #fff;
+  }
+
+  .sm\:divide-primary > :not(template) ~ :not(template) {
+    border-color: #8111FF;
+  }
+
+  .sm\:divide-secondary > :not(template) ~ :not(template) {
+    border-color: #C088FF;
+  }
+
+  .sm\:divide-tertiary > :not(template) ~ :not(template) {
+    border-color: #E6CFFF;
+  }
+
+  .sm\:divide-complimentary > :not(template) ~ :not(template) {
+    border-color: #F9F3FF;
   }
 
   .sm\:divide-gray-100 > :not(template) ~ :not(template) {
@@ -12914,7 +12894,6 @@ video {
     border-color: #fff5f5;
   }
 
-<<<<<<< HEAD
   .sm\:divide-red-200 > :not(template) ~ :not(template) {
     border-color: #fed7d7;
   }
@@ -12925,10 +12904,6 @@ video {
 
   .sm\:divide-red-400 > :not(template) ~ :not(template) {
     border-color: #fc8181;
-=======
-  .sm\:hover\:bg-transparent:hover {
-    background-color: transparent;
->>>>>>> origin/development
   }
 
   .sm\:divide-red-500 > :not(template) ~ :not(template) {
@@ -12939,29 +12914,8 @@ video {
     border-color: #e53e3e;
   }
 
-<<<<<<< HEAD
   .sm\:divide-red-700 > :not(template) ~ :not(template) {
     border-color: #c53030;
-=======
-  .sm\:hover\:bg-primary:hover {
-    background-color: #8111FF;
-  }
-
-  .sm\:hover\:bg-secondary:hover {
-    background-color: #C088FF;
-  }
-
-  .sm\:hover\:bg-tertiary:hover {
-    background-color: #E6CFFF;
-  }
-
-  .sm\:hover\:bg-complimentary:hover {
-    background-color: #F9F3FF;
-  }
-
-  .sm\:hover\:bg-gray-100:hover {
-    background-color: #f7fafc;
->>>>>>> origin/development
   }
 
   .sm\:divide-red-800 > :not(template) ~ :not(template) {
@@ -13324,19 +13278,7 @@ video {
     background-attachment: scroll;
   }
 
-<<<<<<< HEAD
-  .sm\:bg-primary {
-    background-color: #1129FF;
-  }
-
-  .sm\:bg-secondary {
-    background-color: #fff;
-  }
-
   .sm\:bg-transparent {
-=======
-  .sm\:focus\:bg-transparent:focus {
->>>>>>> origin/development
     background-color: transparent;
   }
 
@@ -13348,27 +13290,23 @@ video {
     background-color: #fff;
   }
 
-<<<<<<< HEAD
-  .sm\:bg-gray-100 {
-=======
-  .sm\:focus\:bg-primary:focus {
+  .sm\:bg-primary {
     background-color: #8111FF;
   }
 
-  .sm\:focus\:bg-secondary:focus {
+  .sm\:bg-secondary {
     background-color: #C088FF;
   }
 
-  .sm\:focus\:bg-tertiary:focus {
+  .sm\:bg-tertiary {
     background-color: #E6CFFF;
   }
 
-  .sm\:focus\:bg-complimentary:focus {
+  .sm\:bg-complimentary {
     background-color: #F9F3FF;
   }
 
-  .sm\:focus\:bg-gray-100:focus {
->>>>>>> origin/development
+  .sm\:bg-gray-100 {
     background-color: #f7fafc;
   }
 
@@ -13728,14 +13666,6 @@ video {
     background-color: #7A11FF;
   }
 
-  .sm\:hover\:bg-primary:hover {
-    background-color: #1129FF;
-  }
-
-  .sm\:hover\:bg-secondary:hover {
-    background-color: #fff;
-  }
-
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -13746,6 +13676,22 @@ video {
 
   .sm\:hover\:bg-white:hover {
     background-color: #fff;
+  }
+
+  .sm\:hover\:bg-primary:hover {
+    background-color: #8111FF;
+  }
+
+  .sm\:hover\:bg-secondary:hover {
+    background-color: #C088FF;
+  }
+
+  .sm\:hover\:bg-tertiary:hover {
+    background-color: #E6CFFF;
+  }
+
+  .sm\:hover\:bg-complimentary:hover {
+    background-color: #F9F3FF;
   }
 
   .sm\:hover\:bg-gray-100:hover {
@@ -13808,7 +13754,6 @@ video {
     background-color: #e53e3e;
   }
 
-<<<<<<< HEAD
   .sm\:hover\:bg-red-700:hover {
     background-color: #c53030;
   }
@@ -13819,10 +13764,6 @@ video {
 
   .sm\:hover\:bg-red-900:hover {
     background-color: #742a2a;
-=======
-  .sm\:border-transparent {
-    border-color: transparent;
->>>>>>> origin/development
   }
 
   .sm\:hover\:bg-orange-100:hover {
@@ -13833,29 +13774,8 @@ video {
     background-color: #feebc8;
   }
 
-<<<<<<< HEAD
   .sm\:hover\:bg-orange-300:hover {
     background-color: #fbd38d;
-=======
-  .sm\:border-primary {
-    border-color: #8111FF;
-  }
-
-  .sm\:border-secondary {
-    border-color: #C088FF;
-  }
-
-  .sm\:border-tertiary {
-    border-color: #E6CFFF;
-  }
-
-  .sm\:border-complimentary {
-    border-color: #F9F3FF;
-  }
-
-  .sm\:border-gray-100 {
-    border-color: #f7fafc;
->>>>>>> origin/development
   }
 
   .sm\:hover\:bg-orange-400:hover {
@@ -14134,14 +14054,6 @@ video {
     background-color: #7A11FF;
   }
 
-  .sm\:focus\:bg-primary:focus {
-    background-color: #1129FF;
-  }
-
-  .sm\:focus\:bg-secondary:focus {
-    background-color: #fff;
-  }
-
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -14152,6 +14064,22 @@ video {
 
   .sm\:focus\:bg-white:focus {
     background-color: #fff;
+  }
+
+  .sm\:focus\:bg-primary:focus {
+    background-color: #8111FF;
+  }
+
+  .sm\:focus\:bg-secondary:focus {
+    background-color: #C088FF;
+  }
+
+  .sm\:focus\:bg-tertiary:focus {
+    background-color: #E6CFFF;
+  }
+
+  .sm\:focus\:bg-complimentary:focus {
+    background-color: #F9F3FF;
   }
 
   .sm\:focus\:bg-gray-100:focus {
@@ -14214,7 +14142,6 @@ video {
     background-color: #e53e3e;
   }
 
-<<<<<<< HEAD
   .sm\:focus\:bg-red-700:focus {
     background-color: #c53030;
   }
@@ -14225,10 +14152,6 @@ video {
 
   .sm\:focus\:bg-red-900:focus {
     background-color: #742a2a;
-=======
-  .sm\:hover\:border-transparent:hover {
-    border-color: transparent;
->>>>>>> origin/development
   }
 
   .sm\:focus\:bg-orange-100:focus {
@@ -14239,29 +14162,8 @@ video {
     background-color: #feebc8;
   }
 
-<<<<<<< HEAD
   .sm\:focus\:bg-orange-300:focus {
     background-color: #fbd38d;
-=======
-  .sm\:hover\:border-primary:hover {
-    border-color: #8111FF;
-  }
-
-  .sm\:hover\:border-secondary:hover {
-    border-color: #C088FF;
-  }
-
-  .sm\:hover\:border-tertiary:hover {
-    border-color: #E6CFFF;
-  }
-
-  .sm\:hover\:border-complimentary:hover {
-    border-color: #F9F3FF;
-  }
-
-  .sm\:hover\:border-gray-100:hover {
-    border-color: #f7fafc;
->>>>>>> origin/development
   }
 
   .sm\:focus\:bg-orange-400:focus {
@@ -14620,19 +14522,7 @@ video {
     border-collapse: separate;
   }
 
-<<<<<<< HEAD
-  .sm\:border-primary {
-    border-color: #1129FF;
-  }
-
-  .sm\:border-secondary {
-    border-color: #fff;
-  }
-
   .sm\:border-transparent {
-=======
-  .sm\:focus\:border-transparent:focus {
->>>>>>> origin/development
     border-color: transparent;
   }
 
@@ -14644,27 +14534,23 @@ video {
     border-color: #fff;
   }
 
-<<<<<<< HEAD
-  .sm\:border-gray-100 {
-=======
-  .sm\:focus\:border-primary:focus {
+  .sm\:border-primary {
     border-color: #8111FF;
   }
 
-  .sm\:focus\:border-secondary:focus {
+  .sm\:border-secondary {
     border-color: #C088FF;
   }
 
-  .sm\:focus\:border-tertiary:focus {
+  .sm\:border-tertiary {
     border-color: #E6CFFF;
   }
 
-  .sm\:focus\:border-complimentary:focus {
+  .sm\:border-complimentary {
     border-color: #F9F3FF;
   }
 
-  .sm\:focus\:border-gray-100:focus {
->>>>>>> origin/development
+  .sm\:border-gray-100 {
     border-color: #f7fafc;
   }
 
@@ -15024,14 +14910,6 @@ video {
     border-color: #7A11FF;
   }
 
-  .sm\:hover\:border-primary:hover {
-    border-color: #1129FF;
-  }
-
-  .sm\:hover\:border-secondary:hover {
-    border-color: #fff;
-  }
-
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -15042,6 +14920,22 @@ video {
 
   .sm\:hover\:border-white:hover {
     border-color: #fff;
+  }
+
+  .sm\:hover\:border-primary:hover {
+    border-color: #8111FF;
+  }
+
+  .sm\:hover\:border-secondary:hover {
+    border-color: #C088FF;
+  }
+
+  .sm\:hover\:border-tertiary:hover {
+    border-color: #E6CFFF;
+  }
+
+  .sm\:hover\:border-complimentary:hover {
+    border-color: #F9F3FF;
   }
 
   .sm\:hover\:border-gray-100:hover {
@@ -15404,14 +15298,6 @@ video {
     border-color: #7A11FF;
   }
 
-  .sm\:focus\:border-primary:focus {
-    border-color: #1129FF;
-  }
-
-  .sm\:focus\:border-secondary:focus {
-    border-color: #fff;
-  }
-
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -15422,6 +15308,22 @@ video {
 
   .sm\:focus\:border-white:focus {
     border-color: #fff;
+  }
+
+  .sm\:focus\:border-primary:focus {
+    border-color: #8111FF;
+  }
+
+  .sm\:focus\:border-secondary:focus {
+    border-color: #C088FF;
+  }
+
+  .sm\:focus\:border-tertiary:focus {
+    border-color: #E6CFFF;
+  }
+
+  .sm\:focus\:border-complimentary:focus {
+    border-color: #F9F3FF;
   }
 
   .sm\:focus\:border-gray-100:focus {
@@ -19597,7 +19499,6 @@ video {
   }
 
   .sm\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -20235,14 +20136,6 @@ video {
     color: #7A11FF;
   }
 
-  .sm\:hover\:text-primary:hover {
-    color: #1129FF;
-  }
-
-  .sm\:hover\:text-secondary:hover {
-    color: #fff;
-  }
-
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -20253,6 +20146,22 @@ video {
 
   .sm\:hover\:text-white:hover {
     color: #fff;
+  }
+
+  .sm\:hover\:text-primary:hover {
+    color: #8111FF;
+  }
+
+  .sm\:hover\:text-secondary:hover {
+    color: #C088FF;
+  }
+
+  .sm\:hover\:text-tertiary:hover {
+    color: #E6CFFF;
+  }
+
+  .sm\:hover\:text-complimentary:hover {
+    color: #F9F3FF;
   }
 
   .sm\:hover\:text-gray-100:hover {
@@ -20615,19 +20524,7 @@ video {
     color: #7A11FF;
   }
 
-<<<<<<< HEAD
-  .sm\:focus\:text-primary:focus {
-    color: #1129FF;
-  }
-
-  .sm\:focus\:text-secondary:focus {
-    color: #fff;
-  }
-
   .sm\:focus\:text-transparent:focus {
-=======
-  .sm\:hover\:text-transparent:hover {
->>>>>>> origin/development
     color: transparent;
   }
 
@@ -20639,27 +20536,23 @@ video {
     color: #fff;
   }
 
-<<<<<<< HEAD
-  .sm\:focus\:text-gray-100:focus {
-=======
-  .sm\:hover\:text-primary:hover {
+  .sm\:focus\:text-primary:focus {
     color: #8111FF;
   }
 
-  .sm\:hover\:text-secondary:hover {
+  .sm\:focus\:text-secondary:focus {
     color: #C088FF;
   }
 
-  .sm\:hover\:text-tertiary:hover {
+  .sm\:focus\:text-tertiary:focus {
     color: #E6CFFF;
   }
 
-  .sm\:hover\:text-complimentary:hover {
+  .sm\:focus\:text-complimentary:focus {
     color: #F9F3FF;
   }
 
-  .sm\:hover\:text-gray-100:hover {
->>>>>>> origin/development
+  .sm\:focus\:text-gray-100:focus {
     color: #f7fafc;
   }
 
@@ -21264,7 +21157,6 @@ video {
     width: 10rem;
   }
 
-<<<<<<< HEAD
   .sm\:w-48 {
     width: 12rem;
   }
@@ -21275,10 +21167,6 @@ video {
 
   .sm\:w-64 {
     width: 16rem;
-=======
-  .sm\:focus\:text-transparent:focus {
-    color: transparent;
->>>>>>> origin/development
   }
 
   .sm\:w-auto {
@@ -21289,29 +21177,8 @@ video {
     width: 1px;
   }
 
-<<<<<<< HEAD
   .sm\:w-1\/2 {
     width: 50%;
-=======
-  .sm\:focus\:text-primary:focus {
-    color: #8111FF;
-  }
-
-  .sm\:focus\:text-secondary:focus {
-    color: #C088FF;
-  }
-
-  .sm\:focus\:text-tertiary:focus {
-    color: #E6CFFF;
-  }
-
-  .sm\:focus\:text-complimentary:focus {
-    color: #F9F3FF;
-  }
-
-  .sm\:focus\:text-gray-100:focus {
-    color: #f7fafc;
->>>>>>> origin/development
   }
 
   .sm\:w-1\/3 {
@@ -24398,14 +24265,6 @@ video {
     --divide-x-reverse: 1;
   }
 
-  .md\:divide-primary > :not(template) ~ :not(template) {
-    border-color: #1129FF;
-  }
-
-  .md\:divide-secondary > :not(template) ~ :not(template) {
-    border-color: #fff;
-  }
-
   .md\:divide-transparent > :not(template) ~ :not(template) {
     border-color: transparent;
   }
@@ -24416,6 +24275,22 @@ video {
 
   .md\:divide-white > :not(template) ~ :not(template) {
     border-color: #fff;
+  }
+
+  .md\:divide-primary > :not(template) ~ :not(template) {
+    border-color: #8111FF;
+  }
+
+  .md\:divide-secondary > :not(template) ~ :not(template) {
+    border-color: #C088FF;
+  }
+
+  .md\:divide-tertiary > :not(template) ~ :not(template) {
+    border-color: #E6CFFF;
+  }
+
+  .md\:divide-complimentary > :not(template) ~ :not(template) {
+    border-color: #F9F3FF;
   }
 
   .md\:divide-gray-100 > :not(template) ~ :not(template) {
@@ -31063,7 +30938,6 @@ video {
   }
 
   .md\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -31701,14 +31575,6 @@ video {
     color: #7A11FF;
   }
 
-  .md\:hover\:text-primary:hover {
-    color: #1129FF;
-  }
-
-  .md\:hover\:text-secondary:hover {
-    color: #fff;
-  }
-
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -31719,6 +31585,22 @@ video {
 
   .md\:hover\:text-white:hover {
     color: #fff;
+  }
+
+  .md\:hover\:text-primary:hover {
+    color: #8111FF;
+  }
+
+  .md\:hover\:text-secondary:hover {
+    color: #C088FF;
+  }
+
+  .md\:hover\:text-tertiary:hover {
+    color: #E6CFFF;
+  }
+
+  .md\:hover\:text-complimentary:hover {
+    color: #F9F3FF;
   }
 
   .md\:hover\:text-gray-100:hover {
@@ -32081,19 +31963,7 @@ video {
     color: #7A11FF;
   }
 
-<<<<<<< HEAD
-  .md\:focus\:text-primary:focus {
-    color: #1129FF;
-  }
-
-  .md\:focus\:text-secondary:focus {
-    color: #fff;
-  }
-
   .md\:focus\:text-transparent:focus {
-=======
-  .md\:hover\:text-transparent:hover {
->>>>>>> origin/development
     color: transparent;
   }
 
@@ -32105,27 +31975,23 @@ video {
     color: #fff;
   }
 
-<<<<<<< HEAD
-  .md\:focus\:text-gray-100:focus {
-=======
-  .md\:hover\:text-primary:hover {
+  .md\:focus\:text-primary:focus {
     color: #8111FF;
   }
 
-  .md\:hover\:text-secondary:hover {
+  .md\:focus\:text-secondary:focus {
     color: #C088FF;
   }
 
-  .md\:hover\:text-tertiary:hover {
+  .md\:focus\:text-tertiary:focus {
     color: #E6CFFF;
   }
 
-  .md\:hover\:text-complimentary:hover {
+  .md\:focus\:text-complimentary:focus {
     color: #F9F3FF;
   }
 
-  .md\:hover\:text-gray-100:hover {
->>>>>>> origin/development
+  .md\:focus\:text-gray-100:focus {
     color: #f7fafc;
   }
 
@@ -32730,7 +32596,6 @@ video {
     width: 10rem;
   }
 
-<<<<<<< HEAD
   .md\:w-48 {
     width: 12rem;
   }
@@ -32741,10 +32606,6 @@ video {
 
   .md\:w-64 {
     width: 16rem;
-=======
-  .md\:focus\:text-transparent:focus {
-    color: transparent;
->>>>>>> origin/development
   }
 
   .md\:w-auto {
@@ -32755,29 +32616,8 @@ video {
     width: 1px;
   }
 
-<<<<<<< HEAD
   .md\:w-1\/2 {
     width: 50%;
-=======
-  .md\:focus\:text-primary:focus {
-    color: #8111FF;
-  }
-
-  .md\:focus\:text-secondary:focus {
-    color: #C088FF;
-  }
-
-  .md\:focus\:text-tertiary:focus {
-    color: #E6CFFF;
-  }
-
-  .md\:focus\:text-complimentary:focus {
-    color: #F9F3FF;
-  }
-
-  .md\:focus\:text-gray-100:focus {
-    color: #f7fafc;
->>>>>>> origin/development
   }
 
   .md\:w-1\/3 {
@@ -35864,14 +35704,6 @@ video {
     --divide-x-reverse: 1;
   }
 
-  .lg\:divide-primary > :not(template) ~ :not(template) {
-    border-color: #1129FF;
-  }
-
-  .lg\:divide-secondary > :not(template) ~ :not(template) {
-    border-color: #fff;
-  }
-
   .lg\:divide-transparent > :not(template) ~ :not(template) {
     border-color: transparent;
   }
@@ -35882,6 +35714,22 @@ video {
 
   .lg\:divide-white > :not(template) ~ :not(template) {
     border-color: #fff;
+  }
+
+  .lg\:divide-primary > :not(template) ~ :not(template) {
+    border-color: #8111FF;
+  }
+
+  .lg\:divide-secondary > :not(template) ~ :not(template) {
+    border-color: #C088FF;
+  }
+
+  .lg\:divide-tertiary > :not(template) ~ :not(template) {
+    border-color: #E6CFFF;
+  }
+
+  .lg\:divide-complimentary > :not(template) ~ :not(template) {
+    border-color: #F9F3FF;
   }
 
   .lg\:divide-gray-100 > :not(template) ~ :not(template) {
@@ -42529,7 +42377,6 @@ video {
   }
 
   .lg\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -43167,14 +43014,6 @@ video {
     color: #7A11FF;
   }
 
-  .lg\:hover\:text-primary:hover {
-    color: #1129FF;
-  }
-
-  .lg\:hover\:text-secondary:hover {
-    color: #fff;
-  }
-
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -43185,6 +43024,22 @@ video {
 
   .lg\:hover\:text-white:hover {
     color: #fff;
+  }
+
+  .lg\:hover\:text-primary:hover {
+    color: #8111FF;
+  }
+
+  .lg\:hover\:text-secondary:hover {
+    color: #C088FF;
+  }
+
+  .lg\:hover\:text-tertiary:hover {
+    color: #E6CFFF;
+  }
+
+  .lg\:hover\:text-complimentary:hover {
+    color: #F9F3FF;
   }
 
   .lg\:hover\:text-gray-100:hover {
@@ -43547,19 +43402,7 @@ video {
     color: #7A11FF;
   }
 
-<<<<<<< HEAD
-  .lg\:focus\:text-primary:focus {
-    color: #1129FF;
-  }
-
-  .lg\:focus\:text-secondary:focus {
-    color: #fff;
-  }
-
   .lg\:focus\:text-transparent:focus {
-=======
-  .lg\:hover\:text-transparent:hover {
->>>>>>> origin/development
     color: transparent;
   }
 
@@ -43571,27 +43414,23 @@ video {
     color: #fff;
   }
 
-<<<<<<< HEAD
-  .lg\:focus\:text-gray-100:focus {
-=======
-  .lg\:hover\:text-primary:hover {
+  .lg\:focus\:text-primary:focus {
     color: #8111FF;
   }
 
-  .lg\:hover\:text-secondary:hover {
+  .lg\:focus\:text-secondary:focus {
     color: #C088FF;
   }
 
-  .lg\:hover\:text-tertiary:hover {
+  .lg\:focus\:text-tertiary:focus {
     color: #E6CFFF;
   }
 
-  .lg\:hover\:text-complimentary:hover {
+  .lg\:focus\:text-complimentary:focus {
     color: #F9F3FF;
   }
 
-  .lg\:hover\:text-gray-100:hover {
->>>>>>> origin/development
+  .lg\:focus\:text-gray-100:focus {
     color: #f7fafc;
   }
 
@@ -43951,7 +43790,6 @@ video {
     color: #7A11FF;
   }
 
-<<<<<<< HEAD
   .lg\:italic {
     font-style: italic;
   }
@@ -44207,10 +44045,6 @@ video {
 
   .lg\:w-64 {
     width: 16rem;
-=======
-  .lg\:focus\:text-transparent:focus {
-    color: transparent;
->>>>>>> origin/development
   }
 
   .lg\:w-auto {
@@ -44221,29 +44055,8 @@ video {
     width: 1px;
   }
 
-<<<<<<< HEAD
   .lg\:w-1\/2 {
     width: 50%;
-=======
-  .lg\:focus\:text-primary:focus {
-    color: #8111FF;
-  }
-
-  .lg\:focus\:text-secondary:focus {
-    color: #C088FF;
-  }
-
-  .lg\:focus\:text-tertiary:focus {
-    color: #E6CFFF;
-  }
-
-  .lg\:focus\:text-complimentary:focus {
-    color: #F9F3FF;
-  }
-
-  .lg\:focus\:text-gray-100:focus {
-    color: #f7fafc;
->>>>>>> origin/development
   }
 
   .lg\:w-1\/3 {
@@ -47330,14 +47143,6 @@ video {
     --divide-x-reverse: 1;
   }
 
-  .xl\:divide-primary > :not(template) ~ :not(template) {
-    border-color: #1129FF;
-  }
-
-  .xl\:divide-secondary > :not(template) ~ :not(template) {
-    border-color: #fff;
-  }
-
   .xl\:divide-transparent > :not(template) ~ :not(template) {
     border-color: transparent;
   }
@@ -47348,6 +47153,22 @@ video {
 
   .xl\:divide-white > :not(template) ~ :not(template) {
     border-color: #fff;
+  }
+
+  .xl\:divide-primary > :not(template) ~ :not(template) {
+    border-color: #8111FF;
+  }
+
+  .xl\:divide-secondary > :not(template) ~ :not(template) {
+    border-color: #C088FF;
+  }
+
+  .xl\:divide-tertiary > :not(template) ~ :not(template) {
+    border-color: #E6CFFF;
+  }
+
+  .xl\:divide-complimentary > :not(template) ~ :not(template) {
+    border-color: #F9F3FF;
   }
 
   .xl\:divide-gray-100 > :not(template) ~ :not(template) {
@@ -53995,7 +53816,6 @@ video {
   }
 
   .xl\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 

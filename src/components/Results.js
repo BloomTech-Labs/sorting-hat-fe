@@ -66,7 +66,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
-            </p>
+            </p> 
           </div>
           <div className="flex justify-center text-lg questrial flex-column pb-16 lg:pb-32">
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />

@@ -6,14 +6,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.0.3",
     "axios": "^0.19.2",
     "customize-cra": "^0.9.1",
     "dotenv": "^8.2.0",
-    "less": "^3.11.1",
-    "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
@@ -24,8 +20,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "tailwindcss-pseudo": "^1.0.3",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "tailwindcss-pseudo": "^1.0.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.9.5",
@@ -46,8 +42,10 @@
     "tailwindcss": "^1.2.0"
   },
   "scripts": {
-    "start": "npm run build:css && react-app-rewired start",
-    "build": "npm run build:css && react-app-rewired build",
+    "start": "react-scripts start",
+    "prestart": "yarn build:css",
+    "build": "react-scripts build",
+    "prebuild": "npm run build:css",
     "eject": "react-app-rewired eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
