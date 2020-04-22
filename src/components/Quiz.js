@@ -19,8 +19,6 @@ import UnCheckbox from "../img/UnCheckbox.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 
-//! todo: implement enter shortcut for next button
-
 function Quiz(props) {
   //Setting State
   const {
@@ -40,8 +38,8 @@ function Quiz(props) {
 
   //May need to create a cap on this later if too many questions
   //are added to the back end.
-  const totalNumQues = 1;
-  // questions.length questions.length ; slot this in to fix quiz instead of 1
+  const totalNumQues = questions.length;
+  //  1 questions.length ; slot this in to fix quiz instead of 1
 
   /* why not initiate setScore with {} instead of this useEffect?? */
   useEffect(() => {
@@ -95,7 +93,7 @@ function Quiz(props) {
     // setBtnColor("purple-400");
     if (selAnswer) {
       //button background settings
-      setBtnColor("purple-400");
+      setBtnColor("primary");
       // Adds the selected answer points object to history
       setCurQuesIndex(curQuesIndex + 1);
 
@@ -117,7 +115,7 @@ function Quiz(props) {
 
   function handleBack() {
     setCurQuesIndex(curQuesIndex - 1);
-    setBtnColor("purple-900");
+    setBtnColor("primary");
     setSelAnswer(
       questionAnswers.find(
         (answer) => answer.question_id + 1 === questions[curQuesIndex].id
@@ -150,10 +148,14 @@ function Quiz(props) {
   //* renders buttons for each answer
   //Checkbox and index define relationship with the button and image
   const answerButton = (answer, index) => (
-    <div
+    <button
       key={`div-${index}`}
-      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5"
+      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5 hover:bg-complimentary"
       cy={`answer-${index}`}
+      onClick={() => {
+        setSelAnswer(answer);
+        setBtnColor("primary");
+      }}
     >
       {/* Changes based off of whether it is selected or not. 
 			Checkbox contains the id of the current selected answer.
@@ -161,21 +163,17 @@ function Quiz(props) {
 			checkbox is displayed.
 			*/}
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
-      <button
+      <div
         key={index}
-        onClick={() => {
-          setSelAnswer(answer);
-          setBtnColor("purple-900");
-        }}
-        className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
-        // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-        //   answer,
-        //   index
-        // )}`}
+        className={`fira-sans mark w-full p-1 ml-2 text-left`}
+      // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+      //   answer,
+      //   index
+      // )}`}
       >
         {answer.choice}
-      </button>
-    </div>
+      </div>
+    </button>
   );
   // const answerButton = (answer, index) => (
   //   <div
@@ -192,7 +190,7 @@ function Quiz(props) {
   //       key={index}
   //       onClick={() => {
   //         setSelAnswer(answer);
-  //         setBtnColor("purple-900");
+  //         setBtnColor("primary");
   //       }}
   //       className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
   //       // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
@@ -205,7 +203,7 @@ function Quiz(props) {
   //   </div>
   // );
   return (
-    //Redborder remove Highlight
+
     <div className="mr-8 ml-8">
       <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
         <Header />
@@ -234,10 +232,8 @@ function Quiz(props) {
           </div>
           <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
             {/*Back Button
-        
-          If it isn't the first question, the back button says back and updates history.
-          If it is the first question it redirects the user to landing page
-          */}
+              If it isn't the first question, the back button says back and updates history.
+              If it is the first question it redirects the user to landing page*/}
             {curQuesIndex > 0 ? (
               <button
                 onClick={handleBack}
@@ -252,25 +248,25 @@ function Quiz(props) {
                 <span className="text-purple-100 text-lg">Back</span>
               </button>
             ) : (
-              <button
-                onClick={() => props.history.push("/")}
-                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
-              >
-                <img
-                  src={ArrowPurpleL}
-                  alt="leftArrow"
-                  size="1.3rem"
-                  className="pr-4 "
-                />
-                <span className="text-purple-100 text-lg">Home</span>
-              </button>
-            )}
+                <button
+                  onClick={() => props.history.push("/")}
+                  className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
+                >
+                  <img
+                    src={ArrowPurpleL}
+                    alt="leftArrow"
+                    size="1.3rem"
+                    className="pr-4 "
+                  />
+                  <span className="text-purple-100 text-lg">Home</span>
+                </button>
+              )}
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
             {/*Next Button*/}
             <button
               onClick={updateSelAnswers}
-              className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
+              className={`questrial flex ${selAnswer ? 'bg-primary' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
               cy="nextBtn"
             >
               <span className="pr-4 text-white text-lg">Next</span>
