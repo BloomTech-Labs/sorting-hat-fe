@@ -1,76 +1,85 @@
 {
-	"name": "client",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.3.2",
-		"@testing-library/user-event": "^7.1.2",
-		"antd": "^4.0.3",
-		"axios": "^0.19.2",
-		"customize-cra": "^0.9.1",
-		"dotenv": "^8.2.0",
-		"less": "^3.11.1",
-		"less-loader": "^5.0.0",
-		"lodash": "^4.17.15",
-		"node-sass": "^4.13.1",
-		"react": "^16.13.1",
-		"react-app-rewired": "^2.1.5",
-		"react-dom": "^16.13.1",
-		"react-icons": "^3.9.0",
-		"react-particles-js": "^2.7.1",
-		"react-redux": "^7.2.0",
-		"react-router-dom": "^5.1.2",
-		"react-scripts": "3.4.0",
-		"recharts": "^1.8.5",
-		"redux": "^4.0.5",
-		"redux-logger": "^3.0.6",
-		"redux-thunk": "^2.3.0",
-		"styled-components": "^5.1.0",
-		"tailwindcss-pseudo": "^1.0.3"
-	},
-	"scripts": {
-		"start": "yarn run build:css && react-app-rewired start",
-		"build": "yarn run build:css && react-app-rewired build",
-		"test": "jest",
-		"eject": "react-app-rewired eject",
-		"build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
-		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
-		"test:cypress": "cypress open",
-		"coverage": "yarn nyc report --reporter=text-summary"
-	},
-	"nyc": {
-		"report-dir": "coverage/cypress-coverage"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@cypress/code-coverage": "^3.4.0",
-		"autoprefixer": "^9.7.4",
-		"babel-plugin-import": "^1.13.0",
-		"babel-plugin-istanbul": "^6.0.0",
-		"check-code-coverage": "1.1.0",
-		"cypress": "^4.4.1",
-		"cypress-plugin-tab": "^1.0.5",
-		"identity-obj-proxy": "^3.0.0",
-		"istanbul-lib-coverage": "^3.0.0",
-		"it": "^1.1.1",
-		"jest": "^25.1.0",
-		"nyc": "^15.0.1",
-		"postcss-cli": "^7.1.0",
-		"tailwindcss": "^1.2.0"
-	}
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "customize-cra": "^0.9.1",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "react": "^16.13.1",
+    "react-app-rewired": "^2.1.5",
+    "react-dom": "^16.13.1",
+    "react-particles-js": "^2.7.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0",
+    "tailwindcss-pseudo": "^1.0.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "@cypress/code-coverage": "^3.5.1",
+    "autoprefixer": "^9.7.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "cypress": "^4.4.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "identity-obj-proxy": "^3.0.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "it": "^1.1.1",
+    "jest": "^25.4.0",
+    "nyc": "^15.0.1",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prestart": "yarn build:css",
+    "build": "react-scripts build",
+    "prebuild": "npm run build:css",
+    "eject": "react-app-rewired eject",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
+    "cy:open": "cypress open",
+    "test:jest": "jest __tests__",
+    "test:cy": "cypress run",
+    "test": "yarn test:cy && yarn test:jest",
+    "pretest": "rm -rf .nyc_output || true",
+    "posttest": "yarn report:combined",
+    "mkdir:reports": "mkdir reports || true",
+    "precopy:reports": "yarn mkdir:reports",
+    "copy:reports": "cp coverage/cypress-coverage/coverage-final.json reports/from-cypress.json && cp coverage/jest-coverage/coverage-final.json reports/from-jest.json",
+    "precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
+    "combine:reports": "npx nyc merge reports && mv coverage.json .nyc_output/out.json",
+    "prereport:combined": "yarn combine:reports",
+    "report:combined": "npx nyc report --reporter lcov --reporter text --report-dir coverage/combined",
+    "postreport:combined": "cp coverage/combined/lcov-report/index.html reports/combined.html"
+  },
+  "nyc": {
+    "report-dir": "coverage/cypress-coverage"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

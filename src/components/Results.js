@@ -49,7 +49,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
-        <section className="max-w-3xl m-12 lg:m-10 border-black flex-column">
+        <section className="max-w-3xl mt-20 lg:m-10 border-black flex-column">
           <h2
             className={
               "noto-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
@@ -66,7 +66,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
-            </p>
+            </p> 
           </div>
           <div className="flex justify-center text-lg questrial flex-column pb-16 lg:pb-32">
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
@@ -132,7 +132,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     key={el.id}
                     className={"py-3 " + linkedStyle}
                     onClick={() => setSelectedTrack(el)}
-                    cy="trackLink"
+                    cy={`trackLink-${el.name}`}
                   >
                     {el.name}
                     <span className={"cursor-pointer" + linkedStyle}>
@@ -152,6 +152,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               <Link
                 to="/quiz"
                 className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+                cy="retakeBtn"
               >
                 {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
@@ -171,6 +172,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               <Link
                 to="/courses"
                 className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+                cy="coursesBtnB"
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses
