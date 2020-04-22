@@ -52,7 +52,7 @@
     "cy:open": "cypress open",
     "test:jest": "jest __tests__",
     "test:cy": "cypress run",
-    "test": "yarn test:jest && yarn test:cy",
+    "test": "yarn test:cy",
     "pretest": "rm -rf .nyc_output || true",
     "posttest": "yarn report:combined",
     "mkdir:reports": "mkdir reports || true",

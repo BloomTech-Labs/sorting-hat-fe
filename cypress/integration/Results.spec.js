@@ -67,6 +67,6 @@ describe("Results", () => {
   });
   it("view courses Btn bottom", () => {
     cy.get('[cy="coursesBtnB"]').click();
-    cy.url().contains("/courses");
+    cy.url("contains", "/courses");
   });
 });
