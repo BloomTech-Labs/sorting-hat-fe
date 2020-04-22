@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getQuestions } from "../redux/actions/getQuestions";
@@ -9,18 +8,17 @@ import { Link, Redirect } from "react-router-dom";
 import ParticleTesting from "./ParticleTesting";
 import About from "./About";
 
-
-import Header from './Header';
+import Header from "./Header";
 
 function Landing(props) {
-  const { getQuestions, getAnswers, getTracks, getPoints } = props;
-
-
+  const { getQuestions, getAnswers, getTracks, getPoints, questions } = props;
   useEffect(() => {
-    getQuestions();
-    getAnswers();
-    getTracks();
-    getPoints();
+    if (!questions.length) {
+      getQuestions();
+      getAnswers();
+      getTracks();
+      getPoints();
+    }
   }, []);
   if (props.location.state) {
     return <Redirect to="/quiz" />;
@@ -38,16 +36,17 @@ function Landing(props) {
           <div>
             <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold border-b-4 border-purple-200 lg:text-5xl fira sans mt-56">
               Discover the Tech Career for You
-          </h2>
+            </h2>
             <p className="protoGray pt-6 text:xl lg:text-2xl fira-sans">
-              Take our 5 minute survey to discover which tech field would be right
-              for you. Discover the opportunity at your fingertips.
-          </p>
+              Take our 5 minute survey to discover which tech field would be
+              right for you. Discover the opportunity at your fingertips.
+            </p>
           </div>
           <div className="flex pt-10 w-full mb-4 md:mt-0 lg:mt-0">
             <Link
               to="/quiz"
-              className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-purple-900 border border-purple-900 pointer-events-auto fira-sans hover:bg-purple-700"
+              className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-primary border border-primary pointer-events-auto fira-sans hover:bg-purple-700"
+              cy="startBtn"
             >
               Start Quiz
             </Link>
@@ -57,13 +56,19 @@ function Landing(props) {
       {/* <section className="bg-white w-full xl:hidden">
         <About />
       </section> */}
+      {/* </section> */}
     </div>
   );
 }
 
-export default connect(null, {
+const mapStateToProps = (state) => {
+  return {
+    questions: state.questions,
+  };
+};
+export default connect(mapStateToProps, {
   getQuestions,
   getAnswers,
   getTracks,
-  getPoints
+  getPoints,
 })(Landing);

@@ -66,7 +66,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
-            </p>
+            </p> 
           </div>
           <div className="flex justify-center text-lg questrial flex-column pb-16 lg:pb-32">
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
@@ -132,7 +132,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     key={el.id}
                     className={"py-3 " + linkedStyle}
                     onClick={() => setSelectedTrack(el)}
-                    cy="trackLink"
+                    cy={`trackLink-${el.name}`}
                   >
                     {el.name}
                     <span className={"cursor-pointer" + linkedStyle}>
@@ -151,9 +151,10 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
               <Link
                 to="/quiz"
-                className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-6 rounded-lg justify-center items-center`}
+                className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+                cy="retakeBtn"
               >
-                {/* class="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg */}
+                {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
                   src={ArrowPurpleL}
                   alt="leftArrow"
@@ -170,7 +171,8 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
               <Link
                 to="/courses"
-                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
+                className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+                cy="coursesBtnB"
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses
