@@ -93,7 +93,7 @@ function Quiz(props) {
     // setBtnColor("purple-400");
     if (selAnswer) {
       //button background settings
-      setBtnColor("highlightColor");
+      setBtnColor("purple-900");
       // Adds the selected answer points object to history
       setCurQuesIndex(curQuesIndex + 1);
 
@@ -148,9 +148,13 @@ function Quiz(props) {
   //* renders buttons for each answer
   //Checkbox and index define relationship with the button and image
   const answerButton = (answer, index) => (
-    <div
+    <button
       key={`div-${index}`}
-      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5"
+      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5 hover:bg-complimentary"
+      onClick={() => {
+        setSelAnswer(answer);
+        setBtnColor("purple-900");
+      }}
     >
       {/* Changes based off of whether it is selected or not. 
 			Checkbox contains the id of the current selected answer.
@@ -158,22 +162,17 @@ function Quiz(props) {
 			checkbox is displayed.
 			*/}
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
-      <button
+      <div
         key={index}
-        cy="ansBtn"
-        onClick={() => {
-          setSelAnswer(answer);
-          setBtnColor("purple-900");
-        }}
-        className={`fira-sans mark w-full p-1 ml-2 text-left hover:highlightColor`}
+        className={`fira-sans mark w-full p-1 ml-2 text-left`}
       // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
       //   answer,
       //   index
       // )}`}
       >
         {answer.choice}
-      </button>
-    </div>
+      </div>
+    </button>
   );
   // const answerButton = (answer, index) => (
   //   <div
@@ -235,10 +234,8 @@ function Quiz(props) {
           </div>
           <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
             {/*Back Button
-        
-          If it isn't the first question, the back button says back and updates history.
-          If it is the first question it redirects the user to landing page
-          */}
+              If it isn't the first question, the back button says back and updates history.
+              If it is the first question it redirects the user to landing page*/}
             {curQuesIndex > 0 ? (
               <button
                 onClick={handleBack}
@@ -271,7 +268,7 @@ function Quiz(props) {
             {/*Next Button*/}
             <button
               onClick={updateSelAnswers}
-              className={`questrial flex bg-${btnColor}  p-2 px-4 rounded-lg items-center`}
+              className={`questrial flex ${selAnswer ? 'bg-purple-900' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
             >
               <span className="pr-4 text-white text-lg">Next</span>
               <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />

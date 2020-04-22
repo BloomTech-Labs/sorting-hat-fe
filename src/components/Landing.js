@@ -47,7 +47,7 @@ function Landing(props) {
           <div className="flex pt-10 w-full mb-4 md:mt-0 lg:mt-0">
             <Link
               to="/quiz"
-              className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-purple-900 border border-purple-900 pointer-events-auto fira-sans hover:bg-purple-700"
+              className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-primary border border-primary pointer-events-auto fira-sans hover:bg-purple-700"
             >
               Start Quiz
             </Link>

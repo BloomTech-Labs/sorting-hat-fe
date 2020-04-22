@@ -28,7 +28,7 @@ function Header(props) {
 		//history.location.pathname === "/quiz" ?
 		<div
 			className={
-				history.location.pathname === '/quiz' || '/results' || 'about' ? (
+				history.location.pathname === '/results' || 'about' ? (
 					`fixed bg-white w-full h-32 top-0 z-20  ${hiddenStyle} ease-in-out`
 				) : (
 						`bg-transparent w-full h-32 top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`

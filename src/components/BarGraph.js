@@ -14,15 +14,17 @@ function BarGraph({ scores, tracks, top, setTrack }) {
           >
             <div
 
-              className="flex flex-col-reverse w-3/4 lg:w-1/2 h-full text-center justify-baseline"
+              className="flex flex-col-reverse w-3/4 lg:w-1/2 h-full text-center justify-baseline cursor-pointer"
               onClick={() => setTrack(tracks[i])}
             >
               <p className="pt-1 questrial whitespace-no-wrap">
                 {tracks[i].name === "Full Stack" ? "Web" : tracks[i].name}
               </p>
+              {console.log("top.id", top.id, "e[0}", e[0])}
+
               <div
                 className={`h-56 border-solid border-purple-900 rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
-                  top.id === e[0] ? "bg-purple-900" : "bg-purple-100"
+                  top.id === JSON.parse(e[0]) + 1 ? "bg-purple-900" : "bg-purple-100"
                   }`}
                 style={{
                   height: `${e[1] * 2 === 0 ? 3 : e[1] * 2}%`,
