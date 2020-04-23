@@ -11,14 +11,14 @@ module.exports = {
       xl: "1280px",
     },
     colors: {
-      primary: "#1129FF",
-      secondary: colors.white,
-
       transparent: "transparent",
 
       black: "#000",
       white: "#fff",
-
+      primary: "#8111FF",
+      secondary: "#C088FF",
+      tertiary: "#E6CFFF",
+      complimentary: "#F9F3FF",
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
@@ -26,7 +26,7 @@ module.exports = {
         400: "#cbd5e0",
         500: "#a0aec0",
         600: "#718096",
-        700: "#4a5568",
+        700: "#777777",
         800: "#2d3748",
         900: "#1a202c",
       },

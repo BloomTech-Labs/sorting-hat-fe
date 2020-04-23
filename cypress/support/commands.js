@@ -23,3 +23,31 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// takes the entire quiz
+Cypress.Commands.add("quiz", () => {
+  for (let i = 1; i <= 8; i++) {
+    cy.contains(`Question ${i}`);
+    cy.clickAnswer();
+    cy.clickNext();
+  }
+});
+
+Cypress.Commands.add("start", () => {
+  cy.visit("/");
+  cy.get('[cy="startBtn"]')
+    .contains(/start quiz/i)
+    .click();
+});
+
+Cypress.Commands.add("clickAnswer", () => {
+  cy.get(":nth-child(3) > .fira-sans").click();
+});
+
+Cypress.Commands.add("clickNext", () => {
+  cy.get("[cy='nextBtn']").click();
+});
+
+Cypress.Commands.add("clickBack", () => {
+  cy.get(".border-2").click();
+});
