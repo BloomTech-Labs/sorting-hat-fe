@@ -6,7 +6,6 @@ import Quiz from "./components/Quiz";
 import Results from "./components/Results";
 import About from "./components/About";
 import Courses from "./components/Courses";
-import Header from "./components/Header";
 
 function App() {
   return (

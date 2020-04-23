@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "tech-sorting-hat",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
     "react-particles-js": "^2.7.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
@@ -81,5 +82,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/Lambda-School-Labs/sorting-hat-fe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://www.sortinghat.tech/"
 }
