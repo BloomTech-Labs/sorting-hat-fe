@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Header from "./Header";
 
+
 // Redux
 import { connect } from "react-redux";
 
@@ -9,13 +10,12 @@ import { connect } from "react-redux";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import VideoPlaceholder from "../img/VideoPlaceholder.svg";
+// import CoursesButton from "../img/CoursesButton.svg";
 
 // BarGraph
 import BarGraph from "./BarGraph";
 import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 
-//View Courses Button
-import ViewCourses from "./buttons/viewCourses";
 
 //We need to have the endpoints from the backend
 
@@ -45,11 +45,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
     return <Redirect to="/" />;
   }
   return (
-    <div className="mr-8 ml-8 mt-16 lg:mt-32 text-xs md:text-lg lg:text-2xl">
+    <div className="mr-8 ml-8 mt-20 lg:mt-32 text-xs md:text-lg lg:text-2xl">
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
-        <section className="max-w-3xl m-10 border-black flex-column">
+        <section className="max-w-3xl mt-20 lg:m-10 border-black flex-column">
           <h2
             className={
               "noto-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
@@ -62,11 +62,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <p className={sectBodyStyle + "pb-16"}>
               We sorted you into these categories with your primary strengths in
               <span className="font-bold">
-                {"  "} {selectedTrack.name} .
-              </span>
+                {"  "} {selectedTrack.name}
+              </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
-            </p>
+            </p> 
           </div>
           <div className="flex justify-center text-lg questrial flex-column pb-16 lg:pb-32">
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
@@ -78,21 +78,16 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex border-b-2 justify-between align-baseline">
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
               <div className="pb-1">
-                <Link
-                  to="/courses"
-                  className="flex align-baseline justify-end bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg"
-                >
-                  <span className="flex items-center justify-end questrial text-sm lg:text-lg py-2">
-                    View Courses
-                  </span>
+
+                {/* <Link to="/courses"
+                  className="flex align-baseline justify-end">
                   <img
-                    src={ArrowWhiteR}
-                    alt="rightArrow"
-                    size="1.3rem"
-                    className="pl-4 m-1"
-                  />{" "}
-                </Link>
-                </div>
+                    src={CoursesButton}
+                    alt="testing"
+                  />
+                </Link> */}
+
+              </div>
             </div>
             <p className={sectBodyStyle + "pb-24"}>
               {selectedTrack.description}
@@ -137,7 +132,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     key={el.id}
                     className={"py-3 " + linkedStyle}
                     onClick={() => setSelectedTrack(el)}
-                    cy="trackLink"
+                    cy={`trackLink-${el.name}`}
                   >
                     {el.name}
                     <span className={"cursor-pointer" + linkedStyle}>
@@ -156,9 +151,10 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
               <Link
                 to="/quiz"
-                className={`border-2 border-purple-100 hover:border-purple-900 flex p-2 px-6 rounded-lg justify-center items-center`}
+                className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+                cy="retakeBtn"
               >
-                {/* class="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg */}
+                {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
                   src={ArrowPurpleL}
                   alt="leftArrow"
@@ -175,7 +171,8 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
               <Link
                 to="/courses"
-                className="flex align-baseline justify-between bg-purple-900 hover:bg-purple-100 text-white py-0.5 px-4 border border-purple-900 rounded-lg "
+                className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+                cy="coursesBtnB"
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses

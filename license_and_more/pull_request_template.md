@@ -19,8 +19,7 @@ Please delete options that are not relevant.
 
 # How Has This Been Tested?
 
-- [ ] Test A
-- [ ] Test B
+- [ ] E2E Cypress Tests on Quiz.spec.js, Landing.spec.js and Results.spec.js
 
 # Checklist
 

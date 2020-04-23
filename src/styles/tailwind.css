@@ -167,6 +167,12 @@
 
 /* Text Color */
 
+.highlightColor{
+  color: #F9F4FF
+}
+.highlightColor:hover{
+  color: #F9F4FF
+}
 .protoGray {
   color: #777777;
 }
@@ -177,11 +183,11 @@
 }
 
 .mark-select:hover + .mark:hover {
-  background: #f9f4ff;
+  background: #F9F4FF;
 }
 
 .mark-select:focus {
-  background: #f9f4ff;
+  background: #F9F4FF;
 }
 
 /* Selection Control / Checkbox / On / Enabled */
@@ -192,6 +198,8 @@
   left: 382px;
   top: 576px;
 }
+
+
 
 /* Checkbox */
 .checkbox {
@@ -235,6 +243,17 @@
 
   background: #dadada;
 }
+
+.coursesbtn {
+  background-color: #22283A;
+  color: #F6F7F8;
+  width: 27%;
+  font-size: 1rem;
+  padding: 7px;
+  text-align: center;
+  font-weight: bold;
+}
+
 
 /*Button About */
 /* .btnRound {
