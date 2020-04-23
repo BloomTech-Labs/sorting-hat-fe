@@ -81,5 +81,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/Lambda-School-Labs/sorting-hat-fe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://www.sortinghat.tech/"
 }

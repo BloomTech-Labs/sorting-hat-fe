@@ -41,7 +41,7 @@ function BarGraph({ scores, tracks, top, setTrack }) {
     </div>
   );
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     scores: state.scores,
     tracks: state.tracks,
