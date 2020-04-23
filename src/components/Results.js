@@ -49,7 +49,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
       <Header />
       {/*Results Body*/}
       <div className="flex items-center justify-center noto-sans">
-        <section className="max-w-3xl m-12 lg:m-10 border-black flex-column">
+        <section className="max-w-3xl mt-20 lg:m-10 border-black flex-column">
           <h2
             className={
               "noto-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
