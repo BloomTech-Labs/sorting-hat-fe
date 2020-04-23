@@ -2,8 +2,6 @@ describe("Results", () => {
   it("loads", () => {
     cy.start();
     cy.quiz();
-    // cy.clickAnswer();
-    // cy.clickNext();
     cy.url().should("contain", "/results");
   });
   it("Takes user back to start of quiz from Results", () => {
