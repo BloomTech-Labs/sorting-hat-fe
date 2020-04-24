@@ -38,5 +38,3 @@ jobs:
         env:
           # An environment variable, the value is a GitHub repo secret
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
-        with:
-          # Run our `coverage` command from our `package.json`
