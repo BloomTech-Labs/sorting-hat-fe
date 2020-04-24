@@ -26,10 +26,13 @@ jobs:
           node-version: "12"
 
       # Run the NPM install command before proceeding
+      - name: Install
       - run: yarn install
 
-      # A GitHub action for running tests and publishing coverage
-      - uses: paambaati/codeclimate-action@v2.4.0
-        env:
-          # Run our `coverage` command from our `package.json`
-          coverageCommand: yarn coverage
+      # A GitHub action for running tests
+      - name: Test
+      - run: yarn test
+
+      # A GitHub action for publishing coverage
+      - name: Coverage
+      - run: yarn coverage
