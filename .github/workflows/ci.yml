@@ -32,4 +32,4 @@ jobs:
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
           # Run our `coverage` command from our `package.json`
-          coverageCommand: yarn report:combined
+          coverageCommand: yarn coverage
