@@ -4,9 +4,20 @@
 
 @tailwind utilities;
 
-.shadowHeader {
-  box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13);
+
+/*Landing Header */
+.landingContainer{
+  width: 27rem;
 }
+
+/* Landing H2 */
+
+.landingh2 {
+  line-height: 3.7rem;
+}
+
+/*Hamburger Btn Behavior*/ 
+
 .hiddenHeader {
   transform: translateY(-110%);
   }

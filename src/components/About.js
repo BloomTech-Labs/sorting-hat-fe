@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import Header from "./Header";
+import styled from "styled-components";
+// import StyledButtons from "../buttons/styledButtons";
 
 // SVG Images
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";

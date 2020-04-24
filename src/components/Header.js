@@ -28,13 +28,14 @@ function Header(props) {
 		//history.location.pathname === "/quiz" ?
 
 		<div
-			className={
-				history.location.pathname === '/results' || 'about' ? (
-					`fixed bg-white w-full top-0 z-20  ${hiddenStyle} ease-in-out`
-				) : (
-						`bg-transparent w-full top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
-					)
-			}
+			className={`fixed bg-white w-full top-0 z-20 duration-1000 ${hiddenStyle} ease-in-out`}
+		// className={
+		// 	history.location.pathname === '/results' || 'about' ? (
+		// 		`fixed bg-white w-full top-0 z-20  ${hiddenStyle} ease-in-out`
+		// 	) : (
+		// 			`bg-transparent w-full top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
+		// 		)
+		// }
 		>
 			<nav
 

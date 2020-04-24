@@ -9,6 +9,16 @@ import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 //* Components
 import ProgressBar from "./ProgressBar";
 import Header from "./Header";
+import styled from "styled-components";
+// Styled Buttons Components
+import { GrayedNextBtn, BackBtn, SelectedNextBtn } from "./buttons/styledButtons";
+
+
+//Styled Button Components
+// import SelectedNextBtn from "../components/buttons/styledButtons";
+// import GrayedNextBtn from "../components/buttons/styledButtons";
+// import BackBtn from "../components/buttons/styledButtons";
+
 
 //* Checkbox Images
 import Frame from "../img/Frame.svg";
@@ -18,6 +28,7 @@ import UnCheckbox from "../img/UnCheckbox.svg";
 //SVG Images
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
+
 
 function Quiz(props) {
   //Setting State
@@ -234,40 +245,44 @@ function Quiz(props) {
             {/*Back Button
               If it isn't the first question, the back button says back and updates history.
               If it is the first question it redirects the user to landing page*/}
-            {curQuesIndex > 0 ? (
-              <button
-                onClick={handleBack}
-                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
-              >
-                <img
-                  src={ArrowPurpleL}
-                  alt="leftArrow"
-                  size="1.3rem"
-                  className="pr-4"
-                />
-                <span className="text-purple-100 text-lg">Back</span>
-              </button>
-            ) : (
+            {/* {curQuesIndex > 0 ? ( */}
+            <button
+              onClick={() => curQuesIndex > 0 ? handleBack() : props.history.push("/")}
+              // className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
+              style={BackBtn}
+            >
+              <img
+                src={ArrowPurpleL}
+                alt="leftArrow"
+                size="1.3rem"
+                className="pr-4"
+              />
+              <span className="text-purple-100 text-lg">{curQuesIndex > 0 ? "Back" : "Home"}</span>
+            </button>
+            {/* ) : (
                 <button
                   onClick={() => props.history.push("/")}
-                  className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
+                  // className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg justify-center items-center text-lg`}
+                  style={BackBtn}
                 >
                   <img
                     src={ArrowPurpleL}
                     alt="leftArrow"
                     size="1.3rem"
-                    className="pr-4 "
+                    className="pr-2"
                   />
                   <span className="text-purple-100 text-lg">Home</span>
                 </button>
-              )}
+              )} */}
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
             {/*Next Button*/}
+
             <button
               onClick={updateSelAnswers}
-              className={`questrial flex ${selAnswer ? 'bg-primary' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
+              className={`flex p-2 px-4 rounded-lg items-center`}
               cy="nextBtn"
+              style={GrayedNextBtn, { background: `${selAnswer ? "#7a11ff" : "#bd88ff"}` }}
             >
               <span className="pr-4 text-white text-lg">Next</span>
               <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
