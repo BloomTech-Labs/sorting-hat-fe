@@ -21,8 +21,6 @@ function BarGraph({ scores, tracks, top, setTrack }) {
               <p className="pt-1 questrial whitespace-no-wrap">
                 {tracks[i].name === "Full Stack" ? "Web" : tracks[i].name}
               </p>
-              {console.log("top.id", top.id, "e[0}", e[0])}
-
               <div
                 className={`h-56 border-solid border-primary rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
                   top.id === JSON.parse(e[0]) + 1
