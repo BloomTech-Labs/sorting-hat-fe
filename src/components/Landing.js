@@ -27,12 +27,7 @@ function Landing(props) {
     <div className="max-h-screen ">
       <Header />
       <ParticleTesting />
-      {/* // md:justify-center */}
-      {/* Make left aligned */}
-      {/*Make Hamburger aligned with button edge and line on mobile */}
-      {/*Make line height smaller on Landing for header*/}
       <div className="flex flex-row justify-center items-center">
-        {/*<section className="flex flex-col justify-between items-center lg:justify-center lg:items-center p-4 sm:m-auto lg:m-auto lg:w-1/2 xl:w-1/4 sm:w-1/3 h-screen lg:h-auto"> */}
         <section className="flex flex-col justify-between items-center lg:justify-center lg:items-center p-4 sm:m-auto lg:m-auto h-screen lg:h-auto landingContainer">
           <div>
             <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold border-b-4 border-tertiary lg:text-5xl fira sans mt-56 landingh2">
@@ -54,10 +49,6 @@ function Landing(props) {
           </div>
         </section>
       </div>
-      {/* <section className="bg-white w-full xl:hidden">
-        <About />
-      </section> */}
-      {/* </section> */}
     </div>
   );
 }

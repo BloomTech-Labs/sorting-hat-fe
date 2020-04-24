@@ -186,33 +186,6 @@ function Quiz(props) {
       </div>
     </button>
   );
-  // const answerButton = (answer, index) => (
-  //   <div
-  //     key={`div-${index}`}
-  //     className="flex items-center justify-start w-full mt-1 fira-sans mb-5"
-  //   >
-  //     {/* Changes based off of whether it is selected or not.
-  // 		Checkbox contains the id of the current selected answer.
-  // 		If the current question matches the id stored as checkbox, a
-  // 		checkbox is displayed.
-  // 		*/}
-  //     <img src={checkBoxButton(answer, index)} alt="checkbox" />
-  //     <button
-  //       key={index}
-  //       onClick={() => {
-  //         setSelAnswer(answer);
-  //         setBtnColor("primary");
-  //       }}
-  //       className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
-  //       // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-  //       //   answer,
-  //       //   index
-  //       // )}`}
-  //     >
-  //       {answer.choice}
-  //     </button>
-  //   </div>
-  // );
   return (
 
     <div className="mr-8 ml-8">
@@ -241,14 +214,13 @@ function Quiz(props) {
                 answerButton(answer, index)
             )}
           </div>
+          {/*  */}
           <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
             {/*Back Button
               If it isn't the first question, the back button says back and updates history.
               If it is the first question it redirects the user to landing page*/}
-            {/* {curQuesIndex > 0 ? ( */}
             <button
               onClick={() => curQuesIndex > 0 ? handleBack() : props.history.push("/")}
-              // className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
               style={BackBtn}
             >
               <img
@@ -259,33 +231,28 @@ function Quiz(props) {
               />
               <span className="text-purple-100 text-lg">{curQuesIndex > 0 ? "Back" : "Home"}</span>
             </button>
-            {/* ) : (
-                <button
-                  onClick={() => props.history.push("/")}
-                  // className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg justify-center items-center text-lg`}
-                  style={BackBtn}
-                >
-                  <img
-                    src={ArrowPurpleL}
-                    alt="leftArrow"
-                    size="1.3rem"
-                    className="pr-2"
-                  />
-                  <span className="text-purple-100 text-lg">Home</span>
-                </button>
-              )} */}
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
             {/*Next Button*/}
 
             <button
               onClick={updateSelAnswers}
-              className={`flex p-2 px-4 rounded-lg items-center`}
               cy="nextBtn"
-              style={GrayedNextBtn, { background: `${selAnswer ? "#7a11ff" : "#bd88ff"}` }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontFamily: "questrial",
+                border: "1px solid",
+                borderRadius: "10px",
+                width: "96px",
+                height: "36px",
+                color: "white",
+                background: `${selAnswer ? "#7a11ff" : "#bd88ff"}`
+              }}
             >
-              <span className="pr-4 text-white text-lg">Next</span>
-              <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
+              <span className="text-white text-lg">Next</span>
+              <img className="pl-4" src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
             </button>
           </div>
         </div>

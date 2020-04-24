@@ -18,19 +18,18 @@ const ViewCoursesBtn = {
   borderRadius: "10px",
   width: "167px",
   height: "36px",
-  color: "white"
+  color: "#FFFFFF"
 }
 
-// This hover color needs to be worked on to apply to the whole button in the same manner as quiz
 const TakeQuizBtn = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   fontFamily: "questrial",
-  background: "white",
+  background: "#FFFFF",
   border: "1px solid",
   borderRadius: "10px",
-  width: "141px",
+  width: "167px",
   height: "36px",
   color: "#bd88ff"
 }
@@ -45,12 +44,9 @@ const SelectedNextBtn = {
   borderRadius: "10px",
   width: "96px",
   height: "36px",
-  color: "white",
-
+  color: "#FFFFFF",
 }
 
-
-// This background needs to be 50% transparency
 const GrayedNextBtn = {
   display: "flex",
   justifyContent: "center",
@@ -61,23 +57,21 @@ const GrayedNextBtn = {
   borderRadius: "10px",
   width: "96px",
   height: "36px",
-  color: "white"
+  color: "#FFFFFF"
 }
-
 
 const BackBtn = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   fontFamily: "questrial",
-  background: "white",
+  background: "#FFFFFF",
   border: "1px solid",
   borderRadius: "10px",
   width: "96px",
   height: "36px",
   color: "#BD88FF"
 }
-
 
 const StyledButtons = () => {
   return (

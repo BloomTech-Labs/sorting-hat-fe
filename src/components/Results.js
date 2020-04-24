@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import Header from "./Header";
 
 
@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import VideoPlaceholder from "../img/VideoPlaceholder.svg";
-// import CoursesButton from "../img/CoursesButton.svg";
+import { ViewCoursesBtn, TakeQuizBtn } from "./buttons/styledButtons";
 
 // BarGraph
 import BarGraph from "./BarGraph";
@@ -22,6 +22,7 @@ import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 function Results({ scores, tracks, setSelectedAnswers }) {
   const [selectedTrack, setSelectedTrack] = useState({});
 
+  let history = useHistory();
   const sectHeadStyle = " fira-sans text-2xl lg:text-3xl ";
   const sectBodyStyle = " py-3 protoGray noto-sans text-base lg:text-lg ";
   const sectDivider = " border-b-2 pb-1";
@@ -66,7 +67,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               </span>.
               Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
-            </p> 
+            </p>
           </div>
           <div className="flex justify-center text-lg questrial flex-column pb-16 lg:pb-32">
             <BarGraph top={selectedTrack} setTrack={setSelectedTrack} />
@@ -77,7 +78,23 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           <div>
             <div className="flex border-b-2 justify-between align-baseline">
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
-              <div className="pb-1">
+              <div>
+                <button
+                  onClick={() => history.push('/courses')}
+                  // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+                  cy="coursesBtnB"
+                  style={ViewCoursesBtn}
+                >
+                  <span className="flex items-center justify-end questrial text-sm lg:text-lg">
+                    View Courses
+                </span>
+                  <img
+                    src={ArrowWhiteR}
+                    alt="rightArrow"
+                    size="1.3rem"
+                    className="pl-4 m-1"
+                  />{" "}
+                </button>
 
                 {/* <Link to="/courses"
                   className="flex align-baseline justify-end">
@@ -106,17 +123,19 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           <div className="flex-col items-center justify-center noto-sans">
             <h2 className={sectHeadStyle}>Learn More</h2>
             <div className="flex justify-center py-2 pb-24">
-              <img src={VideoPlaceholder} className="w-full" />
+              {/* <img src={VideoPlaceholder} alt="course information video" className="w-full" /> */}
               {/* <VideoPlaceholder /> */}
-              {/* <iframe
+              <iframe
+                title="Relevant course information"
                 width="100%"
-                height="315"
+                height="420"
+                alt="promotional video"
                 src={selectedTrack.link}
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-              ></iframe> */}
-
+              ></iframe>
+              {/* <VideoPlaceholder /> */}
               {/* {selectedTrack. ? trackInfo.trackVideo : } */}
             </div>
           </div>
@@ -149,10 +168,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
 
           <section className="flex flex-row justify-between  pt- 16 lg:pt-32">
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
-              <Link
-                to="/quiz"
-                className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+              <button
+                onClick={() => history.push('/quiz')}
+                //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
                 cy="retakeBtn"
+                style={TakeQuizBtn}
               >
                 {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
@@ -164,15 +184,16 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 <span className="text-purple-100 questrial text-sm lg:text-lg">
                   Retake Quiz
                 </span>
-              </Link>
+              </button>
             </div>
 
             {/* <ViewCourses /> */}
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
-              <Link
-                to="/courses"
-                className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+              <button
+                onClick={() => history.push('/courses')}
+                // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                 cy="coursesBtnB"
+                style={ViewCoursesBtn}
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses
@@ -183,7 +204,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                   size="1.3rem"
                   className="pl-4 m-1"
                 />{" "}
-              </Link>
+              </button>
             </div>
           </section>
         </section>

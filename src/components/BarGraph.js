@@ -1,5 +1,4 @@
 
-
 //Previous version
 import React from "react";
 import { connect } from "react-redux";
@@ -67,7 +66,7 @@ export default withRouter(connect(mapStateToProps, {})(BarGraph));
 //                 className="flex flex-col-reverse items-center justify-start w-full h-full m-auto rounded-lg "
 //               >
 //                 {console.log(`bar-${tracks[i].name}`)}
-                
+
 //                 <div
 
 //                   className="flex flex-col-reverse w-1/2 h-full text-center justify-baseline"
