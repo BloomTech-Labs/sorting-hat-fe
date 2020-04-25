@@ -62,7 +62,7 @@
 		"precombine:reports": "yarn copy:reports && mkdir .nyc_output || true",
 		"combine:reports": "npx nyc merge reports && mv coverage.json .nyc_output/out.json",
 		"prereport:combined": "yarn combine:reports",
-		"coverage": "npx nyc report --reporter lcov --reporter text --report-dir coverage/combined",
+		"report:combined": "npx nyc report --reporter lcov --reporter text --report-dir coverage/combined",
 		"postreport:combined": "cp coverage/combined/lcov-report/index.html reports/combined.html"
 	},
 	"nyc": {

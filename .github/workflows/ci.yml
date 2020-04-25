@@ -20,5 +20,5 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
       with:
-        coverageCommand: yarn coverage
+        coverageCommand: yarn report:combined
         debug: true
