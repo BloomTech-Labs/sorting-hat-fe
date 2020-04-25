@@ -8,7 +8,6 @@ on: [push, pull_request]
 # The jobs that will be run, usually in parallel
 jobs:
   coverage:
-    needs: [ test ]
     name: coverage
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +15,6 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: '12'
-    - run: npm install -g yarn
     - run: yarn install
     - run: yarn build
     - uses: paambaati/codeclimate-action@v2.5.7
