@@ -17,17 +17,6 @@ jobs:
 
     # The steps for the job, executed in sequence
     steps:
-      # A GitHub action for checking out the current branch
-      - uses: actions/checkout@master
-
-      # A GitHub action to setup Node.js
-      - uses: actions/setup-node@master
-        with:
-          node-version: "12"
-
-      # Run the NPM install command before proceeding
-      - run: yarn install
-
       # A GitHub action for running tests and publishing coverage
       - name: Code Climate Coverage Action
       - uses: paambaati/codeclimate-action@v2.6.0
