@@ -29,13 +29,11 @@ jobs:
       - run: yarn install
 
       # A GitHub action for running tests and publishing coverage
-      - uses: paambaati/codeclimate-action@v2.4.0
+      - name: Code Climate Coverage Action
+      - uses: paambaati/codeclimate-action@v2.6.0
         env:
           # An environment variable, the value is a GitHub repo secret
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
-
-      - run: ./cc-test-reporter before-build
-      - run: yarn coverage
-      - run: ./cc-test-reporter format-coverage
-      - run: ./cc-test-reporter sum-coverage
-      - run: ./cc-test-reporter upload-coverage
+        with:
+          coverageCommand: yarn coverage
+          debug: true
