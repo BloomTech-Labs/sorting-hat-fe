@@ -16,6 +16,7 @@ jobs:
       with:
         node-version: '12'
     - run: yarn install
+    - run: yarn test
     - uses: paambaati/codeclimate-action@v2.5.7
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
