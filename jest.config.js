@@ -37,6 +37,7 @@ module.exports = {
   //   "lcov",
   //   "clover"
   // ],
+  coverageReporters: [['lcov', { projectRoot: '..' }]],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
