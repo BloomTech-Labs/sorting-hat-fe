@@ -9,16 +9,13 @@ import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 //* Components
 import ProgressBar from "./ProgressBar";
 import Header from "./Header";
-import styled from "styled-components";
+
 // Styled Buttons Components
-import { GrayedNextBtn, BackBtn, SelectedNextBtn } from "./buttons/styledButtons";
-
-
-//Styled Button Components
-// import SelectedNextBtn from "../components/buttons/styledButtons";
-// import GrayedNextBtn from "../components/buttons/styledButtons";
-// import BackBtn from "../components/buttons/styledButtons";
-
+import {
+  GrayedNextBtn,
+  BackBtn,
+  SelectedNextBtn,
+} from "./buttons/styledButtons";
 
 //* Checkbox Images
 import Frame from "../img/Frame.svg";
@@ -28,7 +25,6 @@ import UnCheckbox from "../img/UnCheckbox.svg";
 //SVG Images
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
-
 
 function Quiz(props) {
   //Setting State
@@ -161,7 +157,7 @@ function Quiz(props) {
   const answerButton = (answer, index) => (
     <button
       key={`div-${index}`}
-      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5 hover:bg-complimentary"
+      className="ansBtn flex items-center justify-start w-full mt-1 pl-4 fira-sans mb-5 hover:bg-complimentary"
       cy={`answer-${index}`}
       onClick={() => {
         setSelAnswer(answer);
@@ -177,17 +173,16 @@ function Quiz(props) {
       <div
         key={index}
         className={`fira-sans mark w-full p-1 ml-2 text-left`}
-      // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-      //   answer,
-      //   index
-      // )}`}
+        // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+        //   answer,
+        //   index
+        // )}`}
       >
         {answer.choice}
       </div>
     </button>
   );
   return (
-
     <div className="mr-8 ml-8">
       <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
         <Header />
@@ -220,7 +215,9 @@ function Quiz(props) {
               If it isn't the first question, the back button says back and updates history.
               If it is the first question it redirects the user to landing page*/}
             <button
-              onClick={() => curQuesIndex > 0 ? handleBack() : props.history.push("/")}
+              onClick={() =>
+                curQuesIndex > 0 ? handleBack() : props.history.push("/")
+              }
               style={BackBtn}
             >
               <img
@@ -229,7 +226,9 @@ function Quiz(props) {
                 size="1.3rem"
                 className="pr-4"
               />
-              <span className="text-purple-100 text-lg">{curQuesIndex > 0 ? "Back" : "Home"}</span>
+              <span className="text-purple-100 text-lg">
+                {curQuesIndex > 0 ? "Back" : "Home"}
+              </span>
             </button>
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
@@ -248,11 +247,16 @@ function Quiz(props) {
                 width: "96px",
                 height: "36px",
                 color: "white",
-                background: `${selAnswer ? "#7a11ff" : "#bd88ff"}`
+                background: `${selAnswer ? "#7a11ff" : "#bd88ff"}`,
               }}
             >
               <span className="text-white text-lg">Next</span>
-              <img className="pl-4" src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
+              <img
+                className="pl-4"
+                src={ArrowWhiteR}
+                alt="rightArrow"
+                size="1.3rem"
+              />
             </button>
           </div>
         </div>

@@ -4,9 +4,8 @@
 
 @tailwind utilities;
 
-
 /*Landing Header */
-.landingContainer{
+.landingContainer {
   width: 27rem;
 }
 
@@ -16,11 +15,11 @@
   line-height: 3.7rem;
 }
 
-/*Hamburger Btn Behavior*/ 
+/*Hamburger Btn Behavior*/
 
 .hiddenHeader {
   transform: translateY(-110%);
-  }
+}
 .fadeOut {
   visibility: hidden;
   opacity: 0;
@@ -135,6 +134,8 @@
   z-index: -1;
 }
 
+/* Colors */
+
 .halfOpacityPurple {
   color: rgba(122, 17, 255, 0.5);
   opacity: 0.5;
@@ -153,7 +154,7 @@
   text-decoration: underline;
 }
 
-/* Fonts ↓ */
+/* Fonts */
 .questrial {
   font-family: "Questrial", sans-serif;
 }
@@ -178,11 +179,11 @@
 
 /* Text Color */
 
-.highlightColor{
-  color: #F9F4FF
+.highlightColor {
+  color: #f9f4ff;
 }
-.highlightColor:hover{
-  color: #F9F4FF
+.highlightColor:hover {
+  color: #f9f4ff;
 }
 .protoGray {
   color: #777777;
@@ -194,11 +195,11 @@
 }
 
 .mark-select:hover + .mark:hover {
-  background: #F9F4FF;
+  background: #f9f4ff;
 }
 
 .mark-select:focus {
-  background: #F9F4FF;
+  background: #f9f4ff;
 }
 
 /* Selection Control / Checkbox / On / Enabled */
@@ -209,8 +210,6 @@
   left: 382px;
   top: 576px;
 }
-
-
 
 /* Checkbox */
 .checkbox {
@@ -256,15 +255,14 @@
 }
 
 .coursesbtn {
-  background-color: #22283A;
-  color: #F6F7F8;
+  background-color: #22283a;
+  color: #f6f7f8;
   width: 27%;
   font-size: 1rem;
   padding: 7px;
   text-align: center;
   font-weight: bold;
 }
-
 
 /*Button About */
 /* .btnRound {

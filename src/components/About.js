@@ -2,11 +2,11 @@ import React from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import Header from "./Header";
 import styled from "styled-components";
-// import StyledButtons from "../buttons/styledButtons";
 
 // SVG Images
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
+import { ViewCoursesBtn, TakeQuizBtn } from "./buttons/styledButtons";
 
 const About = (props) => {
   const { history } = props;
@@ -46,7 +46,7 @@ const About = (props) => {
             <h2 className="mb-1 text-2xl lg:text-5xl text-black border-b-2 fira-sans  ">
               How
             </h2>
-            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-32 leading-loose protoGray noto-sans">
+            <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 leading-loose protoGray noto-sans">
               We surveyed 70 current tech students, interviewed 13 tech
               students, and 2 tech instructors. We discovered that all tracks in
               the tech field are extremely similar, but subtle differences
@@ -58,11 +58,13 @@ const About = (props) => {
             </p>
           </section>
 
-          <section className="flex flex-row justify-between">
-            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5">
-              <Link
-                to="/quiz"
-                className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+          <section className="flex flex-row justify-between  pt- 16 lg:pt-32">
+            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
+              <button
+                onClick={() => history.push("/quiz")}
+                //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
+                cy="retakeBtn"
+                style={TakeQuizBtn}
               >
                 {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
@@ -74,12 +76,16 @@ const About = (props) => {
                 <span className="text-purple-100 questrial text-sm lg:text-lg">
                   Take Quiz
                 </span>
-              </Link>
+              </button>
             </div>
-            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5">
-              <Link
-                to="/courses"
-                className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-1 px-4 border border-primary rounded-lg "
+
+            {/* <ViewCourses /> */}
+            <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
+              <button
+                onClick={() => history.push("/courses")}
+                // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
+                cy="coursesBtnB"
+                style={ViewCoursesBtn}
               >
                 <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses
@@ -88,9 +94,9 @@ const About = (props) => {
                   src={ArrowWhiteR}
                   alt="rightArrow"
                   size="1.3rem"
-                  className="ml-4"
-                />
-              </Link>
+                  className="pl-4 m-1"
+                />{" "}
+              </button>
             </div>
           </section>
         </div>

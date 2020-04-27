@@ -13,11 +13,13 @@ module.exports = {
     colors: {
       transparent: "transparent",
       black: "#1B212C",
+      secondaryText: "#757575",
       white: "#FFFFFF",
       primary: "#8111FF",
       secondary: "#C088FF",
       tertiary: "#E6CFFF",
       complimentary: "#F9F3FF",
+      chartGray: "#4d4d4d",
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",

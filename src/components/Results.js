@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import Header from "./Header";
-
 
 // Redux
 import { connect } from "react-redux";
@@ -9,13 +8,11 @@ import { connect } from "react-redux";
 //SVG Images
 import ArrowWhiteR from "../img/ArrowWhiteR.svg";
 import ArrowPurpleL from "../img/ArrowPurpleL.svg";
-import VideoPlaceholder from "../img/VideoPlaceholder.svg";
 import { ViewCoursesBtn, TakeQuizBtn } from "./buttons/styledButtons";
 
 // BarGraph
 import BarGraph from "./BarGraph";
 import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
-
 
 //We need to have the endpoints from the backend
 
@@ -64,8 +61,8 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               We sorted you into these categories with your primary strengths in
               <span className="font-bold">
                 {"  "} {selectedTrack.name}
-              </span>.
-              Take this into consideration all tracks and percentages, and
+              </span>
+              . Take this into consideration all tracks and percentages, and
               remember this is just a quiz. Follow your heart.
             </p>
           </div>
@@ -80,14 +77,14 @@ function Results({ scores, tracks, setSelectedAnswers }) {
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
               <div>
                 <button
-                  onClick={() => history.push('/courses')}
+                  onClick={() => history.push("/courses")}
                   // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                   cy="coursesBtnB"
                   style={ViewCoursesBtn}
                 >
                   <span className="flex items-center justify-end questrial text-sm lg:text-lg">
                     View Courses
-                </span>
+                  </span>
                   <img
                     src={ArrowWhiteR}
                     alt="rightArrow"
@@ -103,7 +100,6 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     alt="testing"
                   />
                 </Link> */}
-
               </div>
             </div>
             <p className={sectBodyStyle + "pb-24"}>
@@ -169,7 +165,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           <section className="flex flex-row justify-between  pt- 16 lg:pt-32">
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
               <button
-                onClick={() => history.push('/quiz')}
+                onClick={() => history.push("/quiz")}
                 //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
                 cy="retakeBtn"
                 style={TakeQuizBtn}
@@ -190,7 +186,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             {/* <ViewCourses /> */}
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
               <button
-                onClick={() => history.push('/courses')}
+                onClick={() => history.push("/courses")}
                 // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                 cy="coursesBtnB"
                 style={ViewCoursesBtn}

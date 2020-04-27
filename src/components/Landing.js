@@ -30,7 +30,7 @@ function Landing(props) {
       <div className="flex flex-row justify-center items-center">
         <section className="flex flex-col justify-between items-center lg:justify-center lg:items-center p-4 sm:m-auto lg:m-auto h-screen lg:h-auto landingContainer">
           <div>
-            <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold border-b-4 border-tertiary lg:text-5xl fira sans mt-56 landingh2">
+            <h2 className="z-10 pt-2 pb-2 mb-1 text-4xl font-bold border-b-4 border-tertiary lg:text-5xl fira sans mt-56 landingh2 bg-red">
               Discover the Tech Career for You
             </h2>
             <p className="protoGray pt-6 text:xl lg:text-2xl fira-sans">
