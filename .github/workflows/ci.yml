@@ -25,9 +25,14 @@ jobs:
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       - run: chmod +x ./cc-test-reporter
       - run: ./cc-test-reporter before-build
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - run: yarn test
+      # run jest test
+      - uses: stefanoeb/jest-action@1.0.2
+      - run: yarn test:jest
+      # run cypress test
+        uses: cypress-io/github-action@v1
+      - uses: actions/checkout@v1
+      - run: yarn test:cy
+      # cc-test-reporter builds
       - run: ./cc-test-reporter format-coverage
       - run: ./cc-test-reporter sum-coverage
       - run: ./cc-test-reporter upload-coverage
