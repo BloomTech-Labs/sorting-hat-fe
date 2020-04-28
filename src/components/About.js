@@ -80,7 +80,7 @@ const About = (props) => {
             </div>
 
             {/* <ViewCourses /> */}
-            <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
+            <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5 hidden">
               <button
                 onClick={() => history.push("/courses")}
                 // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "

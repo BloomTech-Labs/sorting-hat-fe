@@ -12154,7 +12154,7 @@ video {
 /*Hamburger Btn Behavior*/
 
 .hiddenHeader {
-  transform: translateY(-110%);
+  transform: translateX(-110%);
 }
 
 .fadeOut {

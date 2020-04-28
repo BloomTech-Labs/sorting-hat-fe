@@ -76,13 +76,13 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex border-b-2 justify-between align-baseline">
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
               <div>
-                <button
+                {/* <button
                   onClick={() => history.push("/courses")}
                   // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                   cy="coursesBtnB"
                   style={ViewCoursesBtn}
                 >
-                  <span className="flex items-center justify-end questrial text-sm lg:text-lg">
+                  <span className="hidden flex items-center justify-end questrial text-sm lg:text-lg">
                     View Courses
                   </span>
                   <img
@@ -91,7 +91,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                     size="1.3rem"
                     className="pl-4 m-1"
                   />{" "}
-                </button>
+                </button> */}
 
                 {/* <Link to="/courses"
                   className="flex align-baseline justify-end">
@@ -184,14 +184,14 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             </div>
 
             {/* <ViewCourses /> */}
-            <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
+            <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5 hidden">
               <button
                 onClick={() => history.push("/courses")}
                 // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                 cy="coursesBtnB"
                 style={ViewCoursesBtn}
               >
-                <span className="flex items-center justify-end questrial text-sm lg:text-lg">
+                <span className=" hidden flex items-center justify-end questrial text-sm lg:text-lg">
                   View Courses
                 </span>
                 <img
