@@ -21,10 +21,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
 
   let history = useHistory();
   const sectHeadStyle = " fira-sans text-2xl lg:text-3xl ";
-  const sectBodyStyle = " py-3 protoGray noto-sans text-base lg:text-lg ";
+  const sectBodyStyle =
+    " py-3 protoGray open-sans text-base lg:text-lg leading-loose ";
   const sectDivider = " border-b-2 pb-1";
   const linkedStyle =
-    " hover:underline newBorderColor no-underline text-sm lg:text-lg noto-sans ";
+    " hover:underline newBorderColor no-underline text-sm lg:text-lg open-sans ";
 
   useEffect(() => {
     let highest = { track: null, score: 0 };
@@ -46,11 +47,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
     <div className="mr-8 ml-8 mt-20 lg:mt-32 text-xs md:text-lg lg:text-2xl">
       <Header />
       {/*Results Body*/}
-      <div className="flex items-center justify-center noto-sans">
+      <div className="flex items-center justify-center open-sans">
         <section className="max-w-3xl mt-20 lg:m-10 border-black flex-column">
           <h2
             className={
-              "noto-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
+              "open-sans font-bold text-black text-2xl lg:text-3xl text-left align-bottom" +
               sectDivider
             }
           >
@@ -116,7 +117,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
 
             <p className={sectBodyStyle + "pb-24"}>{selectedTrack.strengths}</p>
           </div>
-          <div className="flex-col items-center justify-center noto-sans">
+          <div className="flex-col items-center justify-center open-sans">
             <h2 className={sectHeadStyle}>Learn More</h2>
             <div className="flex justify-center py-2 pb-24">
               {/* <img src={VideoPlaceholder} alt="course information video" className="w-full" /> */}
@@ -177,7 +178,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                   size="1.3rem"
                   className="pr-4 m-1"
                 />
-                <span className="text-purple-100 questrial text-sm lg:text-lg">
+                <span className="text-purple-100 open-sans text-sm lg:text-lg">
                   Retake Quiz
                 </span>
               </button>
@@ -191,7 +192,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 cy="coursesBtnB"
                 style={ViewCoursesBtn}
               >
-                <span className=" hidden flex items-center justify-end questrial text-sm lg:text-lg">
+                <span className=" hidden flex items-center justify-end open-sans text-sm lg:text-lg">
                   View Courses
                 </span>
                 <img

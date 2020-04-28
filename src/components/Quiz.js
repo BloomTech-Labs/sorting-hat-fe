@@ -81,16 +81,6 @@ function Quiz(props) {
 
   //Scores are being updated based off of user selections
 
-  window.document.addEventListener("keydown", function (e) {
-    // console.log('e.key:', e);
-    // shortcut is implemented for enter and tab key
-    if (e.keyCode === 9 || 13 || 32) {
-      updateSelAnswers();
-    }
-  });
-
-  //Scores are being updated based off of user selections
-
   const updateSelAnswers = () => {
     //This action updates the score based on points associated with the tracks
     const existingNextAns = questionAnswers.find(
@@ -157,7 +147,7 @@ function Quiz(props) {
   const answerButton = (answer, index) => (
     <button
       key={`div-${index}`}
-      className="ansBtn flex items-center justify-start w-full mt-1 pl-4 fira-sans mb-5 hover:bg-complimentary"
+      className="ansBtn flex items-center justify-start w-full mt-1 pl-4 open-sans mb-5 hover:bg-complimentary"
       cy={`answer-${index}`}
       onClick={() => {
         setSelAnswer(answer);
@@ -172,8 +162,8 @@ function Quiz(props) {
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
       <div
         key={index}
-        className={`fira-sans mark w-full p-1 ml-2 text-left`}
-        // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+        className={`open-sans mark w-full p-1 ml-2 text-left`}
+        // className={`open-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
         //   answer,
         //   index
         // )}`}
@@ -190,16 +180,16 @@ function Quiz(props) {
 
         <div className="lg:w-1/2 p-2 mt-10 w-full">
           {/*Current Question number*/}
-          <h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
+          <h1 className="pt-4 mt-2 open-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
             Question {curQuesIndex + 1}
           </h1>
           <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 
           {/*Question Text*/}
-          <h1 className="mt-2 text-black lg:text-black fira-sans" cy="question">
+          <h1 className="mt-2 text-black lg:text-black open-sans" cy="question">
             {questions[curQuesIndex].question}
           </h1>
-          <p className="text-xs text-gray-700 italic">Select one</p>
+          <p className="text-xs text-gray-700 italic open-sans">Select one</p>
 
           {/*Answers to the Questions*/}
           <div className="flex flex-col w-full mt-4 mb-2 py-5 text-sm lg:text-lg">
@@ -210,7 +200,7 @@ function Quiz(props) {
             )}
           </div>
           {/*  */}
-          <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
+          <div className="flex items-center justify-between m-auto mt-10 mb-16 open-sans actions">
             {/*Back Button
               If it isn't the first question, the back button says back and updates history.
               If it is the first question it redirects the user to landing page*/}
@@ -226,7 +216,7 @@ function Quiz(props) {
                 size="1.3rem"
                 className="pr-4"
               />
-              <span className="text-purple-100 text-lg">
+              <span className="open-sans text-purple-100 text-lg">
                 {curQuesIndex > 0 ? "Back" : "Home"}
               </span>
             </button>
@@ -241,7 +231,7 @@ function Quiz(props) {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontFamily: "questrial",
+                fontFamily: "open-sans",
                 border: "1px solid",
                 borderRadius: "10px",
                 width: "96px",
@@ -250,7 +240,7 @@ function Quiz(props) {
                 background: `${selAnswer ? "#7a11ff" : "#bd88ff"}`,
               }}
             >
-              <span className="text-white text-lg">Next</span>
+              <span className="text-white text-lg open-sans">Next</span>
               <img
                 className="pl-4"
                 src={ArrowWhiteR}
