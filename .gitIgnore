@@ -29,3 +29,5 @@ videos/
 node_modules/
 .nyc_output
 cypress/videos
+.env
+screenshots/

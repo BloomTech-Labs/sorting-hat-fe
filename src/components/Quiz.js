@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
+import ReactGA from 'react-ga';
 
 //* Redux
 import { connect } from "react-redux";
@@ -116,6 +117,10 @@ function Quiz(props) {
   function handleBack() {
     setCurQuesIndex(curQuesIndex - 1);
     setBtnColor("primary");
+    ReactGA.event({
+      category: 'Back',
+      action: 'User clicked the back button'
+    });
     setSelAnswer(
       questionAnswers.find(
         (answer) => answer.question_id + 1 === questions[curQuesIndex].id

@@ -30,6 +30,7 @@ Cypress.Commands.add("quiz", () => {
     cy.contains(`Question ${i}`);
     cy.clickAnswer();
     cy.clickNext();
+    cy.getStore();
   }
 });
 
@@ -50,4 +51,11 @@ Cypress.Commands.add("clickNext", () => {
 
 Cypress.Commands.add("clickBack", () => {
   cy.get(".border-2").click();
+});
+
+Cypress.Commands.add("getStore", () => {
+  cy.window()
+    .its("store")
+    .invoke("getState")
+    .then((store) => console.log(store));
 });
