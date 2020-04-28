@@ -16,12 +16,11 @@ function BarGraph({ scores, tracks, top, setTrack }) {
             <div
               className="flex flex-col-reverse w-3/4 lg:w-1/2 h-full text-center justify-baseline cursor-pointer"
               onClick={() => setTrack(tracks[i])}
+              cy={`bar-${tracks[i].name}`}
             >
               <p className="pt-1 open-sans whitespace-no-wrap">
                 {tracks[i].name === "Full Stack" ? "Web" : tracks[i].name}
               </p>
-              {console.log("top.id", top.id, "e[0}", e[0])}
-
               <div
                 className={`h-56 border-solid border-primary rounded-lg duration-1000 w-full ease-in-out flex justify-center ${
                   top.id === JSON.parse(e[0]) + 1

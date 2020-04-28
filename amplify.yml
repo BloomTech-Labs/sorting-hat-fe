@@ -4,11 +4,12 @@ frontend:
     preBuild:
       commands:
         # Temporarily delete node_modules before building
-        - rm -rf node_modules
+        # - rm -rf node_modules
         - yarn install
+        # - amplifyPush --simple
+
     build:
       commands:
-        - yarn test
         - yarn run build
   artifacts:
     baseDirectory: build

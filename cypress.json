@@ -1,2 +1,5 @@
-
-{ "baseUrl": "process.env.REACT_APP_BASE_URL", "video": false }
+{
+  "baseUrl": "https://sortinghat.tech",
+  "video": false,
+  "projectId": "x3o9wv"
+}
