@@ -11,6 +11,13 @@ import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 import ProgressBar from "./ProgressBar";
 import Header from "./Header";
 
+// Styled Buttons Components
+import {
+  GrayedNextBtn,
+  BackBtn,
+  SelectedNextBtn,
+} from "./buttons/styledButtons";
+
 //* Checkbox Images
 import Frame from "../img/Frame.svg";
 import Checkbox from "../img/Checkbox.svg";
@@ -72,16 +79,6 @@ function Quiz(props) {
     setScores(totalScores);
     return <Redirect to="/results" />;
   }
-
-  //Scores are being updated based off of user selections
-
-  window.document.addEventListener("keydown", function (e) {
-    // console.log('e.key:', e);
-    // shortcut is implemented for enter and tab key
-    if (e.keyCode === 9 || 13 || 32) {
-      updateSelAnswers();
-    }
-  });
 
   //Scores are being updated based off of user selections
 
@@ -155,7 +152,7 @@ function Quiz(props) {
   const answerButton = (answer, index) => (
     <button
       key={`div-${index}`}
-      className="ansBtn flex items-center justify-start w-full mt-1 fira-sans mb-5 hover:bg-complimentary"
+      className="ansBtn flex items-center justify-start w-full mt-1 pl-4 open-sans mb-5 hover:bg-complimentary"
       cy={`answer-${index}`}
       onClick={() => {
         setSelAnswer(answer);
@@ -170,45 +167,17 @@ function Quiz(props) {
       <img src={checkBoxButton(answer, index)} alt="checkbox" />
       <div
         key={index}
-        className={`fira-sans mark w-full p-1 ml-2 text-left`}
-      // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-      //   answer,
-      //   index
-      // )}`}
+        className={`open-sans mark w-full p-1 ml-2 text-left`}
+        // className={`open-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
+        //   answer,
+        //   index
+        // )}`}
       >
         {answer.choice}
       </div>
     </button>
   );
-  // const answerButton = (answer, index) => (
-  //   <div
-  //     key={`div-${index}`}
-  //     className="flex items-center justify-start w-full mt-1 fira-sans mb-5"
-  //   >
-  //     {/* Changes based off of whether it is selected or not.
-  // 		Checkbox contains the id of the current selected answer.
-  // 		If the current question matches the id stored as checkbox, a
-  // 		checkbox is displayed.
-  // 		*/}
-  //     <img src={checkBoxButton(answer, index)} alt="checkbox" />
-  //     <button
-  //       key={index}
-  //       onClick={() => {
-  //         setSelAnswer(answer);
-  //         setBtnColor("primary");
-  //       }}
-  //       className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100`}
-  //       // className={`fira-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-  //       //   answer,
-  //       //   index
-  //       // )}`}
-  //     >
-  //       {answer.choice}
-  //     </button>
-  //   </div>
-  // );
   return (
-
     <div className="mr-8 ml-8">
       <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
         <Header />
@@ -216,16 +185,16 @@ function Quiz(props) {
 
         <div className="lg:w-1/2 p-2 mt-10 w-full">
           {/*Current Question number*/}
-          <h1 className="pt-4 mt-2 fira-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
+          <h1 className="pt-4 mt-2 open-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">
             Question {curQuesIndex + 1}
           </h1>
           <ProgressBar progress={questions[curQuesIndex].id / totalNumQues} />
 
           {/*Question Text*/}
-          <h1 className="mt-2 text-black lg:text-black fira-sans" cy="question">
+          <h1 className="mt-2 text-black lg:text-black open-sans" cy="question">
             {questions[curQuesIndex].question}
           </h1>
-          <p className="text-xs text-gray-700 italic">Select one</p>
+          <p className="text-xs text-gray-700 italic open-sans">Select one</p>
 
           {/*Answers to the Questions*/}
           <div className="flex flex-col w-full mt-4 mb-2 py-5 text-sm lg:text-lg">
@@ -235,47 +204,54 @@ function Quiz(props) {
                 answerButton(answer, index)
             )}
           </div>
-          <div className="flex items-center justify-between m-auto mt-10 mb-16 questrial actions">
+          {/*  */}
+          <div className="flex items-center justify-between m-auto mt-10 mb-16 open-sans actions">
             {/*Back Button
               If it isn't the first question, the back button says back and updates history.
               If it is the first question it redirects the user to landing page*/}
-            {curQuesIndex > 0 ? (
-              <button
-                onClick={handleBack}
-                className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center`}
-              >
-                <img
-                  src={ArrowPurpleL}
-                  alt="leftArrow"
-                  size="1.3rem"
-                  className="pr-4"
-                />
-                <span className="text-purple-100 text-lg">Back</span>
-              </button>
-            ) : (
-                <button
-                  onClick={() => props.history.push("/")}
-                  className={`questrial border-2 p-2 px-4 border-purple-100 flex rounded-lg items-center text-lg`}
-                >
-                  <img
-                    src={ArrowPurpleL}
-                    alt="leftArrow"
-                    size="1.3rem"
-                    className="pr-4 "
-                  />
-                  <span className="text-purple-100 text-lg">Home</span>
-                </button>
-              )}
+            <button
+              onClick={() =>
+                curQuesIndex > 0 ? handleBack() : props.history.push("/")
+              }
+              style={BackBtn}
+            >
+              <img
+                src={ArrowPurpleL}
+                alt="leftArrow"
+                size="1.3rem"
+                className="pr-4"
+              />
+              <span className="open-sans text-purple-100 text-lg">
+                {curQuesIndex > 0 ? "Back" : "Home"}
+              </span>
+            </button>
             <span className="text-gray-700 text-lg">{`${questions[curQuesIndex].id}/${totalNumQues}`}</span>
 
             {/*Next Button*/}
+
             <button
               onClick={updateSelAnswers}
-              className={`questrial flex ${selAnswer ? 'bg-primary' : 'bg-purple-100'}  p-2 px-4 rounded-lg items-center`}
               cy="nextBtn"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontFamily: "open-sans",
+                border: "1px solid",
+                borderRadius: "10px",
+                width: "96px",
+                height: "36px",
+                color: "white",
+                background: `${selAnswer ? "#7a11ff" : "#bd88ff"}`,
+              }}
             >
-              <span className="pr-4 text-white text-lg">Next</span>
-              <img src={ArrowWhiteR} alt="rightArrow" size="1.3rem" />
+              <span className="text-white text-lg open-sans">Next</span>
+              <img
+                className="pl-4"
+                src={ArrowWhiteR}
+                alt="rightArrow"
+                size="1.3rem"
+              />
             </button>
           </div>
         </div>
