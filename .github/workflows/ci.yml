@@ -16,26 +16,11 @@ jobs:
       with:
         node-version: '12'
     - run: yarn install
-  cypress-run:
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - run: yarn global add nyc
-      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v1
-      - run: yarn test
-      - run: ./cc-test-reporter format-coverage
-      - run: ./cc-test-reporter sum-coverage
-      - run: ./cc-test-reporter upload-coverage
-      - uses: paambaati/codeclimate-action@v2.5.7
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
-        with:
-          coverageCommand: yarn report:combined
-          debug: true
+    - uses: paambaati/codeclimate-action@v2.5.7
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
+      with:
+        coverageCommand: yarn test
+        debug: true
+        coverageLocations: |
+          ${{github.workspace}}/coverage/cypress-coverage/clover.xml:clover
