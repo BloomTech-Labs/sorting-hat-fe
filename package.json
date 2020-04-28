@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
+		"@cypress/instrument-cra": "^1.1.1",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
@@ -40,6 +41,7 @@
 		"jest": "^25.4.0",
 		"nyc": "^15.0.1",
 		"postcss-cli": "^7.1.0",
+		"start-server-and-test": "^1.11.0",
 		"tailwindcss": "^1.2.0"
 	},
 	"scripts": {
@@ -52,9 +54,11 @@
 		"watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w",
 		"cy:open": "cypress open",
 		"test:jest": "jest __tests__",
-		"test:cy": "cypress run",
-		"test": "yarn test:cy && yarn test:jest",
-		"coverage": "yarn test:cy; yarn test:jest; true",
+		"cypress:coverage:run": "cypress run || true",
+		"start:coverage": "react-scripts -r @cypress/instrument-cra start",
+		"cypress:coverage": "start-server-and-test start:coverage http://localhost:3000 cypress:coverage:run || true",
+		"test": "yarn cypress:coverage:run && yarn test:jest",
+		"coverage": "yarn cypress:coverage:run; yarn test:jest; true",
 		"pretest": "rm -rf .nyc_output || true",
 		"posttest": "yarn report:combined",
 		"mkdir:reports": "mkdir reports || true",
@@ -73,8 +77,16 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"respository": {
 		"type": "git",
