@@ -164,7 +164,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           {/* Bottom Buttons Section ↓ */}
 
           <section className="flex flex-row justify-between  pt- 16 lg:pt-32">
-            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
+            <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 hidden">
               <button
                 onClick={() => history.push("/quiz")}
                 //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
