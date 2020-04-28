@@ -19,4 +19,13 @@ import "./commands";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 import "@cypress/code-coverage/support";
+// import "cypress-react-unit-test";
 require("cypress-plugin-tab");
+
+module.exports = (on, config) => {
+    // `on` is used to hook into various events Cypress emits
+    // `config` is the resolved Cypress config
+    require('@cypress/code-coverage/task')(on, config)
+  
+    return config
+}

@@ -20,10 +20,78 @@ Fullstack Developer | UX Developer | Section Lead | Team Lead |
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![styles](https://img.shields.io/badge/styles-Tailwind.css-red)![](https://img.shields.io/badge/-Ant%20Design-green)![](https://img.shields.io/badge/-SASS-lightblue)
+![styles](https://img.shields.io/badge/styles-Tailwind.css-red)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Deployed](https://img.shields.io/badge/Deployed-AWS%20Amplify-black)](https://master.d2560iuusixetb.amplifyapp.com/)
-![Testing](https://img.shields.io/badge/testing-jest-yellow)
+![Testing](https://img.shields.io/badge/testing-jest-yellow)![cypress](https://img.shields.io/badge/-Cypress-orange)
 ![State Management](https://img.shields.io/badge/state%20management-Redux-blue)
 
+## Project Overview
+
+[Trello Board](https://trello.com/b/w9YZxYzm/sorting-hat)
+
+[Product Canvas](https://www.notion.so/Sorting-Hat-c7c26dd376d74f418d4e0ec64f192a2a)
+
+[UX Design files](https://www.figma.com/file/CozTJxp3mWu8Ez0L9HZ76j/Sorting-Hat%2C-Ryan?node-id=1462%3A158)
+
+Sorting Hat is a quiz application that suggests students the top ranking tracks that they can further look into based on their interests and what they find most important in a job.
+
+### Key Features
+
+-    Quiz asks questions that are engaging
+-    Results of the quiz are displayed in a bar graph
+-    Description of each track is available
+-    Extra resources are provided to help start the research
+-    Schools are provided in the Courses section
+
+## Tech Stack
+
+### Front end built using:
+
+#### _React_
+
+Why did you choose this framework?
+
+-    Unidirectional Data Flow is easy and viable for this product
+-    Components make react highly reusable
+-    Easy to be used for mobile and desktop
+-    Huge Community of support
+
+#### _Redux_
+
+Why did you choose this library?
+
+-    easy to test
+-    single store to reuse objects
+
+#### _Cypress Testing_
+
+Why did you choose this library?
+
+-    End to end testing
+-    GUI is intuitive
+-    low learning curve
+
+#### _Jest Testing_
+
+Why did you choose this library?
+
+-    specialized for unit testing
+-    works well with code climate
+
+#### Front end deployed to `Amplify AWS`
+
+#### [Back end](https://github.com/Lambda-School-Labs/sorting-hat-be) built using:
+
+#### NodeJS
+
+-    built on Chrome's JavaScript runtime which is convenient as Javascript is the only choice to develop new web applications in the web browser.
+-    adding/changing functionality is easy as changes to the source code aren't needed.
+-    lightweight as its executions are a series of asynchronous callback.
+
+# APIs
+
+## Backend API
+ 
+This backend API allows for the front end application to interact with the back end database to display questions and results of the quiz as desired.
 

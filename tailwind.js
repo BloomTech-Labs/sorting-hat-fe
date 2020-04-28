@@ -12,13 +12,14 @@ module.exports = {
     },
     colors: {
       transparent: "transparent",
-
-      black: "#000",
-      white: "#fff",
+      black: "#1B212C",
+      secondaryText: "#757575",
+      white: "#FFFFFF",
       primary: "#8111FF",
       secondary: "#C088FF",
       tertiary: "#E6CFFF",
       complimentary: "#F9F3FF",
+      chartGray: "#4d4d4d",
       gray: {
         100: "#f7fafc",
         200: "#edf2f7",
@@ -28,7 +29,7 @@ module.exports = {
         600: "#718096",
         700: "#777777",
         800: "#2d3748",
-        900: "#1a202c",
+        900: "#757575",
       },
       red: {
         100: "#fff5f5",
