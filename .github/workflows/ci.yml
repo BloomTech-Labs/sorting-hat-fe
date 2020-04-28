@@ -21,6 +21,6 @@ jobs:
         CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
       with:
         coverageCommand: yarn coverage
-        debug: true
         coverageLocations: |
           ${{github.workspace}}/coverage/cypress-coverage/clover.xml:clover
+        debug: true
