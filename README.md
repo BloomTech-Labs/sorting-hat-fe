@@ -89,7 +89,7 @@ Why did you choose this library?
 -    specialized for unit testing
 -    works well with code climate
 
-#### Front end deployed to [`Amplify AWS`](https://www.sortinghat.tech/)
+#### Front end deployed to [Amplify AWS](https://www.sortinghat.tech/)
 
 #### [Back end](https://github.com/Lambda-School-Labs/sorting-hat-be) built using:
 
