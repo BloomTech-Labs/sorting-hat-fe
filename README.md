@@ -28,11 +28,21 @@ Fullstack Developer | UX Developer | Section Lead | Team Lead |
 
 ## Project Overview
 
-[Trello Board](https://trello.com/b/w9YZxYzm/sorting-hat)
+>[Trello Board](https://trello.com/b/w9YZxYzm/sorting-hat)
 
-[Product Canvas](https://www.notion.so/Sorting-Hat-c7c26dd376d74f418d4e0ec64f192a2a)
+>[Product Canvas](https://www.notion.so/Sorting-Hat-c7c26dd376d74f418d4e0ec64f192a2a)
 
-[UX Design files](https://www.figma.com/file/CozTJxp3mWu8Ez0L9HZ76j/Sorting-Hat%2C-Ryan?node-id=1462%3A158)
+>[UX Design files](https://www.figma.com/file/CozTJxp3mWu8Ez0L9HZ76j/Sorting-Hat%2C-Ryan?node-id=1462%3A158)
+
+>**Team Email** \
+Account: techsortinghat@gmail.com \
+Password: Lambdalabs22.
+
+>**Google analytics account details** \
+User: sortingh79@gmail.com \
+Password: sortinghat1!
+
+>Here’s the **AWS** info for the Sorting Hat project. The login URL is https://655955459246.signin.aws.amazon.com/console.
 
 Sorting Hat is a quiz application that suggests students the top ranking tracks that they can further look into based on their interests and what they find most important in a job.
 
