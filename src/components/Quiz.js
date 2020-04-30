@@ -124,15 +124,7 @@ function Quiz(props) {
       )
     );
   }
-  //todo use like a useEffect, (not reRendering component)
-  // function highlightButton(answerBtn) {
-  //   if (selAnswer && answerBtn && selAnswer.id === answerBtn.id) {
-  //     return "purple-100";
-  //   } else {
-  //     return "white";
-  //   }
-  // }
-
+ 
   //todo use like a useEffect, (not reRendering component)
   function checkBoxButton(answerBtn, index) {
     if (
@@ -168,10 +160,6 @@ function Quiz(props) {
       <div
         key={index}
         className={`open-sans mark w-full p-1 ml-2 text-left`}
-        // className={`open-sans mark w-full p-1 ml-2 text-left hover:bg-purple-100 bg-${highlightButton(
-        //   answer,
-        //   index
-        // )}`}
       >
         {answer.choice}
       </div>
@@ -181,8 +169,7 @@ function Quiz(props) {
     <div className="mr-8 ml-8">
       <div className="flex flex-col justify-center items-center md:max-h-screen md:h-screen mt-20 md:m-auto text-sm lg:text-2xl">
         <Header />
-        {/* <div className="lg:w-1/2 p-2 m-auto  lg:mt-40"> */}
-
+        
         <div className="lg:w-1/2 p-2 mt-10 w-full">
           {/*Current Question number*/}
           <h1 className="pt-4 mt-2 open-sans text-gray-700 text-2xl md:text-3xl lg:text-protoGray">

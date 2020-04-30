@@ -28,11 +28,21 @@ Fullstack Developer | UX Developer | Section Lead | Team Lead |
 
 ## Project Overview
 
-[Trello Board](https://trello.com/b/w9YZxYzm/sorting-hat)
+>[Trello Board](https://trello.com/b/w9YZxYzm/sorting-hat)
 
-[Product Canvas](https://www.notion.so/Sorting-Hat-c7c26dd376d74f418d4e0ec64f192a2a)
+>[Product Canvas](https://www.notion.so/Sorting-Hat-c7c26dd376d74f418d4e0ec64f192a2a)
 
-[UX Design files](https://www.figma.com/file/CozTJxp3mWu8Ez0L9HZ76j/Sorting-Hat%2C-Ryan?node-id=1462%3A158)
+>[UX Design files](https://www.figma.com/file/CozTJxp3mWu8Ez0L9HZ76j/Sorting-Hat%2C-Ryan?node-id=1462%3A158)
+
+>**Team Email** \
+Account: techsortinghat@gmail.com \
+Password: Lambdalabs22.
+
+>**Google analytics account details** \
+User: sortingh79@gmail.com \
+Password: sortinghat1!
+
+>Here’s the **AWS** info for the Sorting Hat project. The login URL is https://655955459246.signin.aws.amazon.com/console.
 
 Sorting Hat is a quiz application that suggests students the top ranking tracks that they can further look into based on their interests and what they find most important in a job.
 
@@ -79,7 +89,7 @@ Why did you choose this library?
 -    specialized for unit testing
 -    works well with code climate
 
-#### Front end deployed to `Amplify AWS`
+#### Front end deployed to [Amplify AWS](https://www.sortinghat.tech/)
 
 #### [Back end](https://github.com/Lambda-School-Labs/sorting-hat-be) built using:
 
@@ -95,3 +105,80 @@ Why did you choose this library?
  
 This backend API allows for the front end application to interact with the back end database to display questions and results of the quiz as desired.
 
+# Environment Variables
+
+This app does not require any environment variables for it to work. Optionally you can add a .env file containing the following:
+
+    *  SKIP_PREFLIGHT_CHECK=true - sometimes rca brings a preflight check error in which case set this variable to true
+
+# Content Licenses
+
+🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+
+| Image Filename | Source / Creator | License                                                                      |
+| -------------- | ---------------- | ---------------------------------------------------------------------------- |
+| ArrowPurpleL.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| ArrowWhiteL.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| ArrowWhiteR.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Checkbox.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| CoursesButton.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Frame.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| HamburgerBtn.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| MainIcon.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| UnCheckbox.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Vector.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| VideoPlaceholder.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+
+# Testing
+
+We used Cypress for the end to end testing to mimick user interactions. We used Jest react testing for the integration testing as jest is better suited for testing the business logic of an application.
+
+# Installation Instructions
+
+Run `yarn install` to install the required dependencies to get this project up and running with yarn.
+
+## Other Scripts
+
+    * build - creates a build of the application
+    * start - starts the production server after a build is created
+    * test - runs all test builds
+    * cypress:coverage - runs cypress tests in the integration folder and saves the coverage in coverage/cypress-coverage directory.
+    * test:jest - runs jest tests and saves the coverage in coverage/jest-coverage directory.
+
+# Contributing
+
+Please note we have a [code of conduct](./license_and_more/CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
+
+## Issue/Bug Request
+   
+ **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+ - Check first to see if your issue has already been reported.
+ - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+ - Create a live example of the problem.
+ - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+
+### Feature Requests
+
+We would love to hear from you about new features which would improve this app and further the aims of our project. Please provide as much detail and information as possible to show us why you think your new feature should be implemented.
+
+### Pull Requests
+
+If you have developed a patch, bug fix, or new feature that would improve this app, please submit a pull request. It is best to communicate your ideas with the developers first before investing a great deal of time into a pull request to ensure that it will mesh smoothly with the project.
+
+Remember that this project is licensed under the MIT license, and by submitting a pull request, you agree that your work will be, too.
+
+#### Pull Request Guidelines
+
+- Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+- Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file locations and container parameters.
+- Ensure that your code conforms to our existing code conventions and test coverage.
+- Include the relevant issue number, if applicable.
+- You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+
+### Attribution
+
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+
+## Documentation
+
+See [Backend Documentation](_https://github.com/Lambda-School-Labs/sorting-hat-be_) for details on the backend of our project.

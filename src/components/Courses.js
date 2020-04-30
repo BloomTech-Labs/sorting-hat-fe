@@ -179,32 +179,18 @@ const courseData = {
   },
 };
 
-// const maddness = () =>{
-//   courseData[currentCourse].bootcamps.forEach((el) => {
-//     names.push(el);
-
-//   });
-// }
-
-//These structure the table
-// const tableRow = "flex justify-between items-between open-sans border-2 border-solid border-red-500";
-// const tableColumn = "flex-row w-full justify-between  open-sans border-2 border-black bg-blue-100";
-// //These structure content styling
-// const colHeader = "font-bold border-2 border-green-500";
-// const tableContent = "";
-// const rowHeader = "font-bold pr-6 border-2 border-blue-900 flex-grow";
-// const row = "pr-6 border-2 border-gray-500";
-// const mobile = false;
 const tableRow =
   "flex justify-between items-between open-sans border-2 border-solid border-red-500";
 const tableColumn =
   "flex-row w-full justify-between  open-sans border-2 border-black bg-blue-100";
+
 //These structure content styling
 const colHeader = "font-bold border-2 border-green-500";
 const tableContent = "";
 const rowHeader = "font-bold pr-6 border-2 border-blue-900 flex-grow";
 const row = "pr-6 border-2 border-gray-500";
 const mobile = false;
+
 //24 px between each content
 const Courses = () => {
   const [currentCourse, setCurrentCourse] = useState("UX");
@@ -215,9 +201,7 @@ const Courses = () => {
     "support",
     "length",
     "timeCommitment",
-    "localeCommitment",
-    // "courseTitle",
-    // "link",
+    "localeCommitment"
   ];
 
   return (
@@ -257,7 +241,6 @@ const Courses = () => {
                 </div>
                 <div className={`${tableRow}`}>
                   {/*Y dimension*/}
-                  {/* <div className={tableColumn}> */}
                   <div className="flex-row w-full justify-between open-sans border-2 border-black bg-blue-100 flex-grow">
                     <p className={rowHeader}>Price</p>
                     <p className={rowHeader}>Content</p>

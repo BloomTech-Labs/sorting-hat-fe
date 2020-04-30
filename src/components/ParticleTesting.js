@@ -58,7 +58,7 @@ function ParticleTesting() {
       },
       move: {
         enable: true,
-        speed: 2,
+        speed: 2.1,
         direction: "none",
         random: false,
         straight: false,
@@ -75,7 +75,7 @@ function ParticleTesting() {
       detect_on: "canvas",
       events: {
         onhover: {
-          enable: false,
+          enable: true,
           mode: "grab",
         },
         onclick: {
@@ -114,9 +114,7 @@ function ParticleTesting() {
   };
 
   return (
-    // <div className="fixed top-0 left-0 w-full h-full particle-wrapper">
     <Particles params={particleOpt} className="particle-wrapper" />
-    // </div>
   );
 }
 

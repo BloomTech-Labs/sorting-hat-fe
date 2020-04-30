@@ -14,8 +14,6 @@ import { ViewCoursesBtn, TakeQuizBtn } from "./buttons/styledButtons";
 import BarGraph from "./BarGraph";
 import { setSelectedAnswers } from "../redux/actions/setSelectedAnswers";
 
-//We need to have the endpoints from the backend
-
 function Results({ scores, tracks, setSelectedAnswers }) {
   const [selectedTrack, setSelectedTrack] = useState({});
 
@@ -77,30 +75,7 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex border-b-2 justify-between align-baseline">
               <h2 className={sectHeadStyle}>{selectedTrack.name}</h2>
               <div>
-                {/* <button
-                  onClick={() => history.push("/courses")}
-                  // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
-                  cy="coursesBtnB"
-                  style={ViewCoursesBtn}
-                >
-                  <span className="hidden flex items-center justify-end questrial text-sm lg:text-lg">
-                    View Courses
-                  </span>
-                  <img
-                    src={ArrowWhiteR}
-                    alt="rightArrow"
-                    size="1.3rem"
-                    className="pl-4 m-1"
-                  />{" "}
-                </button> */}
-
-                {/* <Link to="/courses"
-                  className="flex align-baseline justify-end">
-                  <img
-                    src={CoursesButton}
-                    alt="testing"
-                  />
-                </Link> */}
+                
               </div>
             </div>
             <p className={sectBodyStyle + "pb-24"}>
@@ -113,15 +88,11 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <h2 className={sectHeadStyle + sectDivider}>
               {"  "} {selectedTrack.name} Traits
             </h2>
-            {/* This View Courses button needs to be inline with the H2 above ↑ */}
-
             <p className={sectBodyStyle + "pb-24"}>{selectedTrack.strengths}</p>
           </div>
           <div className="flex-col items-center justify-center open-sans">
             <h2 className={sectHeadStyle}>Learn More</h2>
             <div className="flex justify-center py-2 pb-24">
-              {/* <img src={VideoPlaceholder} alt="course information video" className="w-full" /> */}
-              {/* <VideoPlaceholder /> */}
               <iframe
                 title="Relevant course information"
                 width="100%"
@@ -132,15 +103,13 @@ function Results({ scores, tracks, setSelectedAnswers }) {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              {/* <VideoPlaceholder /> */}
-              {/* {selectedTrack. ? trackInfo.trackVideo : } */}
             </div>
           </div>
           <div>
             <h2 className={sectHeadStyle + sectDivider}>
               Discover Other Tracks
             </h2>
-            {/*I need to axios all this info*/}
+            {/* For Each Track add a link and update state */}
             {tracks.map((el) => {
               if (el.id != selectedTrack.id) {
                 return (
@@ -167,11 +136,9 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 hidden">
               <button
                 onClick={() => history.push("/quiz")}
-                //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
                 cy="retakeBtn"
                 style={TakeQuizBtn}
               >
-                {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
                   src={ArrowPurpleL}
                   alt="leftArrow"
@@ -188,7 +155,6 @@ function Results({ scores, tracks, setSelectedAnswers }) {
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5 hidden">
               <button
                 onClick={() => history.push("/courses")}
-                // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                 cy="coursesBtnB"
                 style={ViewCoursesBtn}
               >
@@ -206,7 +172,6 @@ function Results({ scores, tracks, setSelectedAnswers }) {
           </section>
         </section>
       </div>
-      {/*Bottom Nav Bar */}
     </div>
   );
 }
