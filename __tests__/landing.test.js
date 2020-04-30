@@ -1,5 +1,6 @@
 import React from "react";
 import Landing from "../src/components/Landing";
+import { fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { renderWithRedux } from "../__mocks__/reduxMock.js";
 
@@ -7,64 +8,43 @@ jest.mock("../src/components/ParticleTesting", () => () => (
   <div>Hello World</div>
 ));
 
-describe("<App />", () => {
-  describe("<Landing />", () => {
-    it("should render", () => {
-      renderWithRedux(
-        <Router>
-          <Switch>
-            <Landing />
-          </Switch>
-        </Router>
-      );
-    });
-    //   it('should welcome user', () => {
-    //     const wrapper = rtl.render(<Landing />)
-    //     expect(wrapper.getByText(/Discover/i))
-    //   })
+describe("<Landing />", () => {
+  it("should render", () => {
+    renderWithRedux(
+      <Router>
+        <Switch>
+          <Landing />
+        </Switch>
+      </Router>
+    )
   });
-
-  function sum(a, b) {
-    return a + b;
-  }
-
-  test("adds 1 + 2 to equal 3", () => {
-    expect(sum(1, 2)).toBe(3);
+  it("should have h2 content", () => {
+    expect(renderWithRedux(
+      <Router>
+        <Switch>
+          <Landing />
+        </Switch>
+      </Router>
+    )
+    .getByText("Discover the Tech Career for You"))
+  });
+  it("should start the quiz", () => {
+    fireEvent.click(renderWithRedux(
+      <Router>
+        <Switch>
+          <Landing />
+        </Switch>
+      </Router>
+    )
+    .getByTestId("startBtn"))
+    expect(window.location.pathname).toBe("/quiz")
   });
 });
 
-const questions = [
-  {
-    question: "Which describes your preferred work environment?",
-    id: 1,
-  },
-  {
-    question: "How do you learn?",
-    id: 2,
-  },
-  {
-    question: "What do you find more fascinating?",
-    id: 3,
-  },
-  {
-    question: "How do you problem solve?",
-    id: 4,
-  },
-  {
-    question: "When constructing a new chair...",
-    id: 5,
-  },
-  {
-    question:
-      "How would you explain music to someone who's never listened to it before?",
-    id: 6,
-  },
-  {
-    question: "What describes you better?",
-    id: 7,
-  },
-  {
-    question: "What is the most appealing to you?",
-    id: 8,
-  },
-];
+function sum(a, b) {
+  return a + b;
+}
+
+test("adds 1 + 2 to equal 3", () => {
+  expect(sum(1, 2)).toBe(3);
+});
