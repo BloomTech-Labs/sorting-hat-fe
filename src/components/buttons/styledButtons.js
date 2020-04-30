@@ -7,7 +7,6 @@ import ArrowPurpleL from "../../img/ArrowPurpleL.svg";
 import styled from "styled-components";
 
 
-// This hover color needs to be worked on to apply to the whole button in the same manner as quiz
 const ViewCoursesBtn = {
   display: "flex",
   justifyContent: "center",
@@ -80,7 +79,6 @@ const StyledButtons = () => {
         Work in progress come back later ♥
       </h1>
 
-      {/* This is where i chop the button like it's a stolen escalade  */}
       <Link to="/">
         <ViewCoursesBtn>
           <span>View Courses</span>

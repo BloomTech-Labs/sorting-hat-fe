@@ -13,30 +13,29 @@ import AboutImage3 from "../img/AboutImage3.svg";
 
 const About = (props) => {
   //Tailwind styles for containers at texttop
-  const textCont = "w-full lg:w-1/2 p-8";
-  const imgStyles = "hidden lg:block h-full lg:w-1/2";
-  const { history } = props;
+  const textCont = "w-full lg:w-1/2 px-1 lg:p-8 lg:px-12";
+  const imgStyles = "hidden lg:block h-full lg:w-1/2 py-2";
+  const { history } = props; 
   return (
     <div>
       {history.location.pathname !== "/" ? <Header /> : <></>}
-      <div className="flex items-center justify-center mr-8 ml-8 mt-20">
-        <div className="flex flex-col m-4 mt-10 max-w-3xl ">
-          <section className=" mt-4 mb-4 flex justify-between items-center">
+      <div className="flex items-center justify-center lg:mx-8 mt-20">
+        <div className="flex flex-col m-4 mt-10 max-w-5xl ">
+          <section className=" mt-4 mb-4 flex justify-between items-center lg:pb-3">
             <div className={textCont}>
               <h2 className="mb-1 text-2xl lg:text-3xl font-bold text-black border-b-2 open-sans lg:font-normal">
                 About
               </h2>
-              {/* There needs to be more text here below! */}
               <div className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-24 lg:pb-0 leading-loose protoGray open-sans">
                 <p className="pb-4">Tech Sorting Hat was inspired and built by tech students.</p>
                 <p className="pb-4">We aim to have a fun quiz that informs users about tech careers.</p>
-                <p className="pb-4">Our hope is to spark an interest the interest.</p>
+                <p className="pb-4 pr-4">Our hope is to spark an interest the interest.</p>
               </div>
             </div>
             <img className={imgStyles} src={AboutImage1} />
           </section>
 
-          <section className="flex justify-between items-center">
+          <section className="flex justify-between items-center lg:pb-3">
             <img className={imgStyles} src={AboutImage2}  />
             <div className={textCont}>
               <h2 className="mb-1 text-2xl lg:text-3xl text-black border-b-2 fira-sans  ">
@@ -52,7 +51,7 @@ const About = (props) => {
             </div>
           </section>
 
-          <section className=" flex container mt-5 justify-between items-center">
+          <section className=" flex container mt-5 justify-between items-center lg:pb-3">
             <div className={textCont}>
               <h2 className="mb-1 text-2xl lg:text-3xl text-black border-b-2 fira-sans">
                 How it was made
@@ -66,15 +65,13 @@ const About = (props) => {
             <img className={imgStyles} src={AboutImage3} />
           </section>
 
-          <section className="flex flex-row justify-between  pt- 16 lg:pt-32">
-            <div className="flex justify-start pb-1 pt-2 pr-1 my-8 mr-5 ">
+          <section className="flex flex-row justify-between lg:mx-12 pt-16 lg:pt-32">
+            <div className="flex justify-start pb-1 pt-2 pr-4 my-8 mr-5 ">
               <button
                 onClick={() => history.push("/quiz")}
-                //className={`border-2 border-purple-100 hover:border-primary flex p-2 px-6 rounded-lg justify-center items-center`}
                 cy="retakeBtn"
                 style={TakeQuizBtn}
               >
-                {/* class="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg */}
                 <img
                   src={ArrowPurpleL}
                   alt="leftArrow"
@@ -91,7 +88,6 @@ const About = (props) => {
             <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5 hidden">
               <button
                 onClick={() => history.push("/courses")}
-                // className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded-lg "
                 cy="coursesBtnB"
                 style={ViewCoursesBtn}
               >
@@ -114,39 +110,3 @@ const About = (props) => {
 };
 
 export default withRouter(About);
-
-{
-  /* <div className="flex justify-start py-1 pt-2 pr-1 my-8 mr-5 ">
-            <Link
-              to="/quiz"
-              className={`border-2 border-purple-100 hover:border-primary  flex p-2 px-8 rounded-lg justify-center items-center rounded-lg`}
-            >
-              <img
-                src={ArrowPurpleL}
-                alt="leftArrow"
-                size="1.3rem"
-                className="pr-4 m-1"
-              />{" "}
-              <span className="text-purple-100 open-sans">Take Quiz</span>
-            </Link>
-          </div>  */
-}
-
-{
-  /* <div className="flex justify-end py-1 pt-2 pl-1 my-8 ml-5">
-            <Link
-              to="/courses"
-              className="flex align-baseline justify-between bg-primary hover:bg-purple-100 text-white py-0.5 px-4 border border-primary rounded btnRound "
-            >
-              <span className="flex items-center justify-end open-sans">
-                View Courses
-              </span>
-              <img
-                src={ArrowWhiteR}
-                alt="rightArrow"
-                size="1.3rem"
-                className="pl-4 m-1"
-              />{" "}
-            </Link>
-          </div> */
-}
