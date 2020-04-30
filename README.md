@@ -117,17 +117,17 @@ This app does not require any environment variables for it to work. Optionally y
 
 | Image Filename | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| ArrowPurpleL.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| ArrowWhiteL.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| ArrowWhiteR.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| Checkbox.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| CoursesButton.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| Frame.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| HamburgerBtn.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| MainIcon.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| UnCheckbox.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| Vector.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
-| VideoPlaceholder.svg      | w3c      | [Creative Commons](https://github.com/w3c/svgwg/)                             |
+| ArrowPurpleL.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| ArrowWhiteL.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| ArrowWhiteR.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Checkbox.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| CoursesButton.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Frame.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| HamburgerBtn.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| MainIcon.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| UnCheckbox.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| Vector.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
+| VideoPlaceholder.svg      | w3c      | [Creative Commons](https://github.com/iconify/iconify-react)                             |
 
 # Testing
 
