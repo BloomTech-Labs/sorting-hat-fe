@@ -26,18 +26,22 @@ function Header(props) {
   return (
     //lg:fixed lg:left-0 lg:top-0 bg-transparent p-10
     //history.location.pathname === "/quiz" ?
-
+    //`fixed bg-white w-full top-0 z-20 ${hiddenStyle} ease-in-out`
     <div
-      className={
-        history.location.pathname === "/results" || "about"
-          ? `fixed bg-white w-full top-0 z-20  ${hiddenStyle} ease-in-out`
-          : `bg-transparent w-full top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
-      }
+      className={`bg-white w-full top-0 z-20 ${hiddenStyle} ease-in-out`}
+      // className={
+      // 	history.location.pathname === '/results' || 'about' ? (
+      // 		`fixed bg-white w-full top-0 z-20  ${hiddenStyle} ease-in-out`
+      // 	) : (
+      // 			`bg-transparent w-full top-0 -ml-10 z-20 ${hiddenStyle} ease-in-out`
+      // 		)
+      // }
     >
-      <nav className="flex flex-wrap justify-between fira-sans w-full top-0 left-0 fixed py-6 px-10 lg:px-0 ">
+      {/* //"flex flex-wrap justify-between open-sans w-full top-0 left-0 fixed py-6 px-10 lg:px-0 " */}
+      <nav className="flex flex-wrap justify-between open-sans w-full top-0 left-0 py-6 px-10 fixed lg:px-0 bg-white">
         <NavLink
           to="/"
-          className="flex lg:top-0 lg:left-0 mr-6 lg:ml-20 text-2xl font-bold text-black hover:text-primary"
+          className="flex lg:top-0 lg:left-0 mr-6 lg:ml-20 text-2xl font-bold text-black hover:text-primary open-sans"
         >
           <div className="flex items-center">
             <img
@@ -70,17 +74,16 @@ function Header(props) {
                   ? "/quiz"
                   : { pathname: "/", state: {} }
               }
-              className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary"
-              cy="hRestart"
+              className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary open-sans"
             >
               {history.location.pathname === "/" ||
               history.location.pathname === "/about"
-                ? "Take Quiz"
+                ? "Start Quiz"
                 : "Restart"}
             </NavLink>
             <NavLink
               to="/about"
-              className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary"
+              className="mt-auto mr-1 text-lg text-black protoGray hover:text-primary open-sans"
             >
               About
             </NavLink>
@@ -104,7 +107,7 @@ function Header(props) {
         <div className="hidden md:flex px-10">
           <NavLink
             to="/about"
-            className="hidden md:block mt-auto mr-10 text-lg text-black protoGray hover:text-primary"
+            className="hidden md:block mt-auto mr-10 text-lg text-black protoGray hover:text-primary open-sans"
             data-testid="aboutbtn"
           >
             About
@@ -115,11 +118,11 @@ function Header(props) {
                 ? "/quiz"
                 : { pathname: "/", state: {} }
             }
-            className="hidden md:block mt-auto mr-4 text-lg text-black protoGray hover:text-primary"
+            className="hidden md:block mt-auto mr-4 text-lg text-black protoGray hover:text-primary open-sans"
           >
             {history.location.pathname === "/" ||
             history.location.pathname === "/about"
-              ? "Take Quiz"
+              ? "Start Quiz"
               : "Restart"}
           </NavLink>
         </div>
