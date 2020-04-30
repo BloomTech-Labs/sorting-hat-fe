@@ -43,6 +43,7 @@ function Landing(props) {
               to="/quiz"
               className="rounded-lg z-0 lg:z-10 w-full px-20 py-2 self-end text-center lg:auto text-white bg-primary border pointer-events-auto open-sans"
               cy="startBtn"
+              data-testid="startBtn"
             >
               Start Quiz
             </Link>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import MainIcon from "../img/MainIcon.svg";
+import MainIcon from "../img/mainIcon.svg";
 import useDocumentScrollThrottled from "./useDocumentScrollThrottled";
 
 // import HamburgerBtn from '../img/HamburgerBtn.svg';
@@ -108,6 +108,7 @@ function Header(props) {
           <NavLink
             to="/about"
             className="hidden md:block mt-auto mr-10 text-lg text-black protoGray hover:text-primary open-sans"
+            data-testid="aboutbtn"
           >
             About
           </NavLink>
