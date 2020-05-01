@@ -75,10 +75,6 @@ const BackBtn = {
 const StyledButtons = () => {
   return (
     <div>
-      <h1 className=" protoGray fira-sans">
-        Work in progress come back later ♥
-      </h1>
-
       <Link to="/">
         <ViewCoursesBtn>
           <span>View Courses</span>

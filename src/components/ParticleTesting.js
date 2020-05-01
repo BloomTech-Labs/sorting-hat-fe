@@ -88,7 +88,8 @@ function ParticleTesting() {
         grab: {
           distance: 150,
           line_linked: {
-            opacity: 1,
+            enable: false,
+            opacity: 0,
           },
         },
         bubble: {
@@ -113,9 +114,7 @@ function ParticleTesting() {
     retina_detect: true,
   };
 
-  return (
-    <Particles params={particleOpt} className="particle-wrapper" />
-  );
+  return <Particles params={particleOpt} className="particle-wrapper" />;
 }
 
 export default ParticleTesting;
