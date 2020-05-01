@@ -15,7 +15,7 @@ const About = (props) => {
   //Tailwind styles for containers at texttop
   const textCont = "w-full lg:w-1/2 px-1 lg:p-8 lg:px-12";
   const imgStyles = "hidden lg:block h-full lg:w-1/2 py-2";
-  const { history } = props; 
+  const { history } = props;
   return (
     <div>
       {history.location.pathname !== "/" ? <Header /> : <></>}
@@ -27,27 +27,46 @@ const About = (props) => {
                 About
               </h2>
               <div className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-24 lg:pb-0 leading-loose protoGray open-sans">
-                <p className="pb-4">Tech Sorting Hat was inspired and built by tech students.</p>
-                <p className="pb-4">We aim to have a fun quiz that informs users about tech careers.</p>
-                <p className="pb-4 pr-4">Our hope is to spark an interest the interest.</p>
+                <p className="pb-4">
+                  Tech Sorting Hat was inspired and built by tech students.
+                </p>
+                <p className="pb-4">
+                  We aim to have a fun quiz that informs users about tech
+                  careers.
+                </p>
+                <p className="pb-4 pr-4">
+                  Our hope is to spark an interest in the interest.
+                </p>
               </div>
             </div>
             <img className={imgStyles} src={AboutImage1} />
           </section>
 
           <section className="flex justify-between items-center lg:pb-3">
-            <img className={imgStyles} src={AboutImage2}  />
+            <img className={imgStyles} src={AboutImage2} />
             <div className={textCont}>
               <h2 className="mb-1 text-2xl lg:text-3xl text-black border-b-2 fira-sans  ">
                 Why it was created
-            </h2>
+              </h2>
               <div className="flex-col items-center justify-center text-base lg:text-lg mt-4 pb-24 lg:pb-0 leading-loose protoGray open-sans">
-              <p className="pb-4">We wanted to provide information about tech careers in a way that empathizes with people outside the industry. No tech jargon.</p>
-              
-              <p className="pb-4">Our goal is to inspire, not discourage. Questions were carefully created to do this. We quizzed them based on personality, not what they knew about the tech industry.</p>
-              
-              <p className="pb-4">Anyone is capable of pursuing a career in the tech field, and it is our job to help find their niche based on their personality.</p>
-            </div>
+                <p className="pb-4">
+                  We wanted to provide information about tech careers in a way
+                  that empathizes with people outside the industry. No tech
+                  jargon.
+                </p>
+
+                <p className="pb-4">
+                  Our goal is to inspire, not discourage. Questions were
+                  carefully created to do this. We quizzed them based on
+                  personality, not what they knew about the tech industry.
+                </p>
+
+                <p className="pb-4">
+                  Anyone is capable of pursuing a career in the tech field, and
+                  it is our job to help find their niche based on their
+                  personality.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -57,9 +76,18 @@ const About = (props) => {
                 How it was made
               </h2>
               <p className="flex-col items-center justify-center text-base lg:text-lg mt-4 leading-loose protoGray open-sans">
-              <p className="pb-4">We surveyed 70 current tech students, interviewed 13 tech students, and 2 tech instructors.</p>
-              <p className="pb-4">All tracks in the tech field are extremely similar, but subtle differences between each emerged from analyzing the data.</p>
-              <p className="pb-4">We created questions that do not deal with tech, but relate to how people in different tech fields think.</p>
+                <p className="pb-4">
+                  We surveyed 70 current tech students, interviewed 13 tech
+                  students, and 2 tech instructors.
+                </p>
+                <p className="pb-4">
+                  All tracks in the tech field are extremely similar, but subtle
+                  differences between each emerged from analyzing the data.
+                </p>
+                <p className="pb-4">
+                  We created questions that do not deal with tech, but relate to
+                  how people in different tech fields think.
+                </p>
               </p>
             </div>
             <img className={imgStyles} src={AboutImage3} />
